@@ -11,17 +11,17 @@ public class PlayerMovement3D : MonoBehaviour
     {
         float moveX = Input.GetAxisRaw("Horizontal");
 
-        // Gerak kiri-kanan di 2D tapi fisika 3D
         rb.linearVelocity = new Vector3(moveX * moveSpeed, rb.linearVelocity.y, 0);
 
-        // Lompat
+        /*
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
+        */
     }
 
-    private void OnCollisionEnter(Collision collision)
+    /* private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Ground"))
         {
@@ -35,5 +35,5 @@ public class PlayerMovement3D : MonoBehaviour
         {
             isGrounded = false;
         }
-    }
+    }*/
 }
