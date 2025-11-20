@@ -1,83 +1,105 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using System.Collections;
 
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
 
-    public Image characterAvatar;
-    public TextMeshProUGUI characterNameText;
-    public TextMeshProUGUI dialogueArea;
+    [Header("Links Components")]
+    public TextMeshProUGUI nameBox;
+    public TextMeshProUGUI textBox;
+    public Image portraitBox;
+    public GameObject dialogueGameObject;
 
-    private Queue<DialogueLine> dialogueLines;
+    [Header("Text Configuration")]
+    public float textSpeed = 0.05f;
 
-    public bool IsOpen;
-    public float typingSpeed = 0.25f;
-    public Animator animator;
-    private void Start() {
+    [Header("Dialogue Status")]
+    public bool isTyping = false;
+    public bool dialogueFinished = true;
+
+    [Header("Dialogue Data")]
+    public DialogueLine[] dialogueLines;
+
+    private int currentLineIndex = 0;
+    private Coroutine typingCoroutine;
+    private bool justStarted = false;
+
+    private void Awake()
+    {
         if (instance == null)
         {
             instance = this;
         }
-
-        dialogueLines = new Queue<DialogueLine>();
-        IsOpen = false;
-        animator.SetBool("IsOpen", false);
-    }
-
-    public void StartDialogue(Dialogue dialogue)
-    {
-        IsOpen = true;
-        animator.SetBool("IsOpen", true);
-        dialogueLines.Clear();
-
-        foreach (DialogueLine line in dialogue.lines)
+        else
         {
-            dialogueLines.Enqueue(line);
+            Destroy(gameObject);
         }
-        DisplayNextLine();
     }
 
     private void Update() {
-        if (IsOpen && Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            DisplayNextLine();
+            if (justStarted)
+            {
+                justStarted = false;
+                return;
+            }
+            if (isTyping)
+            {
+                StopCoroutine(typingCoroutine);
+                ShowFullLine(dialogueLines[currentLineIndex]);
+                isTyping = false;
+            }
+            else
+            {
+                currentLineIndex++;
+                if (currentLineIndex < dialogueLines.Length)
+                {
+                    typingCoroutine = StartCoroutine(TypeLine(dialogueLines[currentLineIndex]));
+                }
+                else
+                {
+                    textBox.text = "";
+                    nameBox.text = "";
+                    portraitBox.sprite = null;
+                    dialogueFinished = true;
+                    dialogueGameObject.SetActive(false);
+                }
+            }
         }
     }
 
-    public void DisplayNextLine()
+    public void StartDialogue(DialogueLine[] newLines)
     {
-        if (dialogueLines.Count == 0)
-        {
-            EndDialogue();
-            return;
-        }
-
-        DialogueLine currentLine = dialogueLines.Dequeue();
-        characterAvatar.sprite = currentLine.character.avatar;
-        characterNameText.text = currentLine.character.name;
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(currentLine));
+        dialogueGameObject.SetActive(true);
+        dialogueFinished = false;
+        dialogueLines = newLines;
+        currentLineIndex = 0;
+        justStarted = true;
+        typingCoroutine = StartCoroutine(TypeLine(dialogueLines[currentLineIndex]));
     }
 
-    IEnumerator TypeSentence(DialogueLine dialogueLine)
+    IEnumerator TypeLine(DialogueLine line)
     {
-        dialogueArea.text = "";
-        foreach (char letter in dialogueLine.line.ToCharArray())
+        isTyping = true;
+        textBox.text = "";
+        nameBox.text = line.characterName;
+        portraitBox.sprite = line.characterPortrait;
+        foreach (char text in line.dialogueText)
         {
-            dialogueArea.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+            textBox.text += text;
+            yield return new WaitForSeconds(textSpeed);
         }
+        isTyping = false;
     }
 
-    void EndDialogue()
+    private void ShowFullLine(DialogueLine line)
     {
-        IsOpen = false;
-        animator.SetBool("IsOpen", false);
+        textBox.text = line.dialogueText;
+        nameBox.text = line.characterName;
+        portraitBox.sprite = line.characterPortrait;
     }
 }
-
