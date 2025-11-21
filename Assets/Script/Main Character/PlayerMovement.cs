@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMovement3D : MonoBehaviour
+public class PlayerMovement3D : MonoBehaviour, IDataPresistence
 {
     public Rigidbody2D rb;
     public float moveSpeed = 5f;
@@ -10,5 +10,14 @@ public class PlayerMovement3D : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal");
 
         rb.linearVelocity = new Vector3(moveX * moveSpeed, rb.linearVelocity.y, 0);
+    }
+
+    public void LoadData(GameData data)
+    {
+        transform.position = data.playerPosistion;
+    }
+    public void SaveData(ref GameData data)
+    {
+        data.playerPosistion = transform.position;
     }
 }
