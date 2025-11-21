@@ -9,6 +9,6 @@ public class GameData
 
     public GameData()
     {
-        playerPosistion = new Vector3(7.84f, -2.35f, 0);
+        playerPosistion = new Vector3(0f, 0f, 0f);
     }
 }
