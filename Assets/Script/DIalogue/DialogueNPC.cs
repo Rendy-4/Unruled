@@ -9,7 +9,7 @@ public class DialogueNPC : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange && dialogueStrarted == false && (Input.GetButtonDown("Jump") || Input.GetButtonDown("Fire1")))
+        if (playerInRange && dialogueStrarted == false && Input.GetKeyDown(KeyCode.Space))
         {
             DialogueManager.instance.StartDialogue(dialogueLines);
             dialogueStrarted = true;
@@ -18,18 +18,21 @@ public class DialogueNPC : MonoBehaviour
         {
             dialogueStrarted = false;
         }
-    }    
-    private void OnTriggerEnter2D(Collider2D collision)
+    }
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
+            Debug.Log("Player in range");
             playerInRange = true;
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+
+    void OnTriggerExit(Collider other)
     {
-        if (collision.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
+            Debug.Log("Player out of range");
             playerInRange = false;
         }
     }
