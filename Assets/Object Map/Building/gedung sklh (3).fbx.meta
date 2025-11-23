@@ -3,7 +3,22 @@ guid: 67a0fecae0c32664ea69669556494fb3
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: alas
+    second: {fileID: 2100000, guid: 06f9979db4dfbdf479dc7fc81f5fa726, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pilar
+    second: {fileID: 2100000, guid: eb3a9ee6c15f44f4ba43774ea1300bc0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: temboknatap
+    second: {fileID: 2100000, guid: 37dc559796891dd4f906a86680df010e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
