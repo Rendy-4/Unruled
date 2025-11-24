@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 public class MenuManager : MonoBehaviour
 {
-    public TMP_Text panelName;
+    /*public TMP_Text panelName;*/
     [Header("Menu Buttons")]
     [SerializeField] private Button newGameButton;
     [SerializeField] private Button loadGameButton;
@@ -31,8 +31,8 @@ public class MenuManager : MonoBehaviour
         Debug.Log("User Telah Keluar");
     }
 
-    public void setPanelName(string name)
+    /*public void setPanelName(string name)
     {
         panelName.text = name;
-    }
+    }*/
 }

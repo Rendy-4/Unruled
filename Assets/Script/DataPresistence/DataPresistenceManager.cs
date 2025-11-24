@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class DataPresistenceManager : MonoBehaviour
 {
@@ -26,11 +27,27 @@ public class DataPresistenceManager : MonoBehaviour
         this.dataHandler = new DataHandler(Application.persistentDataPath, fileName);
     }
 
-    private void Start() 
+    public void Onable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
+    }
+    public void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneUnloaded -= OnSceneUnloaded;
+    }
+
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         this.dataPresistencesObjects = FindAllDataPresistenceObjects();
         LoadGame();
     }
+    public void OnSceneUnloaded(Scene scene)
+    {
+        SaveGame();
+    }
+
     public void NewGame()
     {
         this.gameData = new GameData();
@@ -42,6 +59,11 @@ public class DataPresistenceManager : MonoBehaviour
         {
             Debug.Log("No data was found. Initializing data to defaults.");
             NewGame();
+        }
+        if (this.gameData == null)
+        {
+            Debug.Log("No data was found. Initializing data to defaults.");
+            return;
         }
 
         foreach (IDataPresistence dataPresistenceObj in dataPresistencesObjects)
