@@ -45,7 +45,7 @@ public class SettingMenuResolution : MonoBehaviour, IDataPresistence
     // ======================================
     // EVENT UI
     // ======================================
-    void OnResolutionChanged()
+    public void OnResolutionChanged()
     {
         if (loadingFromSave) return; // cegah overwrite saat Load
 
@@ -53,7 +53,7 @@ public class SettingMenuResolution : MonoBehaviour, IDataPresistence
         ApplyResolution();
     }
 
-    void OnFullscreenChanged()
+    public void OnFullscreenChanged()
     {
         if (loadingFromSave) return;
 
