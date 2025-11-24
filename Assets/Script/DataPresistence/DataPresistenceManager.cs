@@ -31,7 +31,7 @@ public class DataPresistenceManager : MonoBehaviour
         this.dataPresistencesObjects = FindAllDataPresistenceObjects();
         LoadGame();
     }
-    public void NewGAme()
+    public void NewGame()
     {
         this.gameData = new GameData();
     }
@@ -41,7 +41,7 @@ public class DataPresistenceManager : MonoBehaviour
         if (this.gameData == null)
         {
             Debug.Log("No data was found. Initializing data to defaults.");
-            NewGAme();
+            NewGame();
         }
 
         foreach (IDataPresistence dataPresistenceObj in dataPresistencesObjects)
@@ -74,5 +74,9 @@ public class DataPresistenceManager : MonoBehaviour
         IEnumerable<IDataPresistence> dataPresistenceObjects = objects.OfType<IDataPresistence>();
 
         return new List<IDataPresistence>(dataPresistenceObjects);
+    }
+    public bool HasGameData()
+    {
+        return this.gameData != null;
     }
 }
