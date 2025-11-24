@@ -3,8 +3,8 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     public GameObject gambarInteract;
-    public bool IsPlayerNear = false;
-
+    public MissionUIController Mission;
+    
     private void Start()
     {
         gambarInteract.SetActive(false);
@@ -13,30 +13,16 @@ public class Interactable : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-        IsPlayerNear = true;
+        Mission.ShowMission("Find Alice In The Canteen");
         gambarInteract.SetActive(true); 
-        }
-         
+        } 
     }
     void OnTriggerExit(Collider collision)
     {
         if(collision.CompareTag("Player"))
         {
-        IsPlayerNear = false;
         gambarInteract.SetActive(false);
-        }
-        
+        }   
     }
-    public void HideIcon()
-    {
-        gambarInteract.SetActive(false);
-    }
-    public void ShowIcon()
-    {
-        if (IsPlayerNear)
-        {
-            gambarInteract.SetActive(true);
-        }
-    }
-    public bool isPlayerNear => IsPlayerNear;
+    
 }
