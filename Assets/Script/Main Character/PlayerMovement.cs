@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement3D : MonoBehaviour, IDataPresistence
@@ -7,8 +8,8 @@ public class PlayerMovement3D : MonoBehaviour, IDataPresistence
 
     void Update()
     {
+        
         float moveX = Input.GetAxis("Horizontal");
-
         rb.linearVelocity = new Vector3(moveX * moveSpeed, rb.linearVelocity.y, 0f);
     }
 
