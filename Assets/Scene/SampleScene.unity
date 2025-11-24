@@ -2464,7 +2464,7 @@ MonoBehaviour:
   missionText: {fileID: 1504240924}
   fadeDuration: 0.4
   slideDistance: 550
-  displayTime: 2
+  displayTime: 5
 --- !u!114 &1902189917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2478,7 +2478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.3056603, g: 0.29700956, b: 0.29700956, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
