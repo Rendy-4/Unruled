@@ -5,12 +5,27 @@ public class PlayerMovement3D : MonoBehaviour, IDataPresistence
 {
     public Rigidbody rb;
     public float moveSpeed = 5f;
+    private int facingDirection = 1;
+    public Animator anim;
 
-    void Update()
+
+    void FixedUpdate()
     {
         
-        float moveX = Input.GetAxis("Horizontal");
-        rb.linearVelocity = new Vector3(moveX * moveSpeed, rb.linearVelocity.y, 0f);
+        float horizontal = Input.GetAxis("Horizontal");
+        if (horizontal > 0 && transform.localScale.x < 0 || horizontal < 0 && transform.localScale.x > 0)
+        {
+            Flip();
+        }
+        anim.SetFloat("horizontal", Mathf.Abs(horizontal));
+        rb.linearVelocity = new Vector3(horizontal * moveSpeed, rb.linearVelocity.y, 0f);
+
+    }
+
+    void Flip()
+    {
+        facingDirection *= -1;
+        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
     }
 
     public void LoadData(GameData data)
