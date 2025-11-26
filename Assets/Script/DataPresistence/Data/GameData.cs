@@ -12,6 +12,6 @@ public class GameData
     public bool isFullscreen;
     public GameData()
     {
-        playerPosistion = new Vector3(3f, -0.5f, -2.55f);
+        playerPosistion = new Vector3(3f, 1f, -0.45f);
     }
 }

@@ -27,7 +27,7 @@ public class DataPresistenceManager : MonoBehaviour
         this.dataHandler = new DataHandler(Application.persistentDataPath, fileName);
     }
 
-    public void Onable()
+    public void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.sceneUnloaded += OnSceneUnloaded;
