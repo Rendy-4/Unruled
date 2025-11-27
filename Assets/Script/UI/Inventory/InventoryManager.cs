@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryManager : MonoBehaviour,IDataPresistence
 {
     public static InventoryManager Instance;
 
@@ -44,4 +45,25 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public void SaveData(ref GameData data)
+    {
+       data.InventoryItemIDs.Clear();
+       foreach (var item in Items)
+        {
+            data.InventoryItemIDs.Add(item.itemID);
+        }
+    }
+
+    public void LoadData(GameData data)
+    {
+        Items.Clear();
+        foreach(string id in data.InventoryItemIDs)
+        {
+            var ItemData = ItemDatabase.Instance.GetItemByID(id);
+
+            if (ItemData != null)
+            Items.Add(ItemData);
+        }
+        UpdateUI();
+    }   
 }

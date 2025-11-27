@@ -1767,7 +1767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c863223fb078240baba2b00c344057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemname: Balok
+  data: {fileID: 11400000, guid: 79fcf98ebbc6a4d4f87a3947d8e1b5c5, type: 2}
 --- !u!1 &642826909
 GameObject:
   m_ObjectHideFlags: 0

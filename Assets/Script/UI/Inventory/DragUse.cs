@@ -36,20 +36,26 @@ public class DragUse : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         if (Physics.Raycast(laser, out RaycastHit hit))
         {
             InteractableObject obj = hit.collider.GetComponent<InteractableObject>();
-            if (obj)
-            {
-                obj.OnItemUsed(GetComponent<ItemUI>().itemName);
 
+            bool cocok = obj.OnItemUsed(GetComponent<ItemUI>().itemName);
+
+            if (cocok)
+            {
+                //jika cocok maka hapus dari inventory
                 int index = originalparent.GetSiblingIndex();
                 InventoryManager.Instance.RemoveItem(index);
                 Destroy(gameObject);
-                return;
             }
+            else
+            {
+                //Jika tidak cocok  maka kembali ke slot aseli
+                transform.SetParent(originalparent);
+                rect.anchoredPosition = Vector2.zero;
+            }
+            return;
         }
 
-        //Jika tidak mengenaik object maka kembali ke slot aseli
-        transform.SetParent(originalparent);
-        rect.anchoredPosition = Vector2.zero;
+        
     }
 
     
