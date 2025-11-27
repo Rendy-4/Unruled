@@ -6,9 +6,10 @@ public class ItemUI : MonoBehaviour
    public string itemName;
    public Image icon;
 
-   public void SetItem(string name)
+   public void SetUI(ItemData data)
     {
-        itemName = name;
+        itemName = data.ItemName;
+        icon.sprite = data.icon;
 
     }
 }

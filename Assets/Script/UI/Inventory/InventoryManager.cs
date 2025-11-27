@@ -5,7 +5,7 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
 
-    public List<string> Items = new List<string>();
+    public List<ItemData> Items = new List<ItemData>();
     public Transform[] Slots;
     public GameObject ItemPrefab;
 
@@ -14,9 +14,9 @@ public class InventoryManager : MonoBehaviour
         Instance = this;
     }
 
-    public void AddItem(string itemname)
+    public void AddItem(ItemData data)
     {
-        Items.Add(itemname);
+        Items.Add(data);
         UpdateUI();
     }
 
@@ -35,11 +35,12 @@ public class InventoryManager : MonoBehaviour
             if(slot.childCount > 0)
             Destroy(slot.GetChild(0).gameObject);
         }
-        for (int i = 0; i < Items.Count; i++)
+        for (int i = 0; i < Items.Count && i < Slots.Length; i++)
         {
-            GameObject newItem = Instantiate(ItemPrefab, Slots[i]);
-            newItem.GetComponent<ItemUI>().SetItem(Items[i]);
+            var uiObject = Instantiate(ItemPrefab, Slots[i]);
+            var ui = uiObject.GetComponent<ItemUI>();
             
+            ui.SetUI(Items[i]);
         }
     }
 

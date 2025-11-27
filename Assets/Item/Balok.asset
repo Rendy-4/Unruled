@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e53fe92f2c1b748bd5f248f24faa0d, type: 3}
+  m_Name: Balok
+  m_EditorClassIdentifier: 
+  itemID: 001
+  ItemName: Balok
+  icon: {fileID: -334920172155688980, guid: 75bc59a84351223feaf2c30d2f5a9456, type: 3}
