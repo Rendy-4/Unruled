@@ -6,7 +6,7 @@ public class MissionUIController : MonoBehaviour
     public CanvasGroup canvasGroup;
     public RectTransform panelTransform;
     public TextMeshProUGUI missionText;
-
+    
     public float fadeDuration = 0.4f;
     public float slideDistance = 100f;
     public float displayTime = 3f;
