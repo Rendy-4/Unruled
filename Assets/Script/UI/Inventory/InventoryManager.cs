@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 
 public class InventoryManager : MonoBehaviour,IDataPresistence
 {
@@ -9,6 +8,8 @@ public class InventoryManager : MonoBehaviour,IDataPresistence
     public List<ItemData> Items = new List<ItemData>();
     public Transform[] Slots;
     public GameObject ItemPrefab;
+    public ItemDatabase database;
+
 
     void Awake()
     {
@@ -59,7 +60,7 @@ public class InventoryManager : MonoBehaviour,IDataPresistence
         Items.Clear();
         foreach(string id in data.InventoryItemIDs)
         {
-            var ItemData = ItemDatabase.Instance.GetItemByID(id);
+            var ItemData = database.GetItemByID(id);
 
             if (ItemData != null)
             Items.Add(ItemData);
