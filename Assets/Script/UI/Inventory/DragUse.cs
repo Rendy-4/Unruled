@@ -30,13 +30,15 @@ public class DragUse : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
     {
         group.blocksRaycasts = true;
 
-        //Raycast ke dunia
-
         Ray laser = Camera.main.ScreenPointToRay(Input.mousePosition);
+       
+        //terkena object 3D
         if (Physics.Raycast(laser, out RaycastHit hit))
         {
             InteractableObject obj = hit.collider.GetComponent<InteractableObject>();
 
+            if(obj != null)
+            {
             bool cocok = obj.OnItemUsed(GetComponent<ItemUI>().itemName);
 
             if (cocok)
@@ -53,9 +55,12 @@ public class DragUse : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
                 rect.anchoredPosition = Vector2.zero;
             }
             return;
+            }
+           
         }
 
-        
+        transform.SetParent(originalparent);
+        rect.anchoredPosition = Vector2.zero;
     }
 
     
