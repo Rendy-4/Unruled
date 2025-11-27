@@ -1,13 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
-    public List<string> Itemlist = new List<string>();
-    public Transform InventoryBar;
-    public GameObject slotPrefab;
+
+    public List<string> Items = new List<string>();
+    public Transform[] Slots;
+    public GameObject ItemPrefab;
 
     void Awake()
     {
@@ -16,25 +16,31 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItem(string itemname)
     {
-        Itemlist.Add(itemname);
+        Items.Add(itemname);
+        UpdateUI();
+    }
+
+    public void RemoveItem(int index)
+    {
+        if (index < 0 || index >= Items.Count)
+        return;
+        Items.RemoveAt(index);
         UpdateUI();
     }
 
     private void UpdateUI()
     {
-        foreach (Transform child in InventoryBar)
-            Destroy(child.gameObject);
-        
-        foreach(string item in Itemlist)
+        foreach (Transform slot in Slots)
         {
-            GameObject slot = Instantiate(slotPrefab, InventoryBar);
-            slot.GetComponentInChildren<Text>();
+            if(slot.childCount > 0)
+            Destroy(slot.GetChild(0).gameObject);
         }
-    }
-
-    public void Ambilitem()
-    {
-        
+        for (int i = 0; i < Items.Count; i++)
+        {
+            GameObject newItem = Instantiate(ItemPrefab, Slots[i]);
+            newItem.GetComponent<ItemUI>().SetItem(Items[i]);
+            
+        }
     }
 
 }
