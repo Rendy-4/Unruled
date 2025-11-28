@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fcf48df8f6264cb44a0e7767d4cc3cdf
+guid: 1aba61d399231644da5962248b773752
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2629884331155895635
-    second: lantaiBasket_0
+      213: -8809108933565157163
+    second: lantai_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -74,7 +74,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lantaiBasket_0
+      name: lantai_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 256
-        height: 400
+        y: 163
+        width: 141
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: daa46117226c08bd0800000000000000
-      internalID: -2629884331155895635
+      spriteID: 5d0f02bf812cfb580800000000000000
+      internalID: -8809108933565157163
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      lantaiBasket_0: -2629884331155895635
+      lantai_0: -8809108933565157163
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -3,35 +3,35 @@ guid: 64389c1a9744ea14488f5ed79fcc4a2e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3167556787238360564
-    second: tembokNAtap_0
+      213: -4758049196954425160
+    second: tembokNAtap 1_0
   - first:
-      213: -5171674675583599172
-    second: tembokNAtap_1
+      213: -6471499488996280555
+    second: tembokNAtap 1_1
   - first:
-      213: -5743136644412690948
-    second: tembokNAtap_2
+      213: 7514186531784769786
+    second: tembokNAtap 1_2
   - first:
-      213: 1295760409184602201
-    second: tembokNAtap_3
+      213: 9200334362441899603
+    second: tembokNAtap 1_3
   - first:
-      213: -7214433641302364531
-    second: tembokNAtap_4
+      213: -4319841561001440761
+    second: tembokNAtap 1_4
   - first:
-      213: 6053616358891254543
-    second: tembokNAtap_5
+      213: -8391447160380467664
+    second: tembokNAtap 1_5
   - first:
-      213: -780869965460492580
-    second: tembokNAtap_6
+      213: 8109133278014229479
+    second: tembokNAtap 1_6
   - first:
-      213: 8844930571364962463
-    second: tembokNAtap_7
+      213: 5466433307004442210
+    second: tembokNAtap 1_7
   - first:
-      213: 3743099794237658312
-    second: tembokNAtap_8
+      213: 7165076038896534998
+    second: tembokNAtap 1_8
   - first:
-      213: -3213738526323716295
-    second: tembokNAtap_9
+      213: -5652668909189479904
+    second: tembokNAtap 1_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -64,7 +64,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -101,7 +101,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -140,7 +140,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tembokNAtap_0
+      name: tembokNAtap 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -155,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c0aa7ca62e39a04d0800000000000000
-      internalID: -3167556787238360564
+      spriteID: 8b8e2bfe67308fdb0800000000000000
+      internalID: -4758049196954425160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tembokNAtap_1
+      name: tembokNAtap 1_1
       rect:
         serializedVersion: 2
         x: 49
@@ -177,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cbdb4f388458a38b0800000000000000
-      internalID: -5171674675583599172
+      spriteID: 5173142908d9036a0800000000000000
+      internalID: -6471499488996280555
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tembokNAtap_2
+      name: tembokNAtap 1_2
       rect:
         serializedVersion: 2
         x: 99
@@ -199,14 +199,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cfda04d76a74c40b0800000000000000
-      internalID: -5743136644412690948
+      spriteID: af04e0bb6d0c74860800000000000000
+      internalID: 7514186531784769786
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tembokNAtap_3
+      name: tembokNAtap 1_3
       rect:
         serializedVersion: 2
         x: 99
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 95886771a377bf110800000000000000
-      internalID: 1295760409184602201
+      spriteID: 35e5b207b572eaf70800000000000000
+      internalID: 9200334362441899603
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tembokNAtap_4
+      name: tembokNAtap 1_4
       rect:
         serializedVersion: 2
         x: 205
@@ -243,14 +243,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d8e6b82b3de21eb90800000000000000
-      internalID: -7214433641302364531
+      spriteID: 70a4a8edcf6dc04c0800000000000000
+      internalID: -4319841561001440761
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tembokNAtap_5
+      name: tembokNAtap 1_5
       rect:
         serializedVersion: 2
         x: 99
@@ -265,14 +265,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f03f4364104c20450800000000000000
-      internalID: 6053616358891254543
+      spriteID: 036df0674479b8b80800000000000000
+      internalID: -8391447160380467664
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tembokNAtap_6
+      name: tembokNAtap 1_6
       rect:
         serializedVersion: 2
         x: 0
@@ -287,14 +287,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cdea4f457eac925f0800000000000000
-      internalID: -780869965460492580
+      spriteID: 7eb465890cd698070800000000000000
+      internalID: 8109133278014229479
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tembokNAtap_7
+      name: tembokNAtap 1_7
       rect:
         serializedVersion: 2
         x: 0
@@ -309,14 +309,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f9093310e718fba70800000000000000
-      internalID: 8844930571364962463
+      spriteID: 2661d5c512cacdb40800000000000000
+      internalID: 5466433307004442210
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tembokNAtap_8
+      name: tembokNAtap 1_8
       rect:
         serializedVersion: 2
         x: 51
@@ -331,14 +331,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8c49f5a5e6922f330800000000000000
-      internalID: 3743099794237658312
+      spriteID: 6d54717f1b67f6360800000000000000
+      internalID: 7165076038896534998
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tembokNAtap_9
+      name: tembokNAtap 1_9
       rect:
         serializedVersion: 2
         x: 129
@@ -353,8 +353,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 93fcc7166d18663d0800000000000000
-      internalID: -3213738526323716295
+      spriteID: 022cdd2839fad81b0800000000000000
+      internalID: -5652668909189479904
       vertices: []
       indices: 
       edges: []
@@ -373,16 +373,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tembokNAtap_0: -3167556787238360564
-      tembokNAtap_1: -5171674675583599172
-      tembokNAtap_2: -5743136644412690948
-      tembokNAtap_3: 1295760409184602201
-      tembokNAtap_4: -7214433641302364531
-      tembokNAtap_5: 6053616358891254543
-      tembokNAtap_6: -780869965460492580
-      tembokNAtap_7: 8844930571364962463
-      tembokNAtap_8: 3743099794237658312
-      tembokNAtap_9: -3213738526323716295
+      tembokNAtap 1_0: -4758049196954425160
+      tembokNAtap 1_1: -6471499488996280555
+      tembokNAtap 1_2: 7514186531784769786
+      tembokNAtap 1_3: 9200334362441899603
+      tembokNAtap 1_4: -4319841561001440761
+      tembokNAtap 1_5: -8391447160380467664
+      tembokNAtap 1_6: 8109133278014229479
+      tembokNAtap 1_7: 5466433307004442210
+      tembokNAtap 1_8: 7165076038896534998
+      tembokNAtap 1_9: -5652668909189479904
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
