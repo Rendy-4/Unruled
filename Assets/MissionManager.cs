@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MissionManager : MonoBehaviour
+public class MissionManager : MonoBehaviour , IDataPresistence
 {
    public static MissionManager Instance;
    public int currentMission = 0;
@@ -19,5 +19,16 @@ public class MissionManager : MonoBehaviour
         }
         
         return false;
+    }
+
+    public void LoadData(GameData data)
+    {
+       currentMission = data.MissionOrder;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+       data.MissionOrder = currentMission;
+       
     }
 }

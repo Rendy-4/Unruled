@@ -6,6 +6,8 @@ public class InventoryManager : MonoBehaviour,IDataPresistence
     public static InventoryManager Instance;
 
     public List<ItemData> Items = new List<ItemData>();
+    public List<string> collectedItemIDs = new List<string>();
+
     public Transform[] Slots;
     public GameObject ItemPrefab;
     public ItemDatabase database;
@@ -19,6 +21,10 @@ public class InventoryManager : MonoBehaviour,IDataPresistence
     public void AddItem(ItemData data)
     {
         Items.Add(data);
+
+        if(!collectedItemIDs.Contains(data.itemID))
+        collectedItemIDs.Add(data.itemID);
+
         UpdateUI();
     }
 
@@ -48,11 +54,13 @@ public class InventoryManager : MonoBehaviour,IDataPresistence
 
     public void SaveData(ref GameData data)
     {
-       data.InventoryItemIDs.Clear();
+       data.InventoryItemIDs.Clear(); //Apa Saja Item Yang Player Bawa
        foreach (var item in Items)
-        {
-            data.InventoryItemIDs.Add(item.itemID);
-        }
+        data.InventoryItemIDs.Add(item.itemID);
+
+        data.collectedItemIDs.Clear(); //Apa Saja Item Yang Pernah Diambil Player
+        foreach(var id in collectedItemIDs)
+        data.collectedItemIDs.Add(id);
     }
 
     public void LoadData(GameData data)
@@ -61,10 +69,14 @@ public class InventoryManager : MonoBehaviour,IDataPresistence
         foreach(string id in data.InventoryItemIDs)
         {
             var ItemData = database.GetItemByID(id);
-
             if (ItemData != null)
-            Items.Add(ItemData);
+                Items.Add(ItemData);
         }
+
+        collectedItemIDs.Clear();
+        foreach(string id in data.collectedItemIDs)
+            collectedItemIDs.Add(id);
+
         UpdateUI();
     }   
 }
