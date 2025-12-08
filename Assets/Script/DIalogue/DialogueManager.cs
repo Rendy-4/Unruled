@@ -78,11 +78,12 @@ public class DialogueManager : MonoBehaviour
                 }
                 else
                 {
+                    dialogueFinished = true;
                     textBox.text = "";
                     nameBox.text = "";
                     portraitBox.sprite = null;
-                    dialogueFinished = true;
-                    dialogueGameObject.SetActive(false);
+                
+                    HideDialogueBox();
                 }
             }
         }
@@ -100,6 +101,7 @@ public class DialogueManager : MonoBehaviour
         ShowDialogueBox();
         typingCoroutine = StartCoroutine(TypeLine(dialogueLines[currentLineIndex]));
     }
+
 
     IEnumerator TypeLine(DialogueLine line)
     {
