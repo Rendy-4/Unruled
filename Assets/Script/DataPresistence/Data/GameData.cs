@@ -14,6 +14,6 @@ public class GameData
     public List<string> collectedItemIDs = new List<string>();
     public GameData()
     {
-        playerPosistion = new Vector3(3f, 1f, -0.45f);
+        playerPosistion = new Vector3(4.26f, 0.71f, -1.341f);
     }
 }

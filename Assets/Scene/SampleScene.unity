@@ -2754,6 +2754,8 @@ MonoBehaviour:
   isTyping: 0
   dialogueFinished: 0
   dialogueLines: []
+  dialoguePanel: {fileID: 1602062358}
+  slidespeed: 12
 --- !u!4 &805787950
 Transform:
   m_ObjectHideFlags: 0

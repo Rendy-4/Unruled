@@ -27,6 +27,13 @@ public class DialogueManager : MonoBehaviour
     private Coroutine typingCoroutine;
     private bool justStarted = false;
 
+    [Header("Dialogue Animation")]
+    public RectTransform dialoguePanel;
+    public float slidespeed = 12f;
+
+    private Vector2 hiddenPosition;
+    private Vector2 shownPosition;
+
     private void Awake()
     {
         if (instance == null)
@@ -37,6 +44,15 @@ public class DialogueManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
+    }
+
+    private void Start()
+    {
+        shownPosition = new Vector2(0, 172);
+        hiddenPosition = new Vector2(0, -600);
+
+        dialoguePanel.anchoredPosition = hiddenPosition;
     }
 
     private void Update() {
@@ -76,9 +92,12 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueGameObject.SetActive(true);
         dialogueFinished = false;
+
         dialogueLines = newLines;
         currentLineIndex = 0;
         justStarted = true;
+
+        ShowDialogueBox();
         typingCoroutine = StartCoroutine(TypeLine(dialogueLines[currentLineIndex]));
     }
 
@@ -101,5 +120,37 @@ public class DialogueManager : MonoBehaviour
         textBox.text = line.dialogueText;
         nameBox.text = line.characterName;
         portraitBox.sprite = line.characterPortrait;
+    }
+
+    public void ForceCloseDialogue()
+    {
+        StopAllCoroutines();
+        textBox.text = "";
+        nameBox.text = "";
+        portraitBox.sprite = null;
+
+        dialogueFinished = true;
+        HideDialogueBox();
+    }
+
+    public void ShowDialogueBox()
+    {
+        StopAllCoroutines();
+        StartCoroutine(SlideUI(dialoguePanel, shownPosition));
+    }
+    public void HideDialogueBox()
+    {
+        StopAllCoroutines();
+        StartCoroutine(SlideUI(dialoguePanel, hiddenPosition));
+    }
+
+    IEnumerator SlideUI(RectTransform panel, Vector2 target)
+    {
+        while(Vector2.Distance(panel.anchoredPosition, target) > 0.1f)
+        {
+            panel.anchoredPosition = Vector2.Lerp(panel.anchoredPosition, target, slidespeed * Time.deltaTime);
+            yield return null;
+        }
+        panel.anchoredPosition = target;
     }
 }

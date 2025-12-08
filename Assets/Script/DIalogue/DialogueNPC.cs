@@ -34,6 +34,7 @@ public class DialogueNPC : MonoBehaviour
         {
             Debug.Log("Player out of range");
             playerInRange = false;
+            DialogueManager.instance.ForceCloseDialogue();
         }
     }
 }
