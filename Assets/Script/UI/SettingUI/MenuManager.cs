@@ -18,11 +18,11 @@ public class MenuManager : MonoBehaviour
     public void OnNewGameClicked()
     {
         DataPresistenceManager.instance.NewGame();
-        SceneManager.LoadSceneAsync("SampleScene");
+        SceneManager.LoadSceneAsync("Sekolah");
     }
     public void OnLoadGameClicked()
     {
-        SceneManager.LoadSceneAsync("SampleScene");
+        SceneManager.LoadSceneAsync("Sekolah");
     }
 
     public void exitGame()
