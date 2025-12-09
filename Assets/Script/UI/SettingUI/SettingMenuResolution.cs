@@ -16,7 +16,7 @@ public class SettingMenuResolution : MonoBehaviour, IDataPresistence
 
     bool loadingFromSave = false;
 
-    void Start()
+    void Awake()
     {
         AllResolution = Screen.resolutions;
 
@@ -37,6 +37,9 @@ public class SettingMenuResolution : MonoBehaviour, IDataPresistence
 
         ResDropdown.AddOptions(resolutionStringList);
 
+    }
+
+    void Start() {
         // UI event listener
         ResDropdown.onValueChanged.AddListener(delegate { OnResolutionChanged(); });
         FullscreenTogle.onValueChanged.AddListener(delegate { OnFullscreenChanged(); });
@@ -66,6 +69,18 @@ public class SettingMenuResolution : MonoBehaviour, IDataPresistence
     // ======================================
     void ApplyResolution()
     {
+        if (SelectedResolutionList == null || SelectedResolutionList.Count == 0)
+        {
+            Debug.LogWarning("No available resolutions to apply!");
+            return;
+        }
+        if (SelectedResolution < 0 || SelectedResolution >= SelectedResolutionList.Count)
+        {
+            Debug.LogWarning("Selected resolution index is out of range! Reset to 0");
+            SelectedResolution = 0;
+            ResDropdown.value = 0;
+        }
+
         Screen.SetResolution(
             SelectedResolutionList[SelectedResolution].width,
             SelectedResolutionList[SelectedResolution].height,
@@ -76,7 +91,22 @@ public class SettingMenuResolution : MonoBehaviour, IDataPresistence
     {
         loadingFromSave = true; //supaya tidak overwrite
 
-        SelectedResolution = data.resolutionIndex;
+        if (SelectedResolutionList == null || SelectedResolutionList.Count == 0)
+        {
+            Debug.LogWarning("No available resolutions to load!");
+            loadingFromSave = false;
+            return;
+        }
+
+        if (data.resolutionIndex < 0 || data.resolutionIndex >= SelectedResolutionList.Count)
+        {
+            SelectedResolution = 0;
+        }
+        else
+        {
+            SelectedResolution = data.resolutionIndex;
+        }
+
         IsFullScreen = data.isFullscreen;
 
         ResDropdown.value = SelectedResolution;

@@ -4560,6 +4560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b25314f6f199958468a16cf0f6634504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeOfDialogue: 0
   dialogueLines:
   - characterName: Yusuf(Player)
     dialogueText: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -4579,6 +4580,8 @@ MonoBehaviour:
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat.
     characterPortrait: {fileID: -5754388876357630561, guid: 5e0b100468a6a5e4cb38c08b5fe4ff50, type: 3}
+  requiredStoryOrder: 0
+  nextStoryOrder: 1
   dialogueStrarted: 0
 --- !u!135 &1769269830
 SphereCollider:
