@@ -1826,9 +1826,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e2ea84ac1385b40af8840d238b61a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MyMixer: {fileID: 24100000, guid: a4a57c6cbaaf57e4e89e269aaecfc98a, type: 2}
   musicSlider: {fileID: 2023069279}
-  SFXSlider: {fileID: 1240190350}
+  sfxSlider: {fileID: 1240190350}
 --- !u!114 &1505747222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2635,11 +2634,27 @@ PrefabInstance:
     - target: {fileID: 2842041117477536762, guid: 211f0fc0567bbce45acef372564bec69, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1505747221}
+      objectReference: {fileID: 1915571734}
+    - target: {fileID: 2842041117477536762, guid: 211f0fc0567bbce45acef372564bec69, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMusicVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842041117477536762, guid: 211f0fc0567bbce45acef372564bec69, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3237434485466997160, guid: 211f0fc0567bbce45acef372564bec69, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1505747221}
+      objectReference: {fileID: 1915571734}
+    - target: {fileID: 3237434485466997160, guid: 211f0fc0567bbce45acef372564bec69, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSFXVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 3237434485466997160, guid: 211f0fc0567bbce45acef372564bec69, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3752537797365891851, guid: 211f0fc0567bbce45acef372564bec69, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
