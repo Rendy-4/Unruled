@@ -8,54 +8,66 @@ public class VolumeSetting : MonoBehaviour, IDataPresistence
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider SFXSlider;
 
-    float musicVolume = 1f;
-    float sfxVolume = 1f;
+    private float musicVolume = 1f;
+    private float sfxVolume = 1f;
+    private bool loaded = false;
 
     private void Start()
     {
-        // Saat pertama running, slider HARUS memanggil event perubahan
-        ApplyMusicVolume(musicVolume);
-        ApplySFXVolume(sfxVolume);
+        musicSlider.onValueChanged.AddListener(SetMusic);
+        SFXSlider.onValueChanged.AddListener(SetSFX);
 
-       // slider mengupdate variabel
-        musicSlider.onValueChanged.AddListener(OnMusicSliderChanged);
-        SFXSlider.onValueChanged.AddListener(OnSFXSliderChanged);
+        // (default / load)
+        ApplyMusic(musicVolume);
+        ApplySFX(sfxVolume);
     }
 
-    public void OnMusicSliderChanged(float value)
+    // Dipanggil User
+    void SetMusic(float value)
     {
+        if (!loaded) return;
         musicVolume = value;
-        ApplyMusicVolume(value);
+        ApplyMusic(value);
     }
 
-    public void OnSFXSliderChanged(float value)
+    void SetSFX(float value)
     {
+        if (!loaded) return;
         sfxVolume = value;
-        ApplySFXVolume(value);
+        ApplySFX(value);
     }
 
-    void ApplyMusicVolume(float value)
+    // Apply ke Mixer
+    private void ApplyMusic(float value)
     {
-        MyMixer.SetFloat("Music", Mathf.Log10(value) * 20);
+        float dB = (value <= 0.0001f) ? -80f : Mathf.Log10(value) * 20f;
+        MyMixer.SetFloat("Music", dB);
     }
 
-    void ApplySFXVolume(float value)
+    private void ApplySFX(float value)
     {
-        MyMixer.SetFloat("SFX", Mathf.Log10(value) * 20);
+        float dB = (value <= 0.0001f) ? -80f : Mathf.Log10(value) * 20f;
+        MyMixer.SetFloat("SFX", dB);
     }
 
+    
     public void LoadData(GameData data)
     {
+        loaded = false;
+
         musicVolume = data.musicVolume;
         sfxVolume = data.sfxVolume;
 
         musicSlider.value = musicVolume;
         SFXSlider.value = sfxVolume;
 
-        ApplyMusicVolume(musicVolume);
-        ApplySFXVolume(sfxVolume);
+        ApplyMusic(musicVolume);
+        ApplySFX(sfxVolume);
+
+        loaded = true;
     }
 
+   
     public void SaveData(ref GameData data)
     {
         data.musicVolume = musicVolume;

@@ -30,8 +30,6 @@ public class AudioManager : MonoBehaviour
     {
         BGMSource.clip = Background;
         BGMSource.loop = true;
-        BGMSource.volume = 0.8f;
-        SFXSource.volume = 0.8f;
         BGMSource.Play();
     }
     public void PlaySFX(AudioClip clip)

@@ -16,5 +16,6 @@ public class GameData
     {
         playerPosistion = new Vector3(4.26f, 0.71f, -1.341f);
         MissionOrder = 0;
+       
     }
 }
