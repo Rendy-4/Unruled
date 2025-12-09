@@ -14,15 +14,15 @@ public class VolumeSetting : MonoBehaviour, IDataPresistence
 
     private void Start()
     {
+        // Listener dipasang sekali
         musicSlider.onValueChanged.AddListener(SetMusic);
         SFXSlider.onValueChanged.AddListener(SetSFX);
 
-        // (default / load)
+        //(default / load)
         ApplyMusic(musicVolume);
         ApplySFX(sfxVolume);
     }
 
-    // Dipanggil User
     void SetMusic(float value)
     {
         if (!loaded) return;
