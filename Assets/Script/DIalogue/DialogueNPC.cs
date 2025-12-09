@@ -56,20 +56,6 @@ public class DialogueNPC : MonoBehaviour, IDataPresistence
                 Data.MissionOrder = nextStoryOrder;
             }
         }
-        DataPresistenceManager.instance.SaveGame();
-    }
-
-    private void LoadStoryState()
-    {
-        if (typeOfDialogue == DialogueType.dialogueType.MainStrory)
-        {
-            var Data = DataPresistenceManager.instance.GetGameData();
-
-            if (Data.MissionOrder != requiredStoryOrder)
-            {
-                gameObject.SetActive(false);
-            }
-        }
     }
 
     public void LoadData(GameData data)
@@ -88,7 +74,13 @@ public class DialogueNPC : MonoBehaviour, IDataPresistence
     }
     public void SaveData(ref GameData data)
     {
-        // No data to save for NPC dialogue
+        if (typeOfDialogue == DialogueType.dialogueType.MainStrory)
+        {
+            if (nextStoryOrder >= 0 && dialogueStrarted == false && DialogueManager.instance.dialogueFinished == true)
+            {
+                data.MissionOrder = nextStoryOrder;
+            }
+        }
     }
 
     void OnTriggerEnter(Collider other)

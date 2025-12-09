@@ -62,13 +62,10 @@ public class DataPresistenceManager : MonoBehaviour
         }
         if (this.gameData == null)
         {
-            Debug.Log("No data was found. Initializing data to defaults.");
-            return;
-        }
-
-        foreach (IDataPresistence dataPresistenceObj in dataPresistencesObjects)
-        {
-            dataPresistenceObj.LoadData(gameData);
+            foreach (IDataPresistence dataPresistenceObj in dataPresistencesObjects)
+            {
+                dataPresistenceObj.LoadData(gameData);
+            }
         }
     }
 
