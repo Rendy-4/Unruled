@@ -101,4 +101,9 @@ public class DataPresistenceManager : MonoBehaviour
     {
         return this.gameData != null;
     }
+
+    public GameData GetGameData()
+    {
+        return this.gameData;
+    }
 }
