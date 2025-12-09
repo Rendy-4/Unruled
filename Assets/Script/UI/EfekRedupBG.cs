@@ -3,6 +3,7 @@ using UnityEngine;
 public class EfekRedupBG : MonoBehaviour
 {
     public GameObject settingsPanel;
+    public GameObject Creditpanel;
 public GameObject dimBackground;
 
 public void OpenSettings()
@@ -14,6 +15,17 @@ public void OpenSettings()
 public void CloseSettings()
 {
     settingsPanel.SetActive(false);
+    dimBackground.SetActive(false);
+}
+public void OpenCredits()
+{
+    dimBackground.SetActive(true);
+    Creditpanel.SetActive(true);
+}
+
+public void CloseCredits()
+{
+    Creditpanel.SetActive(false);
     dimBackground.SetActive(false);
 }
 
