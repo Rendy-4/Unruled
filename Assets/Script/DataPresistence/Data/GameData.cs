@@ -5,8 +5,8 @@ using System.Collections.Generic;
 public class GameData 
 {
     public Vector3 playerPosistion;
-    public float musicVolume;
-    public float sfxVolume;
+    public float musicVolume = 0.5f;
+    public float sfxVolume = 0.5f;
     public int resolutionIndex;
     public bool isFullscreen;
     public int MissionOrder = 0;

@@ -3,17 +3,15 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
-    [Header("-------------------Audio Source-------------------")]
+    [Header("Audio Source")]
     [SerializeField] AudioSource BGMSource;
     [SerializeField] AudioSource SFXSource;
 
-    [Header("-------------------Audio Clip-------------------")]
+    [Header("Clips")]
     public AudioClip Background;
-    [Header("SFX")]
     public AudioClip ButtonClick;
     public AudioClip WalkOnGrass;
     public AudioClip WalkOnStone;
-    
 
     private void Awake()
     {
@@ -26,12 +24,27 @@ public class AudioManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+
     private void Start()
     {
-        BGMSource.clip = Background;
-        BGMSource.loop = true;
-        BGMSource.Play();
+        if (Background != null)
+        {
+            BGMSource.clip = Background;
+            BGMSource.loop = true;
+            BGMSource.Play();
+        }
     }
+
+    public void SetMusicVolume(float value)
+    {
+        BGMSource.volume = value;
+    }
+
+    public void SetSFXVolume(float value)
+    {
+        SFXSource.volume = value;
+    }
+
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
