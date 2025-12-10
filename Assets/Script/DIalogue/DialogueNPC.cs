@@ -62,13 +62,13 @@ public class DialogueNPC : MonoBehaviour, IDataPresistence
     {
         if (typeOfDialogue == DialogueType.dialogueType.MainStrory)
         {
-            if (data.MissionOrder != requiredStoryOrder)
-            {
-                gameObject.SetActive(false);
-            }
-            else 
+            if (data.MissionOrder == requiredStoryOrder)
             {
                 gameObject.SetActive(true);
+            }
+            else
+            {
+                gameObject.SetActive(false);
             }
         }
     }

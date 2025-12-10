@@ -779,7 +779,7 @@ MonoBehaviour:
   iconSprite: {fileID: 8832167503239892954, guid: c99811cb531d0064c880fbdbb2878519, type: 3}
   Mission: {fileID: 1902189916}
   missionText: memasuki misi ke -0
-  missionOrder: 1
+  missionOrder: 3
 --- !u!1001 &359005718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1820,6 +1820,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &620267344
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4092884521787289042, guid: eab95cfe6aadf1f48abdec88a3bcc997, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 597.562
+      objectReference: {fileID: 0}
+    - target: {fileID: 4092884521787289042, guid: eab95cfe6aadf1f48abdec88a3bcc997, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 187.80151
+      objectReference: {fileID: 0}
+    - target: {fileID: 4092884521787289042, guid: eab95cfe6aadf1f48abdec88a3bcc997, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.8514514
+      objectReference: {fileID: 0}
+    - target: {fileID: 4092884521787289042, guid: eab95cfe6aadf1f48abdec88a3bcc997, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4092884521787289042, guid: eab95cfe6aadf1f48abdec88a3bcc997, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4092884521787289042, guid: eab95cfe6aadf1f48abdec88a3bcc997, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4092884521787289042, guid: eab95cfe6aadf1f48abdec88a3bcc997, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4092884521787289042, guid: eab95cfe6aadf1f48abdec88a3bcc997, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4092884521787289042, guid: eab95cfe6aadf1f48abdec88a3bcc997, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4092884521787289042, guid: eab95cfe6aadf1f48abdec88a3bcc997, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566492576154773830, guid: eab95cfe6aadf1f48abdec88a3bcc997, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eab95cfe6aadf1f48abdec88a3bcc997, type: 3}
 --- !u!1 &640184894
 GameObject:
   m_ObjectHideFlags: 0
@@ -2492,9 +2549,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e2ea84ac1385b40af8840d238b61a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MyMixer: {fileID: 24100000, guid: a4a57c6cbaaf57e4e89e269aaecfc98a, type: 2}
   musicSlider: {fileID: 1027972283}
-  SFXSlider: {fileID: 1027972282}
+  sfxSlider: {fileID: 1027972282}
 --- !u!1 &743060603
 GameObject:
   m_ObjectHideFlags: 0
@@ -5478,7 +5534,7 @@ MonoBehaviour:
   iconSprite: {fileID: -5754388876357630561, guid: 5e0b100468a6a5e4cb38c08b5fe4ff50, type: 3}
   Mission: {fileID: 1902189916}
   missionText: berhasil
-  missionOrder: 2
+  missionOrder: 4
 --- !u!1 &2110459043 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 67a0fecae0c32664ea69669556494fb3, type: 3}
@@ -5579,3 +5635,4 @@ SceneRoots:
   - {fileID: 2048418439}
   - {fileID: 754963274}
   - {fileID: 640184895}
+  - {fileID: 620267344}
