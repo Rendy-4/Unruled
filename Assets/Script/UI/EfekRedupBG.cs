@@ -28,11 +28,6 @@ public void CloseCredits()
     Creditpanel.SetActive(false);
     dimBackground.SetActive(false);
 }
-/*************  ✨ Windsurf Command ⭐  *************/
-/// <summary>
-/// Enable dim background only for redup mode
-/// </summary>
-/*******  b38fe17e-863d-45e7-8eb4-f52f9759be18  *******/
 public void SedangRedupOnly(){
     dimBackground.SetActive(true);
 }
