@@ -74,11 +74,17 @@ public class DataPresistenceManager : MonoBehaviour
             Debug.Log("Game data is null. Cannot save game.");
             return;
         }
-        foreach (IDataPresistence dataPresistenceObj in dataPresistencesObjects)
+        Debug.Log($"DataPresistenceManager: Starting Save for MissionOrder: {gameData.MissionOrder}");
+
+        if (this.gameData == null)
         {
-            dataPresistenceObj.SaveData(ref gameData);
+            foreach (IDataPresistence dataPresistenceObj in dataPresistencesObjects)
+            {
+                dataPresistenceObj.SaveData(ref gameData);
+            }
         }
         dataHandler.Save(gameData);
+        Debug.Log("DataPresistenceManager: Save complete.");
     }
 
     private void OnApplicationQuit() {
@@ -87,7 +93,7 @@ public class DataPresistenceManager : MonoBehaviour
 
     private List<IDataPresistence> FindAllDataPresistenceObjects()
     {
-        MonoBehaviour[] objects = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None);
+        MonoBehaviour[] objects = FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None);
         IEnumerable<IDataPresistence> dataPresistenceObjects = objects.OfType<IDataPresistence>();
 
         return new List<IDataPresistence>(dataPresistenceObjects);

@@ -3,7 +3,7 @@ using UnityEngine;
 public class MissionManager : MonoBehaviour , IDataPresistence
 {
    public static MissionManager Instance;
-   public int currentMission = 0;
+   public int currentMission;
 
     private void Awake()
     {

@@ -1,29 +1,40 @@
 using UnityEngine;
 
-public class DialogueNPC : MonoBehaviour, IDataPresistence
+public class DialogueNPC : MonoBehaviour
 {
     [Header("Dialogue Settings")]
     public DialogueType.dialogueType typeOfDialogue;
     public DialogueLine[] dialogueLines;
 
     [Header ("Setting Story (for main story only)")]
-    public int requiredStoryOrder = -1; 
-    public int nextStoryOrder = -1;
+    public int currentMission = MissionManager.Instance.currentMission;
 
     [Header ("Interaction Settings")]
     private bool playerInRange = false;
-    public bool dialogueStrarted = false;
+    public bool dialogueStarted = false;
+
+    private void Start() {
+        var Data = DataPresistenceManager.instance.GetGameData();
+        if (DataPresistenceManager.instance != null)
+        {
+            LoadData(Data);
+        }
+    }
 
     private void Update()
     {
-        if (playerInRange && dialogueStrarted == false && Input.GetKeyDown(KeyCode.Space))
+        if (playerInRange && dialogueStarted == false && Input.GetKeyDown(KeyCode.Space))
         {
             TryStartDialogue();
         }
-        if (dialogueStrarted == true && DialogueManager.instance.dialogueFinished == true)
+        if (dialogueStarted == true && DialogueManager.instance.dialogueFinished == true)
         {
-            dialogueStrarted = false;
+            Debug.Log("DEBUG: Dialogue Finished Condition Met. Calling HandleDialogueFinished.");
+
+            dialogueStarted = false;
             HandleDialogueFinished();
+
+            DialogueManager.instance.dialogueFinished = false;
         }
     }
 
@@ -31,56 +42,45 @@ public class DialogueNPC : MonoBehaviour, IDataPresistence
     {
         var Data = DataPresistenceManager.instance.GetGameData();
 
-        if (typeOfDialogue == DialogueType.dialogueType.MainStrory)
+        if (typeOfDialogue == DialogueType.dialogueType.MainStory)
         {
-            if (Data.MissionOrder == requiredStoryOrder)
+            if (Data.MissionOrder == currentMission)
             {
-                dialogueStrarted = true;
+                dialogueStarted = true;
                 DialogueManager.instance.StartDialogue(dialogueLines);
             }
         }
         else
         {
-            dialogueStrarted = true;
+            dialogueStarted = true;
             DialogueManager.instance.StartDialogue(dialogueLines);
         }
     }
 
     private void HandleDialogueFinished()
     {
-        if (typeOfDialogue == DialogueType.dialogueType.MainStrory)
+        if (typeOfDialogue == DialogueType.dialogueType.MainStory)
         {
-            var Data = DataPresistenceManager.instance.GetGameData();
-            if (nextStoryOrder >= 0)
+            if (MissionManager.Instance.ValidateMission(currentMission))
             {
-                Data.MissionOrder = nextStoryOrder;
+                DataPresistenceManager.instance.SaveGame();
             }
         }
     }
 
     public void LoadData(GameData data)
     {
-        if (typeOfDialogue == DialogueType.dialogueType.MainStrory)
+        if (typeOfDialogue == DialogueType.dialogueType.MainStory)
         {
-            if (data.MissionOrder == requiredStoryOrder)
+            if (data != null)
             {
-                gameObject.SetActive(true);
-            }
-            else
-            {
-                gameObject.SetActive(false);
+                currentMission = data.MissionOrder;
             }
         }
     }
     public void SaveData(ref GameData data)
     {
-        if (typeOfDialogue == DialogueType.dialogueType.MainStrory)
-        {
-            if (nextStoryOrder >= 0 && dialogueStrarted == false && DialogueManager.instance.dialogueFinished == true)
-            {
-                data.MissionOrder = nextStoryOrder;
-            }
-        }
+        
     }
 
     void OnTriggerEnter(Collider other)
