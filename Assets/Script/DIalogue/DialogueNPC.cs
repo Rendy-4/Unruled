@@ -12,19 +12,41 @@ public class DialogueNPC : MonoBehaviour
     [Header ("Interaction Settings")]
     private bool playerInRange = false;
     public bool dialogueStarted = false;
-    
 
-    private void Start() {
-        var data = DataPresistenceManager.instance.GetGameData();
-
-        if (typeOfDialogue == DialogueType.dialogueType.MainStory)
-        {
-            if (data.MissionOrder != currentMission)
-            {
-                gameObject.SetActive(false);
-            }
-        }
+    private Collider npcCollider;
+    private void Awake()
+    {
+        npcCollider = GetComponent<Collider>();
     }
+
+    private void OnEnable()
+    {
+        // Mengikuti ke event mission update supaya bisa re-check ketika mission berubah
+        MissionManager.OnMissionUpdated += CheckMissionCondition;
+        MissionManager.ForceRefreshNPC += TryReactivate;
+
+    }
+
+    private void OnDisable()
+    {
+        MissionManager.OnMissionUpdated -= CheckMissionCondition;
+        MissionManager.ForceRefreshNPC -= TryReactivate;
+
+    }
+
+    private void CheckMissionCondition()
+{
+    var data = DataPresistenceManager.instance.GetGameData();
+
+    bool shouldAppear = (data.MissionOrder == currentMission);
+    npcCollider.enabled = shouldAppear;
+    foreach (var r in GetComponentsInChildren<Renderer>())
+        r.enabled = shouldAppear;
+
+}
+
+
+    
 
     private void Update()
     {
@@ -34,7 +56,6 @@ public class DialogueNPC : MonoBehaviour
         }
         if (dialogueStarted == true && DialogueManager.instance.dialogueFinished == true)
         {
-            Debug.Log("DEBUG: Dialogue Finished Condition Met. Calling HandleDialogueFinished.");
 
             dialogueStarted = false;
             HandleDialogueFinished();
@@ -62,24 +83,29 @@ public class DialogueNPC : MonoBehaviour
         }
     }
 
-    private void HandleDialogueFinished()
+    public void HandleDialogueFinished()
     {
         if (typeOfDialogue == DialogueType.dialogueType.MainStory)
         {
             if (MissionManager.Instance.ValidateMission(currentMission))
             {
+                
                 DataPresistenceManager.instance.SaveGame();
+
+                npcCollider.enabled = false;
+                foreach (var r in GetComponentsInChildren<Renderer>())
+                r.enabled = false;
+
             }
         }
     }
-
-    public void SaveData(ref GameData data)
+    private void TryReactivate()
     {
-        if (typeOfDialogue == DialogueType.dialogueType.MainStory)
-        {
-            data.MissionOrder = currentMission;
-        }
+        gameObject.SetActive(true);
+        Invoke(nameof(CheckMissionCondition), 0.1f);
     }
+
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
