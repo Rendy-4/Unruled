@@ -12,6 +12,7 @@ public class GameData
     public int MissionOrder = 0;
     public List<string> InventoryItemIDs = new List<string>();
     public List<string> collectedItemIDs = new List<string>();
+    public bool HasStartedGame = false;
     public GameData()
     {
         playerPosistion = new Vector3(4.26f, 0.71f, -1.341f);

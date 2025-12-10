@@ -51,6 +51,8 @@ public class DataPresistenceManager : MonoBehaviour
     public void NewGame()
     {
         this.gameData = new GameData();
+        this.gameData.HasStartedGame = true;
+        SaveGame();
     }
     public void LoadGame()
     {

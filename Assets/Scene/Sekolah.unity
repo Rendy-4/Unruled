@@ -3658,7 +3658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9082128339026294747, guid: 211f0fc0567bbce45acef372564bec69, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9082128339026294747, guid: 211f0fc0567bbce45acef372564bec69, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -3682,7 +3682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9082128339026294747, guid: 211f0fc0567bbce45acef372564bec69, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CloseSettings
+      value: CloseSettingswithoutDimBG
       objectReference: {fileID: 0}
     - target: {fileID: 9082128339026294747, guid: 211f0fc0567bbce45acef372564bec69, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName

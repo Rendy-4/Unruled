@@ -10,14 +10,19 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Button loadGameButton;
 
     private void Start() {
-        if(!DataPresistenceManager.instance.HasGameData())
+        if(!DataPresistenceManager.instance.HasGameData() || !DataPresistenceManager.instance.GetGameData().HasStartedGame)
         {
             loadGameButton.interactable = false;
+        }
+        else
+        {
+            loadGameButton.interactable = true;
         }
     }
     public void OnNewGameClicked()
     {
         DataPresistenceManager.instance.NewGame();
+        loadGameButton.interactable = true;
         SceneManager.LoadSceneAsync("Sekolah");
     }
     public void OnLoadGameClicked()
@@ -30,6 +35,8 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
         Debug.Log("User Telah Keluar");
     }
+
+
 
     /*public void setPanelName(string name)
     {

@@ -17,6 +17,10 @@ public void CloseSettings()
     settingsPanel.SetActive(false);
     dimBackground.SetActive(false);
 }
+public void CloseSettingswithoutDimBG()
+{
+    settingsPanel.SetActive(false);
+}
 public void OpenCredits()
 {
     dimBackground.SetActive(true);
