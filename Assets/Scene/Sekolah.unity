@@ -878,7 +878,7 @@ MonoBehaviour:
   iconSprite: {fileID: 8832167503239892954, guid: c99811cb531d0064c880fbdbb2878519, type: 3}
   Mission: {fileID: 1902189916}
   missionText: memasuki misi ke -0
-  missionOrder: 3
+  missionOrder: 2
 --- !u!1 &381950001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,7 +1151,7 @@ MonoBehaviour:
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat.
     characterPortrait: {fileID: -5754388876357630561, guid: 5e0b100468a6a5e4cb38c08b5fe4ff50, type: 3}
-  currentMission: 0
+  currentMission: 1
   dialogueStarted: 0
 --- !u!212 &445396668
 SpriteRenderer:
@@ -3931,7 +3931,7 @@ MonoBehaviour:
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat.
     characterPortrait: {fileID: -5754388876357630561, guid: 5e0b100468a6a5e4cb38c08b5fe4ff50, type: 3}
-  currentMission: 1
+  currentMission: 0
   dialogueStarted: 0
 --- !u!212 &1298270252
 SpriteRenderer:
@@ -5280,7 +5280,7 @@ MonoBehaviour:
   iconSprite: {fileID: -5754388876357630561, guid: 5e0b100468a6a5e4cb38c08b5fe4ff50, type: 3}
   Mission: {fileID: 1902189916}
   missionText: berhasil
-  missionOrder: 4
+  missionOrder: 3
 --- !u!1001 &2589888166010599289
 PrefabInstance:
   m_ObjectHideFlags: 0

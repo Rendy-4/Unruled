@@ -7,17 +7,22 @@ public class DialogueNPC : MonoBehaviour
     public DialogueLine[] dialogueLines;
 
     [Header ("Setting Story (for main story only)")]
-    public int currentMission = MissionManager.Instance.currentMission;
+    public int currentMission;
 
     [Header ("Interaction Settings")]
     private bool playerInRange = false;
     public bool dialogueStarted = false;
+    
 
     private void Start() {
-        var Data = DataPresistenceManager.instance.GetGameData();
-        if (DataPresistenceManager.instance != null)
+        var data = DataPresistenceManager.instance.GetGameData();
+
+        if (typeOfDialogue == DialogueType.dialogueType.MainStory)
         {
-            LoadData(Data);
+            if (data.MissionOrder != currentMission)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 
@@ -68,21 +73,13 @@ public class DialogueNPC : MonoBehaviour
         }
     }
 
-    public void LoadData(GameData data)
+    public void SaveData(ref GameData data)
     {
         if (typeOfDialogue == DialogueType.dialogueType.MainStory)
         {
-            if (data != null)
-            {
-                currentMission = data.MissionOrder;
-            }
+            data.MissionOrder = currentMission;
         }
     }
-    public void SaveData(ref GameData data)
-    {
-        
-    }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

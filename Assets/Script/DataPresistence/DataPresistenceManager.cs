@@ -75,14 +75,12 @@ public class DataPresistenceManager : MonoBehaviour
             return;
         }
         Debug.Log($"DataPresistenceManager: Starting Save for MissionOrder: {gameData.MissionOrder}");
-
-        if (this.gameData == null)
+        
+        foreach (IDataPresistence dataPresistenceObj in dataPresistencesObjects)
         {
-            foreach (IDataPresistence dataPresistenceObj in dataPresistencesObjects)
-            {
-                dataPresistenceObj.SaveData(ref gameData);
-            }
+            dataPresistenceObj.SaveData(ref gameData);
         }
+        
         dataHandler.Save(gameData);
         Debug.Log("DataPresistenceManager: Save complete.");
     }

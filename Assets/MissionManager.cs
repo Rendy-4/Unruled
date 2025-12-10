@@ -12,7 +12,7 @@ public class MissionManager : MonoBehaviour , IDataPresistence
 
     public bool ValidateMission(int missionOrder)
     {
-        if(missionOrder == currentMission + 1)
+        if(missionOrder == currentMission)
         {
             currentMission++;
             return true;
