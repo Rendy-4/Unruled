@@ -3,6 +3,8 @@ using TMPro;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
+
+
 public class SettingMenuResolution : MonoBehaviour, IDataPresistence
 {
     public TMP_Dropdown ResDropdown;
@@ -15,6 +17,9 @@ public class SettingMenuResolution : MonoBehaviour, IDataPresistence
     bool IsFullScreen = true;
 
     bool loadingFromSave = false;
+
+    int pendingResolutionIndex = -1;
+    bool pendingFullscreen;
 
     void Awake()
     {
@@ -43,6 +48,21 @@ public class SettingMenuResolution : MonoBehaviour, IDataPresistence
         // UI event listener
         ResDropdown.onValueChanged.AddListener(delegate { OnResolutionChanged(); });
         FullscreenTogle.onValueChanged.AddListener(delegate { OnFullscreenChanged(); });
+
+        if (pendingResolutionIndex != -1 && SelectedResolutionList.Count > 0)
+        {
+            loadingFromSave = true;
+
+            SelectedResolution = Mathf.Clamp(pendingResolutionIndex, 0, SelectedResolutionList.Count -1);
+            IsFullScreen = pendingFullscreen;
+
+            ResDropdown.value = SelectedResolution;
+            FullscreenTogle.isOn = IsFullScreen;
+
+            ApplyResolution();
+
+            loadingFromSave = false;
+        }
     }
 
     // ======================================
@@ -87,34 +107,12 @@ public class SettingMenuResolution : MonoBehaviour, IDataPresistence
             IsFullScreen);
     }
 
+    
+
     public void LoadData(GameData data)
     {
-        loadingFromSave = true; //supaya tidak overwrite
-
-        if (SelectedResolutionList == null || SelectedResolutionList.Count == 0)
-        {
-            Debug.LogWarning("No available resolutions to load!");
-            loadingFromSave = false;
-            return;
-        }
-
-        if (data.resolutionIndex < 0 || data.resolutionIndex >= SelectedResolutionList.Count)
-        {
-            SelectedResolution = 0;
-        }
-        else
-        {
-            SelectedResolution = data.resolutionIndex;
-        }
-
-        IsFullScreen = data.isFullscreen;
-
-        ResDropdown.value = SelectedResolution;
-        FullscreenTogle.isOn = IsFullScreen;
-
-        ApplyResolution();
-
-        loadingFromSave = false; // aktifkan event lagi
+       pendingResolutionIndex = data.resolutionIndex;
+       pendingFullscreen = data.isFullscreen;
     }
 
     public void SaveData(ref GameData data)
