@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using System.Linq.Expressions;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -12,7 +13,20 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI textBox;
     public Image portraitBox;
     public GameObject dialogueGameObject;
+    public Image basePortrait;
+    public Image ExpressionLayer;
 
+    [Header("Optional: default sprite/ jika portrait tidak di isi /null)")]
+    public Sprite defaultExpressionSprite; // optional fallback
+    public Sprite defaultPortraitSprite;
+
+    [Header("Ekspresi")]
+    public Sprite defaultExpression;
+    public Sprite happyExpression;
+    public Sprite angryExpression;
+    public Sprite sadExpression;
+    public Sprite shockExpression;
+    
     [Header("Text Configuration")]
     public float textSpeed = 0.05f;
 
@@ -52,7 +66,11 @@ public class DialogueManager : MonoBehaviour
         shownPosition = new Vector2(0, 172);
         hiddenPosition = new Vector2(0, -600);
 
-        dialoguePanel.anchoredPosition = hiddenPosition;
+       if (dialoguePanel != null)
+       dialoguePanel.anchoredPosition = hiddenPosition;
+
+       if (ExpressionLayer != null)
+       ExpressionLayer.sprite = null;
     }
 
     private void Update() {
@@ -81,7 +99,11 @@ public class DialogueManager : MonoBehaviour
                     dialogueFinished = true;
                     textBox.text = "";
                     nameBox.text = "";
-                    portraitBox.sprite = null;
+
+                    if (basePortrait != null)
+                    basePortrait.sprite = defaultExpression;
+                    if (ExpressionLayer != null)
+                    ExpressionLayer.sprite = null;
                 
                     HideDialogueBox();
                 }
@@ -108,7 +130,12 @@ public class DialogueManager : MonoBehaviour
         isTyping = true;
         textBox.text = "";
         nameBox.text = line.characterName;
-        portraitBox.sprite = line.characterPortrait;
+
+        if (basePortrait != null)
+            basePortrait.sprite = line.portraitSprite != null ? line.portraitSprite : defaultPortraitSprite;
+
+            ApplyExpression(line.expression);
+
         foreach (char text in line.dialogueText)
         {
             textBox.text += text;
@@ -121,7 +148,11 @@ public class DialogueManager : MonoBehaviour
     {
         textBox.text = line.dialogueText;
         nameBox.text = line.characterName;
-        portraitBox.sprite = line.characterPortrait;
+
+        if (basePortrait != null)
+        basePortrait.sprite = line.portraitSprite != null ? line.portraitSprite : defaultPortraitSprite;
+        ApplyExpression(line.expression);
+;
     }
 
     public void ForceCloseDialogue()
@@ -130,6 +161,11 @@ public class DialogueManager : MonoBehaviour
         textBox.text = "";
         nameBox.text = "";
         portraitBox.sprite = null;
+
+        if (basePortrait != null)
+        basePortrait.sprite = defaultPortraitSprite;
+        if (ExpressionLayer != null)
+        ExpressionLayer.sprite = null;
 
         dialogueFinished = true;
         HideDialogueBox();
@@ -154,5 +190,32 @@ public class DialogueManager : MonoBehaviour
             yield return null;
         }
         panel.anchoredPosition = target;
+    }
+    
+    private void ApplyExpression(DialogueExpression expression)
+    {
+        if (ExpressionLayer == null)
+        {
+            ExpressionLayer.sprite = null;
+        }
+
+        switch (expression)
+        {
+            case DialogueExpression.Happy:
+            ExpressionLayer.sprite = happyExpression;
+            break;
+            case DialogueExpression.Sad:
+                ExpressionLayer.sprite = sadExpression;
+                break;
+            case DialogueExpression.Angry:
+                ExpressionLayer.sprite = angryExpression;
+                break;
+            case DialogueExpression.Shock:
+                ExpressionLayer.sprite = shockExpression;
+                break;
+            default:
+                ExpressionLayer.sprite = defaultExpressionSprite;
+                break;
+        }
     }
 }

@@ -879,6 +879,81 @@ MonoBehaviour:
   Mission: {fileID: 1902189916}
   missionText: memasuki misi ke -0
   missionOrder: 2
+--- !u!1 &314407009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 314407010}
+  - component: {fileID: 314407012}
+  - component: {fileID: 314407011}
+  m_Layer: 5
+  m_Name: EkspressionLayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &314407010
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314407009}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 588564994}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -35, y: 30}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &314407011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314407009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &314407012
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314407009}
+  m_CullTransparentMesh: 1
 --- !u!1 &381950001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1133,24 +1208,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeOfDialogue: 0
   dialogueLines:
-  - characterName: Yusuf(Player)
+  - characterName: Milo
     dialogueText: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat.
-    characterPortrait: {fileID: -5754388876357630561, guid: 5e0b100468a6a5e4cb38c08b5fe4ff50, type: 3}
+    portraitSprite: {fileID: 8832167503239892954, guid: c99811cb531d0064c880fbdbb2878519, type: 3}
+    expression: 3
   - characterName: Zainy(NPC)
     dialogueText: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat.
-    characterPortrait: {fileID: 8832167503239892954, guid: c99811cb531d0064c880fbdbb2878519, type: 3}
-  - characterName: Yusuf(Player)
+    portraitSprite: {fileID: -3788153200967376698, guid: 333a97c10ed664214a6f73254859f2f7, type: 3}
+    expression: 2
+  - characterName: Milo
     dialogueText: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat.
-    characterPortrait: {fileID: -5754388876357630561, guid: 5e0b100468a6a5e4cb38c08b5fe4ff50, type: 3}
+    portraitSprite: {fileID: 8832167503239892954, guid: c99811cb531d0064c880fbdbb2878519, type: 3}
+    expression: 4
   currentMission: 1
   dialogueStarted: 0
 --- !u!212 &445396668
@@ -1693,7 +1771,7 @@ GameObject:
   - component: {fileID: 588564996}
   - component: {fileID: 588564995}
   m_Layer: 5
-  m_Name: AvatarIcon
+  m_Name: Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1712,6 +1790,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 743060604}
+  - {fileID: 314407010}
   m_Father: {fileID: 1602062358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
@@ -2975,6 +3054,15 @@ MonoBehaviour:
   textBox: {fileID: 533494567}
   portraitBox: {fileID: 743060605}
   dialogueGameObject: {fileID: 1602062357}
+  basePortrait: {fileID: 743060605}
+  ExpressionLayer: {fileID: 314407011}
+  defaultExpressionSprite: {fileID: 666756949912133668, guid: 75bc59a84351223feaf2c30d2f5a9456, type: 3}
+  defaultPortraitSprite: {fileID: -5754388876357630561, guid: 5e0b100468a6a5e4cb38c08b5fe4ff50, type: 3}
+  defaultExpression: {fileID: -6059373566013874316, guid: e1d278f48597ac4418a906070b677c21, type: 3}
+  happyExpression: {fileID: 5973396633537871456, guid: e1d278f48597ac4418a906070b677c21, type: 3}
+  angryExpression: {fileID: 6595183733951761920, guid: 8dca4be6e6dffcc44b94ea2bf12ad45e, type: 3}
+  sadExpression: {fileID: -6935492875782931890, guid: 3ce8f260decef93ac9068d7c41b8b540, type: 3}
+  shockExpression: {fileID: -5237472140120834289, guid: 208a169e2e2f5a926be0bc646fcee763, type: 3}
   textSpeed: 0.05
   isTyping: 0
   dialogueFinished: 0
@@ -3913,24 +4001,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeOfDialogue: 0
   dialogueLines:
-  - characterName: Yusuf(Player)
+  - characterName: Rian
     dialogueText: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat.
-    characterPortrait: {fileID: -5754388876357630561, guid: 5e0b100468a6a5e4cb38c08b5fe4ff50, type: 3}
-  - characterName: Zainy(NPC)
+    portraitSprite: {fileID: -5754388876357630561, guid: 5e0b100468a6a5e4cb38c08b5fe4ff50, type: 3}
+    expression: 1
+  - characterName: Alice
     dialogueText: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat.
-    characterPortrait: {fileID: 8832167503239892954, guid: c99811cb531d0064c880fbdbb2878519, type: 3}
-  - characterName: Yusuf(Player)
+    portraitSprite: {fileID: 8832167503239892954, guid: c99811cb531d0064c880fbdbb2878519, type: 3}
+    expression: 4
+  - characterName: Rian
     dialogueText: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat.
-    characterPortrait: {fileID: -5754388876357630561, guid: 5e0b100468a6a5e4cb38c08b5fe4ff50, type: 3}
+    portraitSprite: {fileID: -5754388876357630561, guid: 5e0b100468a6a5e4cb38c08b5fe4ff50, type: 3}
+    expression: 2
   currentMission: 0
   dialogueStarted: 0
 --- !u!212 &1298270252
@@ -4173,7 +4264,7 @@ GameObject:
   - component: {fileID: 1465897015}
   - component: {fileID: 1465897014}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Dialog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4745,7 +4836,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1602062358
 RectTransform:
   m_ObjectHideFlags: 0
