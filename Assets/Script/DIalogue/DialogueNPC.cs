@@ -34,16 +34,29 @@ public class DialogueNPC : MonoBehaviour
 
     }
 
-    private void CheckMissionCondition()
+   private void CheckMissionCondition()
 {
+    if (DataPresistenceManager.instance == null)
+    {
+        Debug.LogWarning("DataPresistenceManager.instance is null!");
+        return; // keluar dulu
+    }
+
     var data = DataPresistenceManager.instance.GetGameData();
+    if (data == null)
+    {
+        Debug.LogWarning("GameData is null!");
+        return;
+    }
 
     bool shouldAppear = (data.MissionOrder == currentMission);
-    npcCollider.enabled = shouldAppear;
+    if (npcCollider != null)
+        npcCollider.enabled = shouldAppear;
+
     foreach (var r in GetComponentsInChildren<Renderer>())
         r.enabled = shouldAppear;
-
 }
+
 
 
     
