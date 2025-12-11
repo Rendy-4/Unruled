@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class DataPresistenceManager : MonoBehaviour
 {
     [Header("FIle Storage Config")]
-    [SerializeField] private string fileName;
+    [SerializeField] public string fileName;
 
     private GameData gameData;
     private List<IDataPresistence> dataPresistencesObjects;

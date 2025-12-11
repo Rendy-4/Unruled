@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using System.IO;
 public class MenuManager : MonoBehaviour
 {
     /*public TMP_Text panelName;*/
@@ -9,14 +10,23 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Button newGameButton;
     [SerializeField] private Button loadGameButton;
 
+    [Header("Reference")]
+    [SerializeField] private DataPresistenceManager dataManager;
+
     private void Start() {
-        if(!DataPresistenceManager.instance.HasGameData() || !DataPresistenceManager.instance.GetGameData().HasStartedGame)
+        loadGameButton.interactable = false;
+
+        string fullPath = Path.Combine(Application.persistentDataPath, DataPresistenceManager.instance.fileName);
+        Debug.Log("Checking Save File at " +  fullPath);
+
+        if (File.Exists(fullPath))
         {
-            loadGameButton.interactable = false;
+            loadGameButton.interactable = true;
+            Debug.Log("Save file Found");
         }
         else
         {
-            loadGameButton.interactable = true;
+            Debug.Log("Save file Not Found");
         }
     }
     public void OnNewGameClicked()

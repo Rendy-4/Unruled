@@ -6,8 +6,8 @@ public class VolumeSetting : MonoBehaviour, IDataPresistence
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
 
-    private float musicVolume = 1f;
-    private float sfxVolume = 1f;
+    private float musicVolume = 0.5f;
+    private float sfxVolume = 0.5f;
 
     private bool isLoading = false;
 
