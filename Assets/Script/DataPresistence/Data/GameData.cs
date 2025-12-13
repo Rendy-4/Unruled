@@ -15,7 +15,7 @@ public class GameData
     public bool HasStartedGame = false;
     public GameData()
     {
-        playerPosistion = new Vector3(497f, 0.71f, 30.172f);
+        playerPosistion = new Vector3(734.3f, 0.69f, -33.37f);
         MissionOrder = 0;
        
     }

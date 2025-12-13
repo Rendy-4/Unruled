@@ -64,7 +64,7 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         shownPosition = new Vector2(0, 172);
-        hiddenPosition = new Vector2(0, -600);
+        hiddenPosition = new Vector2(0, -900);
 
        if (dialoguePanel != null)
        dialoguePanel.anchoredPosition = hiddenPosition;
