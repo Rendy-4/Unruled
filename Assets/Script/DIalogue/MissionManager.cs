@@ -11,13 +11,15 @@ public class MissionManager : MonoBehaviour , IDataPresistence
 
     private void Awake()
     {
+        if(Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
     }
 
-    void Start()
-    {
-        OnMissionUpdated?.Invoke();
-    }
+    
 
    public bool ValidateMission(int missionOrder)
 {
@@ -27,6 +29,7 @@ public class MissionManager : MonoBehaviour , IDataPresistence
         currentMission++;;
         OnMissionUpdated?.Invoke();
         ForceRefreshNPC?.Invoke();
+        DataPresistenceManager.instance.SaveGame();
         return true;
     }
 
