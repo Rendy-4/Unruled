@@ -2706,6 +2706,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 1625200600}
+  sceneText: 
+  fadeDuration: 1
+  displayTime: 3
+  freezeDuration: 0.5
+  cooldown: 1
 --- !u!65 &334101494
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4343,6 +4348,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 1463356954}
+  sceneText: Teleport Ke Gang Perumahan
+  fadeDuration: 0.1
+  displayTime: 1
+  freezeDuration: 0.5
+  cooldown: 1
 --- !u!65 &530973816
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7288,6 +7298,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionOrder: 11
   sceneText: uuujjj
+  fadeDuration: 1
+  displayTime: 3
 --- !u!65 &747544181
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8212,6 +8224,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 1765038436}
+  sceneText: 
+  fadeDuration: 1
+  displayTime: 3
+  freezeDuration: 0.5
+  cooldown: 1
 --- !u!65 &800992155
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8349,6 +8366,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 1230739200}
+  sceneText: Teleport Ke depan Gerbang Sekolah
+  fadeDuration: 1
+  displayTime: 3
+  freezeDuration: 0.5
+  cooldown: 1
 --- !u!65 &809306202
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10953,6 +10975,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 1388362248}
+  sceneText: Teleport Ke Gang Perumahan
+  fadeDuration: 1
+  displayTime: 3
+  freezeDuration: 0.5
+  cooldown: 1
 --- !u!65 &1097757579
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18445,6 +18472,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionOrder: 12
   sceneText: Jadi Pada Suatu Hari Ada Ank banfsadas
+  fadeDuration: 1
+  displayTime: 3
 --- !u!65 &1958059410
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18565,6 +18594,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 653447765}
+  sceneText: 
+  fadeDuration: 1
+  displayTime: 3
+  freezeDuration: 0.5
+  cooldown: 1
 --- !u!65 &1966451141
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19339,6 +19373,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 388401698}
+  sceneText: Teleport Ke Perumahan
+  fadeDuration: 0.1
+  displayTime: 1
+  freezeDuration: 0.5
+  cooldown: 1
 --- !u!65 &2067332507
 BoxCollider:
   m_ObjectHideFlags: 0

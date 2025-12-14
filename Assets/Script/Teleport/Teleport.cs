@@ -1,38 +1,51 @@
-using GLTFast.Schema;
 using UnityEngine;
+using System.Collections;
 
 public class SceneTeleportTrigger : MonoBehaviour
 {
-     [Header("Teleport")]
+    [Header("Teleport")]
     public Transform teleportTarget;
 
     [Header("Scene Text")]
-    [TextArea(2, 4)]
+    [TextArea(3, 6)]
     public string sceneText;
 
     [Header("Display Settings")]
-    public float fadeDuration = 1f;
-    public float displayTime = 3f;
+    public float fadeDuration = 0.5f;
+    public float displayTime = 1.5f;
 
-    private void OnTriggerEnter(Collider other)
+    [Header("Player Freeze")]
+    public float freezeDuration = 0.5f;
+    private bool isProcessing;
+    public float cooldown = 1f;
+
+
+   private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.CompareTag("Player"))
-        {
-            if (!other.CompareTag("Player"))return;
+    if (isProcessing) return;
+    if (!other.CompareTag("Player")) return;
 
-            if(teleportTarget == null)
-            {
-                Debug.LogError("TELEPORT TARGET BELUM DI ISI ", this);
-                return;
-            }
-            
-            if (!string.IsNullOrEmpty(sceneText) && SceneOverlayUIController.Instance != null)
-            {
-                SceneOverlayUIController.Instance.PlaySceneText(sceneText,fadeDuration,displayTime);
-            }
-             other.transform.position = teleportTarget.position;
-             
-        }
+    StartCoroutine(HandlePortal(other));
     }
+
+
+    private IEnumerator HandlePortal(Collider player)
+{
+    isProcessing = true;
+
+    PlayerMovement3D controller = player.GetComponent<PlayerMovement3D>();
+    if (controller != null)
+        controller.Freeze(true);
+
+    yield return new WaitForSeconds(freezeDuration);
+
+    player.transform.position = teleportTarget.position;
+
+    if (controller != null)
+        controller.Freeze(false);
+
+    yield return new WaitForSeconds(cooldown);
+    isProcessing = false;
+}
+
 }

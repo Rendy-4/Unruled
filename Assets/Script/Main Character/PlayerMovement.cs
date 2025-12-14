@@ -8,10 +8,17 @@ public class PlayerMovement3D : MonoBehaviour, IDataPresistence
     private int facingDirection = 1;
     public Animator anim;
     public Transform visualsTransform;
+    private bool isFrozen;
+
 
 
     void FixedUpdate()
     {
+
+        if (isFrozen)
+        {
+            rb.linearVelocity = Vector3.zero;
+        }
         
         float horizontal = Input.GetAxis("Horizontal");
         if (horizontal > 0 && transform.localScale.x < 0 || horizontal < 0 && transform.localScale.x > 0)
@@ -28,6 +35,18 @@ public class PlayerMovement3D : MonoBehaviour, IDataPresistence
         facingDirection *= -1;
         visualsTransform.localScale = new Vector3(visualsTransform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
     }
+    public void Freeze(bool freeze)
+    {
+    isFrozen = freeze;
+
+    if (freeze)
+    {
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+    }
+    }
+
+    
 
     public void LoadData(GameData data)
     {
@@ -37,4 +56,5 @@ public class PlayerMovement3D : MonoBehaviour, IDataPresistence
     {
         data.playerPosistion = transform.position;
     }
+
 }
