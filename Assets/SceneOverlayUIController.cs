@@ -19,29 +19,38 @@ public class SceneOverlayUIController : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void PlaySceneText(string text)
+    public void PlaySceneText(
+        string text,
+        float fadeDurationOverride,
+        float displayTimeOverride)
     {
+        
+
         gameObject.SetActive(true);
         sceneText.text = text;
+
         StopAllCoroutines();
-        StartCoroutine(SceneRoutine());
+        StartCoroutine(SceneRoutine(
+            fadeDurationOverride,
+            displayTimeOverride
+        ));
     }
 
-    private IEnumerator SceneRoutine()
+    private IEnumerator SceneRoutine(float fade, float display)
     {
-        yield return Fade(0, 1);
-        yield return new WaitForSeconds(displayTime);
-        yield return Fade(1, 0);
+        yield return Fade(0, 1, fade);
+        yield return new WaitForSeconds(display);
+        yield return Fade(1, 0, fade);
         gameObject.SetActive(false);
     }
 
-    private IEnumerator Fade(float from, float to)
+    private IEnumerator Fade(float from, float to, float duration)
     {
         float t = 0;
-        while (t < fadeDuration)
+        while (t < duration)
         {
             t += Time.deltaTime;
-            canvasGroup.alpha = Mathf.Lerp(from, to, t / fadeDuration);
+            canvasGroup.alpha = Mathf.Lerp(from, to, t / duration);
             yield return null;
         }
         canvasGroup.alpha = to;
