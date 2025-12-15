@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class DialogueNPC : MonoBehaviour
 {
+    [Header ("Expression Profile")]
+    public NPCExpressionProfile expressionProfile;
+
     [Header("Dialogue Settings")]
     public DialogueType.dialogueType typeOfDialogue;
     public DialogueLine[] dialogueLines;
@@ -86,12 +89,14 @@ public class DialogueNPC : MonoBehaviour
             if (Data.MissionOrder == currentMission)
             {
                 dialogueStarted = true;
+                DialogueManager.instance.SetNPCProfile(expressionProfile);
                 DialogueManager.instance.StartDialogue(dialogueLines);
             }
         }
         else
         {
             dialogueStarted = true;
+            DialogueManager.instance.SetNPCProfile(expressionProfile);
             DialogueManager.instance.StartDialogue(dialogueLines);
         }
     }

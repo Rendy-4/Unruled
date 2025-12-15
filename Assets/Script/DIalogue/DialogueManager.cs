@@ -2,30 +2,29 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
-using System.Linq.Expressions;
+using System.Collections.Generic;
 
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
 
+    [Header("NPC Profiles")]
+    public NPCExpressionProfile[] npcProfiles;
+    private Dictionary<string, NPCExpressionProfile> profileLookup;
+    private NPCExpressionProfile currentProfile;
+
+
+
     [Header("Links Components")]
     public TextMeshProUGUI nameBox;
     public TextMeshProUGUI textBox;
-    public Image portraitBox;
     public GameObject dialogueGameObject;
     public Image basePortrait;
     public Image ExpressionLayer;
 
-    [Header("Optional: default sprite/ jika portrait tidak di isi /null)")]
-    public Sprite defaultExpressionSprite; // optional fallback
-    public Sprite defaultPortraitSprite;
 
-    [Header("Ekspresi")]
-    public Sprite defaultExpression;
-    public Sprite happyExpression;
-    public Sprite angryExpression;
-    public Sprite sadExpression;
-    public Sprite shockExpression;
+    [Header("Fallback Portrait")]
+    public Sprite defaultPortraitSprite;
     
     [Header("Text Configuration")]
     public float textSpeed = 0.05f;
@@ -47,6 +46,7 @@ public class DialogueManager : MonoBehaviour
 
     private Vector2 hiddenPosition;
     private Vector2 shownPosition;
+    
 
     private void Awake()
     {
@@ -57,8 +57,18 @@ public class DialogueManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
         }
-        
+        profileLookup = new Dictionary<string, NPCExpressionProfile>();
+
+        foreach(var profile in npcProfiles)
+        {
+            if (profile == null || string.IsNullOrEmpty(profile.npcName))
+            continue;
+
+            if(!profileLookup.ContainsKey(profile.npcName))
+            profileLookup.Add(profile.npcName, profile);
+        } 
     }
 
     private void Start()
@@ -101,7 +111,7 @@ public class DialogueManager : MonoBehaviour
                     nameBox.text = "";
 
                     if (basePortrait != null)
-                    basePortrait.sprite = defaultExpression;
+                    basePortrait.sprite = currentProfile != null ? currentProfile.defaultPortrait : defaultPortraitSprite;
                     if (ExpressionLayer != null)
                     ExpressionLayer.sprite = null;
                 
@@ -109,6 +119,14 @@ public class DialogueManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SetNPCProfile(NPCExpressionProfile profile)
+    {
+        currentProfile = profile;
+
+        if(basePortrait != null && profile != null)
+        basePortrait.sprite = profile.defaultPortrait;
     }
 
     public void StartDialogue(DialogueLine[] newLines)
@@ -130,10 +148,16 @@ public class DialogueManager : MonoBehaviour
         isTyping = true;
         textBox.text = "";
         nameBox.text = line.characterName;
+        AutoAssignProfile(line.characterName);
 
         if (basePortrait != null)
-            basePortrait.sprite = line.portraitSprite != null ? line.portraitSprite : defaultPortraitSprite;
-
+        {
+            basePortrait.sprite = line.portraitSprite != null
+                ? line.portraitSprite
+                : currentProfile != null
+                    ? currentProfile.defaultPortrait
+                    : defaultPortraitSprite;
+        }
             ApplyExpression(line.expression);
 
         foreach (char text in line.dialogueText)
@@ -150,7 +174,12 @@ public class DialogueManager : MonoBehaviour
         nameBox.text = line.characterName;
 
         if (basePortrait != null)
-        basePortrait.sprite = line.portraitSprite != null ? line.portraitSprite : defaultPortraitSprite;
+        basePortrait.sprite = line.portraitSprite != null
+        ? line.portraitSprite
+        : currentProfile != null
+            ? currentProfile.defaultPortrait
+            : defaultPortraitSprite;
+
         ApplyExpression(line.expression);
 ;
     }
@@ -160,8 +189,7 @@ public class DialogueManager : MonoBehaviour
         StopAllCoroutines();
         textBox.text = "";
         nameBox.text = "";
-        portraitBox.sprite = null;
-
+        
         if (basePortrait != null)
         basePortrait.sprite = defaultPortraitSprite;
         if (ExpressionLayer != null)
@@ -192,30 +220,33 @@ public class DialogueManager : MonoBehaviour
         panel.anchoredPosition = target;
     }
     
-    private void ApplyExpression(DialogueExpression expression)
+    private void AutoAssignProfile(string characterName)
     {
-        if (ExpressionLayer == null)
-        {
-            ExpressionLayer.sprite = null;
-        }
+        if (profileLookup == null) return;
 
-        switch (expression)
+        if (profileLookup.TryGetValue(characterName, out var profile))
         {
-            case DialogueExpression.Happy:
-            ExpressionLayer.sprite = happyExpression;
-            break;
-            case DialogueExpression.Sad:
-                ExpressionLayer.sprite = sadExpression;
-                break;
-            case DialogueExpression.Angry:
-                ExpressionLayer.sprite = angryExpression;
-                break;
-            case DialogueExpression.Shock:
-                ExpressionLayer.sprite = shockExpression;
-                break;
-            default:
-                ExpressionLayer.sprite = defaultExpressionSprite;
-                break;
+            currentProfile = profile;
+
+            if (basePortrait != null)
+                basePortrait.sprite = profile.defaultPortrait;
+        }
+        else
+        {
+            currentProfile = null;
+
+            if (basePortrait != null)
+                basePortrait.sprite = defaultPortraitSprite;
         }
     }
+    
+    private void ApplyExpression(DialogueExpression expression)
+    {
+        if (ExpressionLayer == null || currentProfile == null)
+        return;
+        
+        ExpressionLayer.sprite = currentProfile.GetExpression(expression);
+    }
+
+    
 }
