@@ -2632,9 +2632,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 1625200600}
-  sceneText: 
-  fadeDuration: 1
-  displayTime: 1
+  sceneText: ' '
+  fadeDuration: 0.5
+  displayTime: 0.5
   freezeDuration: 0.5
   cooldown: 1
 --- !u!65 &334101494
@@ -2855,7 +2855,7 @@ MonoBehaviour:
   iconSprite: {fileID: -5754388876357630561, guid: 5e0b100468a6a5e4cb38c08b5fe4ff50, type: 3}
   Mission: {fileID: 1902189916}
   missionText: Beli bakso
-  missionOrder: 6
+  missionOrder: 5
 --- !u!1001 &346955181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3905,7 +3905,7 @@ GameObject:
   - component: {fileID: 503280160}
   - component: {fileID: 503280159}
   m_Layer: 0
-  m_Name: NPC (5)
+  m_Name: NPC (4)
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13531,7 +13531,7 @@ GameObject:
   - component: {fileID: 1453761834}
   - component: {fileID: 1453761833}
   m_Layer: 0
-  m_Name: NPC (4)
+  m_Name: NPC (3)
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13588,7 +13588,7 @@ MonoBehaviour:
     dialogueText: Udah selesai blom?, ayo lanjut ke-kelas. Gih.
     portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
     expression: 1
-  currentMission: 5
+  currentMission: 6
   dialogueStarted: 0
 --- !u!212 &1453761835
 SpriteRenderer:
@@ -15907,7 +15907,7 @@ GameObject:
   - component: {fileID: 1684962594}
   - component: {fileID: 1684962593}
   m_Layer: 0
-  m_Name: NPC (6)
+  m_Name: NPC (5)
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17355,7 +17355,7 @@ GameObject:
   - component: {fileID: 1859612425}
   - component: {fileID: 1859612428}
   m_Layer: 0
-  m_Name: NPC (3)
+  m_Name: NPC (2)
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19637,8 +19637,8 @@ SceneRoots:
   - {fileID: 1061488843}
   - {fileID: 1364914252}
   - {fileID: 1298270253}
-  - {fileID: 1453761836}
   - {fileID: 1859612427}
+  - {fileID: 1453761836}
   - {fileID: 503280162}
   - {fileID: 1684962596}
   - {fileID: 702341309}
