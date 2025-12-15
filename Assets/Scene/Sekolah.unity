@@ -648,10 +648,10 @@ Transform:
   - {fileID: 306926291}
   - {fileID: 2072939275}
   - {fileID: 2067581820}
-  - {fileID: 1314174055}
-  - {fileID: 1208634892}
-  - {fileID: 114613169}
+  - {fileID: 344757104}
   - {fileID: 1026819051}
+  - {fileID: 1208634892}
+  - {fileID: 1314174055}
   m_Father: {fileID: 2048418439}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &94884388
@@ -727,78 +727,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: -4161369568681901532, guid: 05ca53b720cc6dcd98842e64cede21cc, type: 3}
---- !u!1 &114613168
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 114613169}
-  - component: {fileID: 114613171}
-  - component: {fileID: 114613170}
-  m_Layer: 0
-  m_Name: MQ_4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &114613169
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114613168}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -76.42, y: 0, z: 39.9}
-  m_LocalScale: {x: 1, y: 1, z: 2.8}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 91436916}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &114613170
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114613168}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 22.15, y: 16, z: 8.04}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114613171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114613168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f2c443edc77b6a43b195db3bd899370, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gambarInteract: {fileID: 0}
-  iconimage: {fileID: 0}
-  iconSprite: {fileID: -5754388876357630561, guid: 5e0b100468a6a5e4cb38c08b5fe4ff50, type: 3}
-  Mission: {fileID: 1902189916}
-  missionText: Pergi Ke kantin
-  missionOrder: 5
 --- !u!1001 &119517367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2856,6 +2784,78 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: -4161369568681901532, guid: 05ca53b720cc6dcd98842e64cede21cc, type: 3}
+--- !u!1 &344757103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 344757104}
+  - component: {fileID: 344757106}
+  - component: {fileID: 344757105}
+  m_Layer: 0
+  m_Name: MQ_4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &344757104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344757103}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 36.05, y: 0, z: 39.9}
+  m_LocalScale: {x: 0.69, y: 0.69, z: 1.9319999}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 91436916}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &344757105
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344757103}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9.104981, y: 16, z: 8.04}
+  m_Center: {x: -5.7626653, y: 0, z: 0}
+--- !u!114 &344757106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344757103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2c443edc77b6a43b195db3bd899370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gambarInteract: {fileID: 0}
+  iconimage: {fileID: 0}
+  iconSprite: {fileID: -5754388876357630561, guid: 5e0b100468a6a5e4cb38c08b5fe4ff50, type: 3}
+  Mission: {fileID: 1902189916}
+  missionText: Beli bakso
+  missionOrder: 6
 --- !u!1001 &346955181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6636,7 +6636,6 @@ Transform:
   m_Children:
   - {fileID: 388401698}
   - {fileID: 1625200600}
-  - {fileID: 2052645368}
   - {fileID: 1388362248}
   - {fileID: 1463356954}
   m_Father: {fileID: 1747924271}
@@ -6843,6 +6842,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2052645368}
   - {fileID: 153748431}
   - {fileID: 1765038436}
   - {fileID: 1224436409}
@@ -13588,7 +13588,7 @@ MonoBehaviour:
     dialogueText: Udah selesai blom?, ayo lanjut ke-kelas. Gih.
     portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
     expression: 1
-  currentMission: 6
+  currentMission: 5
   dialogueStarted: 0
 --- !u!212 &1453761835
 SpriteRenderer:
@@ -16433,14 +16433,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747924270}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -115.54286, y: 0.3652962, z: -32.13017}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -93.27481, y: -3.6570513, z: 5.0036163}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 681128533}
   - {fileID: 702301923}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2048418439}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1755996487
 PrefabInstance:
@@ -18818,6 +18818,7 @@ Transform:
   - {fileID: 1598941271}
   - {fileID: 121924507}
   - {fileID: 189128169}
+  - {fileID: 1747924271}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2049868396
@@ -18925,7 +18926,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 681128533}
+  m_Father: {fileID: 702301923}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2052645369
 BoxCollider:
@@ -19218,9 +19219,9 @@ MonoBehaviour:
   fadeDuration: 0.1
   displayTime: 1
   freezePlayer: 1
-  freezeDuration: 0.5
+  freezeDuration: 3
   useTeleport: 1
-  teleportTarget: {fileID: 565276724}
+  teleportTarget: {fileID: 2052645368}
 --- !u!1 &2072939274
 GameObject:
   m_ObjectHideFlags: 0
@@ -19648,7 +19649,6 @@ SceneRoots:
   - {fileID: 2048418439}
   - {fileID: 620267344}
   - {fileID: 776963047}
-  - {fileID: 1747924271}
   - {fileID: 1608071599}
   - {fileID: 851101721}
   - {fileID: 544675963}
