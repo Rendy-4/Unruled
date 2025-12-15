@@ -3940,6 +3940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b25314f6f199958468a16cf0f6634504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expressionProfile: {fileID: 0}
   typeOfDialogue: 0
   dialogueLines:
   - characterName: Murid Lain
@@ -8180,19 +8181,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb5361b26cb60345882358051b5569c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcProfiles:
+  - {fileID: 11400000, guid: 0c37aba86b809b146ba5e372c948f12a, type: 2}
   nameBox: {fileID: 447917022}
   textBox: {fileID: 533494567}
-  portraitBox: {fileID: 743060605}
   dialogueGameObject: {fileID: 1602062357}
   basePortrait: {fileID: 743060605}
   ExpressionLayer: {fileID: 314407011}
-  defaultExpressionSprite: {fileID: 0}
-  defaultPortraitSprite: {fileID: 0}
-  defaultExpression: {fileID: -6059373566013874316, guid: e1d278f48597ac4418a906070b677c21, type: 3}
-  happyExpression: {fileID: 5973396633537871456, guid: e1d278f48597ac4418a906070b677c21, type: 3}
-  angryExpression: {fileID: 6595183733951761920, guid: 8dca4be6e6dffcc44b94ea2bf12ad45e, type: 3}
-  sadExpression: {fileID: -6935492875782931890, guid: 3ce8f260decef93ac9068d7c41b8b540, type: 3}
-  shockExpression: {fileID: -5237472140120834289, guid: 208a169e2e2f5a926be0bc646fcee763, type: 3}
+  defaultPortraitSprite: {fileID: 8832167503239892954, guid: c99811cb531d0064c880fbdbb2878519, type: 3}
   textSpeed: 0.05
   isTyping: 0
   dialogueFinished: 0
@@ -11791,9 +11787,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b262ab4d6e93c645885ffec532cb259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 519420032}
-  targetRotation: {x: 0, y: 90, z: 0}
-  rotateSpeed: 2
 --- !u!1001 &1256322792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12217,13 +12210,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b25314f6f199958468a16cf0f6634504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expressionProfile: {fileID: 0}
   typeOfDialogue: 0
   dialogueLines:
   - characterName: Milo
     dialogueText: Rian, PR Pak Surya udah kelar belum? Jangan bilang kamu udah ngerjain?
     portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
     expression: 4
-  - characterName: Rian
+  - characterName: RianL
     dialogueText: Kalo muka panik gitu sih, kayaknya kamu belum ya?
     portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
     expression: 0
@@ -13636,6 +13630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b25314f6f199958468a16cf0f6634504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expressionProfile: {fileID: 0}
   typeOfDialogue: 0
   dialogueLines:
   - characterName: Milo
@@ -16012,6 +16007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b25314f6f199958468a16cf0f6634504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expressionProfile: {fileID: 0}
   typeOfDialogue: 0
   dialogueLines:
   - characterName: Milo
@@ -17439,6 +17435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b25314f6f199958468a16cf0f6634504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expressionProfile: {fileID: 0}
   typeOfDialogue: 0
   dialogueLines:
   - characterName: Milo
