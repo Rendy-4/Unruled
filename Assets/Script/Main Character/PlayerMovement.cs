@@ -18,6 +18,8 @@ public class PlayerMovement3D : MonoBehaviour, IDataPresistence
         if (isFrozen)
         {
             rb.linearVelocity = Vector3.zero;
+            anim.SetFloat("horizontal", 0f);
+            return;
         }
         
         float horizontal = Input.GetAxis("Horizontal");

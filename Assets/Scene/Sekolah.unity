@@ -918,7 +918,7 @@ GameObject:
   - component: {fileID: 123031940}
   - component: {fileID: 123031939}
   m_Layer: 0
-  m_Name: Gedung
+  m_Name: KelasCP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1212,7 +1212,7 @@ GameObject:
   - component: {fileID: 153748433}
   - component: {fileID: 153748432}
   m_Layer: 0
-  m_Name: taman
+  m_Name: TamanCP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1654,9 +1654,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1958059408}
-  - {fileID: 747544179}
+  m_Children: []
   m_Father: {fileID: 2048418439}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &190409441
@@ -2464,7 +2462,7 @@ Transform:
   m_GameObject: {fileID: 306926290}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 188.1, y: 0, z: 6}
+  m_LocalPosition: {x: 528.6, y: 0, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 4.73}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2489,8 +2487,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 22.15, y: 16, z: 8.04}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.5961304, y: 16, z: 8.04}
+  m_Center: {x: -2.735077, y: 0, z: 0}
 --- !u!114 &306926293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2708,7 +2706,7 @@ MonoBehaviour:
   teleportTarget: {fileID: 1625200600}
   sceneText: 
   fadeDuration: 1
-  displayTime: 3
+  displayTime: 1
   freezeDuration: 0.5
   cooldown: 1
 --- !u!65 &334101494
@@ -3074,7 +3072,7 @@ GameObject:
   - component: {fileID: 388401700}
   - component: {fileID: 388401699}
   m_Layer: 0
-  m_Name: komplek
+  m_Name: PerumahanCP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3754,7 +3752,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7479650285264522364, guid: 1b65162df3fd5b644bb4f2f4d59903f5, type: 3}
       propertyPath: m_Name
-      value: gangkomplek
+      value: GangPerumahanCP
       objectReference: {fileID: 0}
     - target: {fileID: -7168150689736360738, guid: 1b65162df3fd5b644bb4f2f4d59903f5, type: 3}
       propertyPath: m_LocalScale.x
@@ -4034,7 +4032,7 @@ Transform:
   m_GameObject: {fileID: 503280158}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -394.51, y: 1, z: -28.3}
+  m_LocalPosition: {x: -393.17, y: 1, z: -28.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -4351,7 +4349,7 @@ MonoBehaviour:
   sceneText: Teleport Ke Gang Perumahan
   fadeDuration: 0.1
   displayTime: 1
-  freezeDuration: 0.5
+  freezeDuration: 3
   cooldown: 1
 --- !u!65 &530973816
 BoxCollider:
@@ -6195,7 +6193,7 @@ GameObject:
   - component: {fileID: 653447767}
   - component: {fileID: 653447766}
   m_Layer: 0
-  m_Name: jalan utama sekolah (1)
+  m_Name: KeluarKantinCP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7249,131 +7247,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743060603}
   m_CullTransparentMesh: 1
---- !u!1 &747544178
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 747544179}
-  - component: {fileID: 747544183}
-  - component: {fileID: 747544182}
-  - component: {fileID: 747544181}
-  - component: {fileID: 747544180}
-  m_Layer: 0
-  m_Name: ST_1 (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &747544179
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 747544178}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.8, y: -2.4148, z: 10.764}
-  m_LocalScale: {x: 12.0808, y: 5.8296, z: 22.527515}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 189128169}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &747544180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 747544178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf8faf2ee73a22b47afce1bcc6693d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  missionOrder: 11
-  sceneText: uuujjj
-  fadeDuration: 1
-  displayTime: 3
---- !u!65 &747544181
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 747544178}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &747544182
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 747544178}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &747544183
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 747544178}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &750458384
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8225,8 +8098,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 1765038436}
   sceneText: 
-  fadeDuration: 1
-  displayTime: 3
+  fadeDuration: 0.5
+  displayTime: 0.5
   freezeDuration: 0.5
   cooldown: 1
 --- !u!65 &800992155
@@ -11621,7 +11494,7 @@ GameObject:
   - component: {fileID: 1224436411}
   - component: {fileID: 1224436410}
   m_Layer: 0
-  m_Name: jalan utama sekolah
+  m_Name: JalanUtamaSekolahCP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11729,7 +11602,7 @@ GameObject:
   - component: {fileID: 1230739202}
   - component: {fileID: 1230739201}
   m_Layer: 0
-  m_Name: jalan utama depan sekolah
+  m_Name: DepanGerbangSekolahCP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12380,7 +12253,7 @@ Transform:
   m_GameObject: {fileID: 1298270249}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 509.71, y: 1.26, z: -34.75}
+  m_LocalPosition: {x: 513.28, y: 1.26, z: -34.75}
   m_LocalScale: {x: 1, y: 1, z: 30.859999}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -12406,8 +12279,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.9294739, y: 2, z: 0.2}
+  m_Center: {x: -0.011978149, y: 0, z: 0}
 --- !u!1 &1304356468
 GameObject:
   m_ObjectHideFlags: 0
@@ -13117,7 +12990,7 @@ Transform:
   m_GameObject: {fileID: 1384333650}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.39, y: -0.5, z: -37.75}
+  m_LocalPosition: {x: -13.39, y: -0.5, z: -46.4}
   m_LocalScale: {x: 2.581273, y: 5.0507374, z: 1.9758}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13979,7 +13852,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7479650285264522364, guid: 1b65162df3fd5b644bb4f2f4d59903f5, type: 3}
       propertyPath: m_Name
-      value: gangkomplek (1)
+      value: GangPerumahanCP 2
       objectReference: {fileID: 0}
     - target: {fileID: -7168150689736360738, guid: 1b65162df3fd5b644bb4f2f4d59903f5, type: 3}
       propertyPath: m_LocalScale.x
@@ -15575,7 +15448,7 @@ GameObject:
   - component: {fileID: 1625200602}
   - component: {fileID: 1625200601}
   m_Layer: 0
-  m_Name: rumahrian
+  m_Name: RumahMCCP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16734,7 +16607,7 @@ GameObject:
   - component: {fileID: 1765038438}
   - component: {fileID: 1765038437}
   m_Layer: 0
-  m_Name: tamandeketgedung
+  m_Name: KeluarGeedungCP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17584,7 +17457,7 @@ Transform:
   m_GameObject: {fileID: 1859612423}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -387.32, y: 1, z: -28.3}
+  m_LocalPosition: {x: -389.41, y: 1, z: -28.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18423,131 +18296,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: -4161369568681901532, guid: 548ce7e4bf308dee2bb755ac4ddfef3c, type: 3}
---- !u!1 &1958059407
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1958059408}
-  - component: {fileID: 1958059412}
-  - component: {fileID: 1958059411}
-  - component: {fileID: 1958059410}
-  - component: {fileID: 1958059409}
-  m_Layer: 0
-  m_Name: ST_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1958059408
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958059407}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.2, y: -2.4148, z: 10.764}
-  m_LocalScale: {x: 12.0808, y: 5.8296, z: 22.527515}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 189128169}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1958059409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958059407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf8faf2ee73a22b47afce1bcc6693d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  missionOrder: 12
-  sceneText: Jadi Pada Suatu Hari Ada Ank banfsadas
-  fadeDuration: 1
-  displayTime: 3
---- !u!65 &1958059410
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958059407}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1958059411
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958059407}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1958059412
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958059407}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1966451138
 GameObject:
   m_ObjectHideFlags: 0
@@ -18594,9 +18342,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 653447765}
-  sceneText: 
-  fadeDuration: 1
-  displayTime: 3
+  sceneText: ' '
+  fadeDuration: 0
+  displayTime: 0
   freezeDuration: 0.5
   cooldown: 1
 --- !u!65 &1966451141
@@ -19158,7 +18906,7 @@ GameObject:
   - component: {fileID: 2052645370}
   - component: {fileID: 2052645369}
   m_Layer: 0
-  m_Name: Kantin
+  m_Name: KantinCP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19376,7 +19124,7 @@ MonoBehaviour:
   sceneText: Teleport Ke Perumahan
   fadeDuration: 0.1
   displayTime: 1
-  freezeDuration: 0.5
+  freezeDuration: 3
   cooldown: 1
 --- !u!65 &2067332507
 BoxCollider:
@@ -19408,8 +19156,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2067581820}
-  - component: {fileID: 2067581822}
   - component: {fileID: 2067581821}
+  - component: {fileID: 2067581822}
   m_Layer: 0
   m_Name: MQ_3
   m_TagString: Untagged
@@ -19426,7 +19174,7 @@ Transform:
   m_GameObject: {fileID: 2067581819}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -353.48, y: 0, z: 10.4}
+  m_LocalPosition: {x: -351.35, y: 0, z: 10.4}
   m_LocalScale: {x: 1, y: 1, z: 2.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19462,15 +19210,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2067581819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f2c443edc77b6a43b195db3bd899370, type: 3}
+  m_Script: {fileID: 11500000, guid: bf8faf2ee73a22b47afce1bcc6693d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gambarInteract: {fileID: 0}
-  iconimage: {fileID: 0}
-  iconSprite: {fileID: -5754388876357630561, guid: 5e0b100468a6a5e4cb38c08b5fe4ff50, type: 3}
-  Mission: {fileID: 1902189916}
-  missionText: Pelajaran berlangsung. Waktu berjalan hingga istirahat.
   missionOrder: 4
+  sceneText: Pelajaran berlangsung. Waktu berjalan hingga istirahat.
+  fadeDuration: 0.1
+  displayTime: 1
+  freezePlayer: 1
+  freezeDuration: 0.5
+  useTeleport: 1
+  teleportTarget: {fileID: 565276724}
 --- !u!1 &2072939274
 GameObject:
   m_ObjectHideFlags: 0

@@ -37,9 +37,21 @@ public class SceneTeleportTrigger : MonoBehaviour
     if (controller != null)
         controller.Freeze(true);
 
-    yield return new WaitForSeconds(freezeDuration);
+        //Fade
+        if (!string.IsNullOrEmpty(sceneText) && SceneOverlayUIController.Instance != null)
+        {
+            SceneOverlayUIController.Instance.PlaySceneText(
+                sceneText,
+                fadeDuration,
+                displayTime
+            );
+        }
+
+    yield return new WaitForSeconds(fadeDuration);
 
     player.transform.position = teleportTarget.position;
+
+    yield return new WaitForSeconds(displayTime);
 
     if (controller != null)
         controller.Freeze(false);
