@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cba73413bf768aa46b09354382a5bc6c, type: 3}
-  m_Name: NPCExpressionProfile
+  m_Name: Rian
   m_EditorClassIdentifier: 
-  npcName: RianL
+  npcName: Rian
   defaultPortrait: {fileID: -7443756053782179069, guid: 1bcb86792561350ada925478167a543f, type: 3}
   defaultExpression: {fileID: -7443756053782179069, guid: 1bcb86792561350ada925478167a543f, type: 3}
   happy: {fileID: -7443756053782179069, guid: 1bcb86792561350ada925478167a543f, type: 3}

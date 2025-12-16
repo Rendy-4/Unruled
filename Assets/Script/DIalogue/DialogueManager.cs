@@ -129,18 +129,25 @@ public class DialogueManager : MonoBehaviour
         basePortrait.sprite = profile.defaultPortrait;
     }
 
-    public void StartDialogue(DialogueLine[] newLines)
+    public void StartDialogue(DialogueData data)
+{
+    if (data == null || data.dialogueLines == null || data.dialogueLines.Length == 0)
     {
-        dialogueGameObject.SetActive(true);
-        dialogueFinished = false;
-
-        dialogueLines = newLines;
-        currentLineIndex = 0;
-        justStarted = true;
-
-        ShowDialogueBox();
-        typingCoroutine = StartCoroutine(TypeLine(dialogueLines[currentLineIndex]));
+        Debug.LogWarning("DialogueData kosong / null");
+        return;
     }
+
+    dialogueGameObject.SetActive(true);
+    dialogueFinished = false;
+
+    dialogueLines = data.dialogueLines;
+    currentLineIndex = 0;
+    justStarted = true;
+
+    ShowDialogueBox();
+    typingCoroutine = StartCoroutine(TypeLine(dialogueLines[0]));
+}
+
 
 
     IEnumerator TypeLine(DialogueLine line)

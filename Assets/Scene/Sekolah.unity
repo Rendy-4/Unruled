@@ -3942,23 +3942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expressionProfile: {fileID: 0}
   typeOfDialogue: 0
-  dialogueLines:
-  - characterName: Murid Lain
-    dialogueText: cuy!!, kali ini kita jamkos nih, guru nya gak dateng lagi ada acara
-    portraitSprite: {fileID: 0}
-    expression: 3
-  - characterName: Milo
-    dialogueText: wah beneran nih, ya udah mending kita main aja ga sih
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 4
-  - characterName: Milo
-    dialogueText: Rian Mabar Yuk!
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
-    expression: 1
-  - characterName: Rian
-    dialogueText: ok
-    portraitSprite: {fileID: 8832167503239892954, guid: c99811cb531d0064c880fbdbb2878519, type: 3}
-    expression: 0
+  dialogueData: {fileID: 0}
   currentMission: 9
   dialogueStarted: 0
 --- !u!212 &503280161
@@ -12216,41 +12200,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b25314f6f199958468a16cf0f6634504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expressionProfile: {fileID: 0}
+  expressionProfile: {fileID: 11400000, guid: 0c37aba86b809b146ba5e372c948f12a, type: 2}
   typeOfDialogue: 0
-  dialogueLines:
-  - characterName: Milo
-    dialogueText: Rian, PR Pak Surya udah kelar belum? Jangan bilang kamu udah ngerjain?
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 4
-  - characterName: RianL
-    dialogueText: Kalo muka panik gitu sih, kayaknya kamu belum ya?
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
-    expression: 0
-  - characterName: Milo
-    dialogueText: Hehe... pinjam catatanmu dong. Darurat ini.
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 1
-  - characterName: Milo
-    dialogueText: Hehe... pinjam catatanmu dong. Darurat ini.
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 1
-  - characterName: Rian
-    dialogueText: Dih kayak orang minta uang 100rb aja, kau
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
-    expression: 3
-  - characterName: Milo
-    dialogueText: nanti kubayar 100rb
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 1
-  - characterName: Rian
-    dialogueText: Deal! gk nih ?
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
-    expression: 1
-  - characterName: Rian
-    dialogueText: 'Jangan dong '
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
-    expression: 1
+  dialogueData: {fileID: 11400000, guid: 7dee4f94cd564874885ddf61636ebc02, type: 2}
   currentMission: 0
   dialogueStarted: 0
 --- !u!212 &1298270252
@@ -13638,23 +13590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expressionProfile: {fileID: 0}
   typeOfDialogue: 0
-  dialogueLines:
-  - characterName: Milo
-    dialogueText: Wah, baksonya wangi banget.
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 1
-  - characterName: Siswi1
-    dialogueText: Dengar-dengar dia nggak masuk lagi hari ini.
-    portraitSprite: {fileID: 0}
-    expression: 0
-  - characterName: Siswi2
-    dialogueText: Dulunya juga begitu, katanya.
-    portraitSprite: {fileID: 0}
-    expression: 0
-  - characterName: Milo
-    dialogueText: Udah selesai blom?, ayo lanjut ke-kelas. Gih.
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 1
+  dialogueData: {fileID: 0}
   currentMission: 6
   dialogueStarted: 0
 --- !u!212 &1453761835
@@ -14245,39 +14181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expressionProfile: {fileID: 0}
   typeOfDialogue: 0
-  dialogueLines:
-  - characterName: Milo
-    dialogueText: Rian, PR Pak Surya udah kelar belum? Jangan bilang kamu udah ngerjain?
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 4
-  - characterName: RianL
-    dialogueText: Kalo muka panik gitu sih, kayaknya kamu belum ya?
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
-    expression: 0
-  - characterName: Milo
-    dialogueText: Hehe... pinjam catatanmu dong. Darurat ini.
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 1
-  - characterName: Milo
-    dialogueText: Hehe... pinjam catatanmu dong. Darurat ini.
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 1
-  - characterName: Rian
-    dialogueText: Dih kayak orang minta uang 100rb aja, kau
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
-    expression: 3
-  - characterName: Milo
-    dialogueText: nanti kubayar 100rb
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 1
-  - characterName: Rian
-    dialogueText: Deal! gk nih ?
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
-    expression: 1
-  - characterName: Rian
-    dialogueText: 'Jangan dong '
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
-    expression: 1
+  dialogueData: {fileID: 0}
   currentMission: 0
   dialogueStarted: 0
 --- !u!212 &1482428468
@@ -16177,15 +16081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expressionProfile: {fileID: 0}
   typeOfDialogue: 0
-  dialogueLines:
-  - characterName: Milo
-    dialogueText: Bro aku duluan ya, ada kegiatan pramuka sama yang lainnya nih
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 3
-  - characterName: Rian
-    dialogueText: Oh ya, aku duluan kalau begitu!
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 4
+  dialogueData: {fileID: 0}
   currentMission: 11
   dialogueStarted: 0
 --- !u!212 &1684962595
@@ -17605,23 +17501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expressionProfile: {fileID: 0}
   typeOfDialogue: 0
-  dialogueLines:
-  - characterName: Milo
-    dialogueText: Rian, buku PR yang kau janjikan mana?
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 1
-  - characterName: Rian
-    dialogueText: Iya - iya. Nih.
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
-    expression: 3
-  - characterName: Milo
-    dialogueText: Pahlawan hidupku.
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 1
-  - characterName: Rian
-    dialogueText: udah jangan lebay.
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 1
+  dialogueData: {fileID: 0}
   currentMission: 3
   dialogueStarted: 0
 --- !u!212 &1859612426
@@ -18999,39 +18879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expressionProfile: {fileID: 11400000, guid: 0c37aba86b809b146ba5e372c948f12a, type: 2}
   typeOfDialogue: 0
-  dialogueLines:
-  - characterName: Milo
-    dialogueText: Rian, PR Pak Surya udah kelar belum? Jangan bilang kamu udah ngerjain?
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 4
-  - characterName: RianL
-    dialogueText: Kalo muka panik gitu sih, kayaknya kamu belum ya?
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
-    expression: 0
-  - characterName: Milo
-    dialogueText: Hehe... pinjam catatanmu dong. Darurat ini.
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 1
-  - characterName: Milo
-    dialogueText: Hehe... pinjam catatanmu dong. Darurat ini.
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 1
-  - characterName: Rian
-    dialogueText: Dih kayak orang minta uang 100rb aja, kau
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
-    expression: 3
-  - characterName: Milo
-    dialogueText: nanti kubayar 100rb
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 1
-  - characterName: Rian
-    dialogueText: Deal! gk nih ?
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
-    expression: 1
-  - characterName: Rian
-    dialogueText: 'Jangan dong '
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
-    expression: 1
+  dialogueData: {fileID: 0}
   currentMission: 0
   dialogueStarted: 0
 --- !u!1001 &2000602992

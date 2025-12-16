@@ -7,7 +7,7 @@ public class DialogueNPC : MonoBehaviour
 
     [Header("Dialogue Settings")]
     public DialogueType.dialogueType typeOfDialogue;
-    public DialogueLine[] dialogueLines;
+    public DialogueData dialogueData;
 
     [Header ("Setting Story (for main story only)")]
     public int currentMission;
@@ -90,14 +90,14 @@ public class DialogueNPC : MonoBehaviour
             {
                 dialogueStarted = true;
                 DialogueManager.instance.SetNPCProfile(expressionProfile);
-                DialogueManager.instance.StartDialogue(dialogueLines);
+                DialogueManager.instance.StartDialogue(dialogueData);
             }
         }
         else
         {
             dialogueStarted = true;
             DialogueManager.instance.SetNPCProfile(expressionProfile);
-            DialogueManager.instance.StartDialogue(dialogueLines);
+            DialogueManager.instance.StartDialogue(dialogueData);
         }
     }
 
