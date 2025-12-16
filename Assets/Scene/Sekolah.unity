@@ -3943,7 +3943,6 @@ MonoBehaviour:
   expressionProfile: {fileID: 0}
   typeOfDialogue: 0
   dialogueData: {fileID: 0}
-  currentMission: 9
   dialogueStarted: 0
 --- !u!212 &503280161
 SpriteRenderer:
@@ -12203,7 +12202,6 @@ MonoBehaviour:
   expressionProfile: {fileID: 11400000, guid: 0c37aba86b809b146ba5e372c948f12a, type: 2}
   typeOfDialogue: 0
   dialogueData: {fileID: 11400000, guid: 7dee4f94cd564874885ddf61636ebc02, type: 2}
-  currentMission: 0
   dialogueStarted: 0
 --- !u!212 &1298270252
 SpriteRenderer:
@@ -13591,7 +13589,6 @@ MonoBehaviour:
   expressionProfile: {fileID: 0}
   typeOfDialogue: 0
   dialogueData: {fileID: 0}
-  currentMission: 6
   dialogueStarted: 0
 --- !u!212 &1453761835
 SpriteRenderer:
@@ -14182,7 +14179,6 @@ MonoBehaviour:
   expressionProfile: {fileID: 0}
   typeOfDialogue: 0
   dialogueData: {fileID: 0}
-  currentMission: 0
   dialogueStarted: 0
 --- !u!212 &1482428468
 SpriteRenderer:
@@ -16082,7 +16078,6 @@ MonoBehaviour:
   expressionProfile: {fileID: 0}
   typeOfDialogue: 0
   dialogueData: {fileID: 0}
-  currentMission: 11
   dialogueStarted: 0
 --- !u!212 &1684962595
 SpriteRenderer:
@@ -17502,7 +17497,6 @@ MonoBehaviour:
   expressionProfile: {fileID: 0}
   typeOfDialogue: 0
   dialogueData: {fileID: 0}
-  currentMission: 3
   dialogueStarted: 0
 --- !u!212 &1859612426
 SpriteRenderer:
@@ -18854,6 +18848,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 902020150215283844, guid: 00e15acf6d0b50a78a7d5427cf7e2561, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1987471751}
+    - targetCorrespondingSourceObject: {fileID: 902020150215283844, guid: 00e15acf6d0b50a78a7d5427cf7e2561, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1987471753}
+    - targetCorrespondingSourceObject: {fileID: 902020150215283844, guid: 00e15acf6d0b50a78a7d5427cf7e2561, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1987471752}
   m_SourcePrefab: {fileID: 100100000, guid: 00e15acf6d0b50a78a7d5427cf7e2561, type: 3}
 --- !u!4 &1987471749 stripped
 Transform:
@@ -18880,8 +18880,35 @@ MonoBehaviour:
   expressionProfile: {fileID: 11400000, guid: 0c37aba86b809b146ba5e372c948f12a, type: 2}
   typeOfDialogue: 0
   dialogueData: {fileID: 0}
-  currentMission: 0
   dialogueStarted: 0
+--- !u!114 &1987471752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987471750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88cb70d53777d4b40aa4c684fec58702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positions: []
+  disappearAfter: -1
+--- !u!114 &1987471753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987471750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf92609dfa5b254d9c2ab0edf8b26b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  appearAtMission: 0
+  dissapearAfter: -1
 --- !u!1001 &2000602992
 PrefabInstance:
   m_ObjectHideFlags: 0
