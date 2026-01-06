@@ -7,6 +7,7 @@ using System.Collections.Generic;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
+    public static System.Action onDialogueFinished;
 
     [Header("NPC Profiles")]
     public NPCExpressionProfile[] npcProfiles;
@@ -116,6 +117,7 @@ public class DialogueManager : MonoBehaviour
                     ExpressionLayer.sprite = null;
                 
                     HideDialogueBox();
+                    onDialogueFinished?.Invoke();
                 }
             }
         }
@@ -204,6 +206,7 @@ public class DialogueManager : MonoBehaviour
 
         dialogueFinished = true;
         HideDialogueBox();
+        onDialogueFinished?.Invoke();
     }
 
     public void ShowDialogueBox()
@@ -253,6 +256,10 @@ public class DialogueManager : MonoBehaviour
         return;
         
         ExpressionLayer.sprite = currentProfile.GetExpression(expression);
+
+        //Apply Posisi Khusus NPC
+        RectTransform rt = ExpressionLayer.rectTransform;
+        rt.anchoredPosition = currentProfile.expressionOffset;
     }
 
     
