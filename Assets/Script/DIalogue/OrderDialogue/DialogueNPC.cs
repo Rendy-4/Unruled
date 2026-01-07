@@ -1,7 +1,9 @@
 using UnityEngine;
+using System;
 
 public class DialogueNPC : MonoBehaviour
 {
+    public static Action<DialogueData> OnDialogueFinished;
     [Header ("Expression Profile")]
     public NPCExpressionProfile expressionProfile;
 
@@ -19,15 +21,32 @@ public class DialogueNPC : MonoBehaviour
         {
             dialogueStarted = true;
             DialogueManager.instance.SetNPCProfile(expressionProfile);
+
+            if(!CanStartDialogue())
+            return;
             DialogueManager.instance.StartDialogue(dialogueData);
         }
 
         if (dialogueStarted && DialogueManager.instance.dialogueFinished)
         {
             dialogueStarted = false;
+            OnDialogueFinished?.Invoke(dialogueData);
+
         }
     }
 
+    bool CanStartDialogue()
+    {
+        if (dialogueData == null)
+        return false;
+
+        //Dialog mission hanya boleh jika mission masih sesuai
+        if (dialogueData.completeMission >= 0)
+        {
+            return MissionManager.Instance.currentMission == dialogueData.completeMission;
+        }
+        return true; //dialog biasa
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
