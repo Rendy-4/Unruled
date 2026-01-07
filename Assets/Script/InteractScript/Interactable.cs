@@ -25,17 +25,23 @@ public class Interactable : MonoBehaviour
     {
         if (collision.CompareTag("Player") && !SudahSelesai)
         {
-            bool valid = MissionManager.Instance.ValidateMission(missionOrder);
+        
+        if(MissionManager.Instance.currentMission != missionOrder)
+        return;
+
+        bool valid = MissionManager.Instance.ValidateMission(missionOrder);
         if(!valid)
         return;
 
         if (Mission != null)
         Mission.ShowMission(missionText);
+
         if (iconimage != null && iconSprite != null)
         iconimage.sprite = iconSprite;
         
         if (gambarInteract != null)
         gambarInteract.SetActive(true); 
+
         SudahSelesai = true;
         } 
         

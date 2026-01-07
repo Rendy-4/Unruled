@@ -37,7 +37,6 @@ public class NPCMissionPosition : MonoBehaviour
         //  Hilang jika lewat batas
         if (disappearAfter >= 0 && currentMission > disappearAfter)
         {
-            gameObject.SetActive(false);
             return;
         }
 
@@ -48,12 +47,11 @@ public class NPCMissionPosition : MonoBehaviour
             {
                 transform.position = pos.targetPosition.position;
                 transform.rotation = pos.targetPosition.rotation;
-                gameObject.SetActive(true);
                 return;
             }
         }
 
-        // ❌ Tidak punya posisi untuk mission ini
+        // Tidak punya posisi untuk mission ini
         gameObject.SetActive(false);
     }
 }
