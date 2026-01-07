@@ -17,7 +17,7 @@ public class NPCMissionVisibility : MonoBehaviour
     {
         MissionManager.OnMissionUpdated += UpdateVisibility;
     }
-    void OsDisable()
+    void OnDisable()
     {
         MissionManager.OnMissionUpdated -= UpdateVisibility;
     }

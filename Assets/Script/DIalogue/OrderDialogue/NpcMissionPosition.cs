@@ -34,14 +34,14 @@ public class NPCMissionPosition : MonoBehaviour
     {
         int currentMission = MissionManager.Instance.currentMission;
 
-        // 🔴 Hilang jika lewat batas
+        //  Hilang jika lewat batas
         if (disappearAfter >= 0 && currentMission > disappearAfter)
         {
             gameObject.SetActive(false);
             return;
         }
 
-        // 🔵 Cari posisi sesuai mission
+        //  Cari posisi sesuai mission
         foreach (var pos in positions)
         {
             if (pos.missionIndex == currentMission && pos.targetPosition != null)
