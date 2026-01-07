@@ -36,7 +36,27 @@ public class MissionManager : MonoBehaviour , IDataPresistence
     return false;
 }
 
-public void LoadData(GameData data)
+    void HandleDialogueFinished(DialogueData data)
+    {
+        if (data == null)
+        return;
+
+        if(data.completeMission >= 0)
+        {
+            ValidateMission(data.completeMission);
+        }
+    }
+
+    private void OnEnable()
+    {
+        DialogueNPC.OnDialogueFinished += HandleDialogueFinished;
+    }
+    private void OnDisable()
+    {
+        DialogueNPC.OnDialogueFinished -= HandleDialogueFinished;
+    }
+
+    public void LoadData(GameData data)
 {
     currentMission = data.MissionOrder;
     Debug.Log($"LOAD MISSION: Mission={currentMission}");

@@ -11919,7 +11919,7 @@ MonoBehaviour:
   positions:
   - missionIndex: 0
     targetPosition: {fileID: 1298270253}
-  disappearAfter: -1
+  disappearAfter: 1
 --- !u!114 &1298270257
 MonoBehaviour:
   m_ObjectHideFlags: 0
