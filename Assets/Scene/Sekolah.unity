@@ -3877,7 +3877,7 @@ GameObject:
   m_Component:
   - component: {fileID: 506784519}
   m_Layer: 0
-  m_Name: NPC
+  m_Name: NPC List
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11867,8 +11867,9 @@ GameObject:
   - component: {fileID: 1298270256}
   - component: {fileID: 1298270257}
   - component: {fileID: 1298270258}
+  - component: {fileID: 1298270259}
   m_Layer: 0
-  m_Name: NPC (1)
+  m_Name: NPC (Milo)
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11934,7 +11935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expressionProfile: {fileID: 11400000, guid: 667cd9ccf20f14e4cb66218c5bdadd9d, type: 2}
   typeOfDialogue: 0
-  dialogueData: {fileID: 11400000, guid: 7dee4f94cd564874885ddf61636ebc02, type: 2}
+  dialogueData: {fileID: 0}
   dialogueStarted: 0
 --- !u!65 &1298270258
 BoxCollider:
@@ -11957,6 +11958,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1298270259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298270249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4426912011bb75940a84d8797ab7e25c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogues:
+  - missionIndex: 0
+    dialogue: {fileID: 11400000, guid: 7dee4f94cd564874885ddf61636ebc02, type: 2}
+  - missionIndex: 1
+    dialogue: {fileID: 11400000, guid: bc99d92f138c6fe4997e2ac0b81c405d, type: 2}
 --- !u!1 &1304356468
 GameObject:
   m_ObjectHideFlags: 0
