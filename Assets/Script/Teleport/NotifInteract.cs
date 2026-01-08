@@ -1,18 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-
 public class NotifInteract : MonoBehaviour
 {
    [Header("UI Element")]
    public Image pressFUI;
    [Header("Scene Settings")]
     public Transform teleportTarget;
-    public string locationName;
+    public string localtionName;
 
     [Header("Cinemachine Settings")]
-    public GameObject MainVcam;
-    public GameObject TeleportVcam;
+    public GameObject VcamMain;
+    public GameObject VcamTarget;
 
     [Header("Movement Settings")]
     public PlayerMovement3D.MovementMode targetMode;
@@ -23,7 +22,7 @@ public class NotifInteract : MonoBehaviour
 
     void Update()
     {
-        if(playerInRange && Input.GetKeyDown(KeyCode.F))
+        if (playerInRange && Input.GetKeyDown(KeyCode.F))
         {
             StartCoroutine(TeleportSequence());
         }
@@ -31,24 +30,23 @@ public class NotifInteract : MonoBehaviour
 
     private IEnumerator TeleportSequence()
     {
+        PlayerMovement3D movement = playerTransform.GetComponent<PlayerMovement3D>();
         if (SceneOverlayUIController.Instance != null)
         {
-            SceneOverlayUIController.Instance.PlaySceneText(
-                locationName,
-                0.5f,
-                1.5f
-            );
+            SceneOverlayUIController.Instance.PlaySceneText(localtionName, 0.5f, 1.5f);
         }
 
-        PlayerMovement3D movement = playerTransform.GetComponent<PlayerMovement3D>();
-        if (movement != null) movement.Freeze(true);
+        if (movement != null)
+        {
+            movement.Freeze(true);
+            movement.currentMode = targetMode;
+        }
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.0f);
 
         if (playerTransform != null && teleportTarget != null)
         {
             playerTransform.position = teleportTarget.position;
-
             playerTransform.rotation = teleportTarget.rotation;
 
             if (movement != null)
@@ -59,13 +57,12 @@ public class NotifInteract : MonoBehaviour
                 movement.visualsTransform.localScale = newScale;
             }
         }
-
-        if (MainVcam != null && TeleportVcam != null)
+        if (VcamMain != null && VcamTarget != null)
         {
-            MainVcam.SetActive(false);
-            TeleportVcam.SetActive(true);
+            VcamMain.SetActive(false);
+            VcamTarget.SetActive(true);
         }
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1.5f);
 
         if (movement != null) movement.Freeze(false);
     }
