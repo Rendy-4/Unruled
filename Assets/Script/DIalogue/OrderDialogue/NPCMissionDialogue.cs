@@ -33,6 +33,13 @@ public class NPCMissionDialogue : MonoBehaviour
     void UpdateDialogue()
     {
         int mission = MissionManager.Instance.currentMission;
+        dialogueNPC.dialogueData = null;
+
+        if (dialogueNPC.dialogueData == null)
+        {
+        Debug.Log($"[NPCMissionDialogue] No dialogue for mission {mission} on {gameObject.name}");
+        }
+
 
         foreach(var d in dialogues)
         {

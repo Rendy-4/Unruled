@@ -9,8 +9,8 @@ public class NPCMissionVisibility : MonoBehaviour
 
     void Awake()
     {
-        npcCollider = GetComponent<Collider>();
-        renderers = GetComponentsInChildren<Renderer>();
+        npcCollider = GetComponentInChildren<Collider>();
+        renderers = GetComponentsInChildren<Renderer>(true);
     }
 
     void OnEnable()
@@ -32,6 +32,10 @@ public class NPCMissionVisibility : MonoBehaviour
        int mission = MissionManager.Instance.currentMission;
 
        bool ShouldAppear = mission >= appearAtMission && (dissapearAfter < 0 || mission <= dissapearAfter);
-       gameObject.SetActive(ShouldAppear);
+       
+       foreach (var r in renderers)
+       r.enabled = ShouldAppear;
+
+       npcCollider.enabled = ShouldAppear;
     }
 }

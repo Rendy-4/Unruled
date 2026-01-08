@@ -14,21 +14,25 @@ public class DialogueNPC : MonoBehaviour
     [Header ("Interaction Settings")]
     private bool playerInRange = false;
     public bool dialogueStarted = false;
+    bool finishedInvoked = false;
  
     private void Update()
     {
-        if (playerInRange && !dialogueStarted && Input.GetKeyDown(KeyCode.Space))
+        if (playerInRange && !dialogueStarted && Input.GetKeyDown(KeyCode.Space)) //Dialog Baru
         {
-            dialogueStarted = true;
-            DialogueManager.instance.SetNPCProfile(expressionProfile);
 
             if(!CanStartDialogue())
             return;
+
+            finishedInvoked = false;
+            dialogueStarted = true;
+            DialogueManager.instance.SetNPCProfile(expressionProfile);
             DialogueManager.instance.StartDialogue(dialogueData);
         }
 
-        if (dialogueStarted && DialogueManager.instance.dialogueFinished)
-        {
+        if (dialogueStarted && DialogueManager.instance.dialogueFinished && !finishedInvoked) //Dialog Selesai
+        {   
+            finishedInvoked = true;
             dialogueStarted = false;
             OnDialogueFinished?.Invoke(dialogueData);
 
@@ -45,7 +49,7 @@ public class DialogueNPC : MonoBehaviour
         {
             return MissionManager.Instance.currentMission == dialogueData.completeMission;
         }
-        return true; //dialog biasa
+        return true;
     }
     void OnTriggerEnter(Collider other)
     {
