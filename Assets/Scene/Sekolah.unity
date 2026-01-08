@@ -349,7 +349,7 @@ Transform:
   m_GameObject: {fileID: 15935622}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 870, y: 1.2, z: -33.52}
+  m_LocalPosition: {x: 36.6, y: 3, z: -37.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2601,6 +2601,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334101491}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &335858236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 335858237}
+  - component: {fileID: 335858238}
+  m_Layer: 0
+  m_Name: Vcam Kantin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &335858237
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335858236}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.007404661, y: -0.707068, z: -0.007404661, w: 0.707068}
+  m_LocalPosition: {x: 65.02, y: -5.3, z: 15.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1364914252}
+  m_LocalEulerAnglesHint: {x: -1.2, y: -90, z: 0}
+--- !u!114 &335858238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335858236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Priority:
+    Enabled: 0
+    m_Value: 0
+  OutputChannel: 1
+  StandbyUpdate: 2
+  m_StreamingVersion: 20241001
+  m_LegacyPriority: 0
+  Target:
+    TrackingTarget: {fileID: 15935626}
+    LookAtTarget: {fileID: 0}
+    CustomLookAtTarget: 0
+  Lens:
+    FieldOfView: 17
+    OrthographicSize: 5
+    NearClipPlane: 0.3
+    FarClipPlane: 1000
+    Dutch: 0
+    ModeOverride: 0
+    PhysicalProperties:
+      GateFit: 2
+      SensorSize: {x: 21.946, y: 16.002}
+      LensShift: {x: 0, y: 0}
+      FocusDistance: 10
+      Iso: 200
+      ShutterSpeed: 0.005
+      Aperture: 16
+      BladeCount: 5
+      Curvature: {x: 2, y: 11}
+      BarrelClipping: 0.25
+      Anamorphism: 0
+  BlendHint: 0
 --- !u!1001 &342843495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2779,8 +2854,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 381950001}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.07333428, y: -0.00000000751131, z: 5.5232374e-10, w: 0.9973074}
-  m_LocalPosition: {x: 891.4633, y: -4.453034, z: -53.00268}
+  m_LocalRotation: {x: 0.073334284, y: 0.000000022090136, z: -0.000000004586006, w: 0.9973074}
+  m_LocalPosition: {x: 58.06333, y: -2.6530342, z: -57.08268}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3936,8 +4011,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.07333427, y: -0.00000008696309, z: 0.0000000063945933, w: 0.9973074}
-  m_LocalPosition: {x: 891.4633, y: -4.453034, z: -53.00268}
+  m_LocalRotation: {x: 0.073334284, y: 0.000000021871173, z: -0.0000000016082371, w: 0.9973074}
+  m_LocalPosition: {x: 58.06333, y: -2.6530342, z: -57.08268}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8598,6 +8673,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pressFUI: {fileID: 1834784916}
   teleportTarget: {fileID: 2052645368}
+  locationName: TeleportTokantin
+  MainVcam: {fileID: 381950001}
+  TeleportVcam: {fileID: 335858236}
 --- !u!65 &871837341
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9065,6 +9143,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pressFUI: {fileID: 1834784916}
   teleportTarget: {fileID: 153748431}
+  locationName: 
+  MainVcam: {fileID: 0}
+  TeleportVcam: {fileID: 0}
 --- !u!65 &929302779
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10599,6 +10680,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pressFUI: {fileID: 1834784916}
   teleportTarget: {fileID: 1224436409}
+  locationName: 
+  MainVcam: {fileID: 0}
+  TeleportVcam: {fileID: 0}
 --- !u!65 &1122472584
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11439,6 +11523,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pressFUI: {fileID: 1834784916}
   teleportTarget: {fileID: 123031938}
+  locationName: 
+  MainVcam: {fileID: 0}
+  TeleportVcam: {fileID: 0}
 --- !u!65 &1278401814
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11640,7 +11727,11 @@ Transform:
   m_GameObject: {fileID: 1298270249}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 513.28, y: -1.338, z: -31.45}
+=======
+  m_LocalPosition: {x: 513.28, y: 0.76, z: -34.75}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 30.859999}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -12261,6 +12352,7 @@ Transform:
   m_Children:
   - {fileID: 519420032}
   - {fileID: 381950002}
+  - {fileID: 335858237}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1373842708 stripped
@@ -13258,7 +13350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1465897014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14703,7 +14795,7 @@ Transform:
   m_GameObject: {fileID: 1625200599}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 636.28, y: 0.000010639429, z: -1.2000008}
+  m_LocalPosition: {x: 636.28, y: 1, z: -1.2000008}
   m_LocalScale: {x: 1.8400002, y: 1.8399999, z: 1.8399999}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -17513,11 +17605,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6832095123784087461, guid: 00e15acf6d0b50a78a7d5427cf7e2561, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: -0.95
       objectReference: {fileID: 0}
     - target: {fileID: 6832095123784087461, guid: 00e15acf6d0b50a78a7d5427cf7e2561, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.167
       objectReference: {fileID: 0}
     - target: {fileID: 6832095123784087461, guid: 00e15acf6d0b50a78a7d5427cf7e2561, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17922,13 +18014,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052645367}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 128.31, y: 1.24, z: 30}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 125.4, y: 1.24, z: 30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 702301923}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &2052645369
 BoxCollider:
   m_ObjectHideFlags: 0

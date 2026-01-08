@@ -10,6 +10,9 @@ public class PlayerMovement3D : MonoBehaviour, IDataPresistence
     public Transform visualsTransform;
     private bool isFrozen;
 
+    public enum MovementMode {HorizontalX, HorizontalZ}
+    public MovementMode movementMode = MovementMode.HorizontalX;
+
 
 
     void FixedUpdate()
@@ -28,7 +31,15 @@ public class PlayerMovement3D : MonoBehaviour, IDataPresistence
             Flip();
         }
         anim.SetFloat("horizontal", Mathf.Abs(horizontal));
-        rb.linearVelocity = new Vector3(horizontal, 0, 0) * moveSpeed;
+
+        if (movementMode == MovementMode.HorizontalX)
+        {
+            rb.linearVelocity = new Vector3(horizontal, 0, 0 ) * moveSpeed;
+        }
+        else if (movementMode == MovementMode.HorizontalZ)
+        {
+            rb.linearVelocity = new Vector3(0, 0, horizontal) * moveSpeed;
+        }
 
     }
 
