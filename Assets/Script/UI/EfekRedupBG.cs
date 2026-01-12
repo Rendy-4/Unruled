@@ -39,4 +39,8 @@ public void TidakRedupOnly(){
     dimBackground.SetActive(false);
 }
 
+public void CloseSettingsPanel(){
+    settingsPanel.SetActive(false);
+}
+
 }
