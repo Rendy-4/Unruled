@@ -33,7 +33,7 @@ public class NotifInteract : MonoBehaviour
         PlayerMovement3D movement = playerTransform.GetComponent<PlayerMovement3D>();
         if (SceneOverlayUIController.Instance != null)
         {
-            SceneOverlayUIController.Instance.PlaySceneText(localtionName, 0.5f, 1.5f);
+            SceneOverlayUIController.Instance.PlaySceneText(localtionName, 0.5f, 2.5f);
         }
 
         if (movement != null)
