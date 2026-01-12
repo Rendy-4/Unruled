@@ -217,13 +217,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3723939}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.013759722, y: -0.7069729, z: 0.013759722, w: 0.7069729}
   m_LocalPosition: {x: 52, y: -5, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1364914252}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.23, y: -90, z: 0}
 --- !u!1 &5886581
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,6 +418,7 @@ MonoBehaviour:
   moveSpeed: 15
   anim: {fileID: 663657539}
   visualsTransform: {fileID: 15935626}
+  currentMode: 0
 --- !u!54 &15935624
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2874,7 +2875,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &381950002
 Transform:
   m_ObjectHideFlags: 0
@@ -4040,8 +4041,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.073334284, y: 0.000000047836036, z: -0.0000000035174925, w: 0.9973074}
-  m_LocalPosition: {x: 40.463333, y: -4.293034, z: -52.48268}
+  m_LocalRotation: {x: 0.013759722, y: -0.7069729, z: 0.013759722, w: 0.7069729}
+  m_LocalPosition: {x: 52, y: -5, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8705,6 +8706,7 @@ MonoBehaviour:
   localtionName: Teleport To Kantin
   VcamMain: {fileID: 381950001}
   VcamTarget: {fileID: 3723939}
+  targetMode: 1
 --- !u!65 &871837341
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9175,6 +9177,7 @@ MonoBehaviour:
   localtionName: 
   VcamMain: {fileID: 0}
   VcamTarget: {fileID: 0}
+  targetMode: 0
 --- !u!65 &929302779
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10712,6 +10715,7 @@ MonoBehaviour:
   localtionName: 
   VcamMain: {fileID: 0}
   VcamTarget: {fileID: 0}
+  targetMode: 0
 --- !u!65 &1122472584
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11489,6 +11493,7 @@ MonoBehaviour:
   localtionName: 
   VcamMain: {fileID: 0}
   VcamTarget: {fileID: 0}
+  targetMode: 0
 --- !u!65 &1278401814
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17968,13 +17973,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052645367}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 128.31, y: 1, z: 30}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 125, y: 0.91, z: 35.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 702301923}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &2052645369
 BoxCollider:
   m_ObjectHideFlags: 0
