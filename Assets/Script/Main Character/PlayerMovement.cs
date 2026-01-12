@@ -49,13 +49,13 @@ public class PlayerMovement3D : MonoBehaviour, IDataPresistence
     }
     public void Freeze(bool freeze)
     {
-    isFrozen = freeze;
+        isFrozen = freeze;
 
-    if (freeze)
-    {
-        rb.linearVelocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-    }
+        if (freeze)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
     }
 
     
