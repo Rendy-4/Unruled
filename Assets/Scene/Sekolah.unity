@@ -11674,11 +11674,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1298270253}
-  - component: {fileID: 1298270255}
-  - component: {fileID: 1298270256}
-  - component: {fileID: 1298270257}
   - component: {fileID: 1298270258}
   - component: {fileID: 1298270259}
+  - component: {fileID: 1298270261}
+  - component: {fileID: 1298270260}
   m_Layer: 0
   m_Name: NPC (Milo)
   m_TagString: NPC
@@ -11702,54 +11701,6 @@ Transform:
   - {fileID: 1987471749}
   m_Father: {fileID: 506784519}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1298270255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1298270249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daf92609dfa5b254d9c2ab0edf8b26b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  appearAtMission: 0
-  dissapearAfter: 3
---- !u!114 &1298270256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1298270249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88cb70d53777d4b40aa4c684fec58702, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  positions:
-  - missionIndex: 0
-    targetPosition: {fileID: 1298270253}
-  - missionIndex: 2
-    targetPosition: {fileID: 1625200600}
-  disappearAfter: 3
---- !u!114 &1298270257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1298270249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b25314f6f199958468a16cf0f6634504, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  expressionProfile: {fileID: 11400000, guid: 667cd9ccf20f14e4cb66218c5bdadd9d, type: 2}
-  typeOfDialogue: 0
-  dialogueData: {fileID: 0}
-  dialogueStarted: 0
 --- !u!65 &1298270258
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11788,6 +11739,38 @@ MonoBehaviour:
     dialogue: {fileID: 11400000, guid: 7dee4f94cd564874885ddf61636ebc02, type: 2}
   - missionIndex: 2
     dialogue: {fileID: 11400000, guid: bc99d92f138c6fe4997e2ac0b81c405d, type: 2}
+--- !u!114 &1298270260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298270249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25314f6f199958468a16cf0f6634504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData: {fileID: 11400000, guid: bc99d92f138c6fe4997e2ac0b81c405d, type: 2}
+--- !u!114 &1298270261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298270249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d75dc3050f781b4481233b86a4c8677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missionStates:
+  - missionIndex: 0
+    targetPosition: {fileID: 1298270253}
+    visible: 1
+  - missionIndex: 2
+    targetPosition: {fileID: 1625200600}
+    visible: 1
 --- !u!1 &1304356468
 GameObject:
   m_ObjectHideFlags: 0
