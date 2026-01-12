@@ -3,11 +3,13 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
-    public static System.Action onDialogueFinished;
+    public static Action<DialogueData> onDialogueFinished;
+    private DialogueData currentDialogueData;
 
     [Header("NPC Profiles")]
     public NPCExpressionProfile[] npcProfiles;
@@ -117,7 +119,7 @@ public class DialogueManager : MonoBehaviour
                     ExpressionLayer.sprite = null;
                 
                     HideDialogueBox();
-                    onDialogueFinished?.Invoke();
+                    onDialogueFinished?.Invoke(currentDialogueData);
                 }
             }
         }
@@ -206,7 +208,7 @@ public class DialogueManager : MonoBehaviour
 
         dialogueFinished = true;
         HideDialogueBox();
-        onDialogueFinished?.Invoke();
+        onDialogueFinished?.Invoke(currentDialogueData);
     }
 
     public void ShowDialogueBox()

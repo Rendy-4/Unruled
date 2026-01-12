@@ -47,13 +47,13 @@ public class MissionManager : MonoBehaviour , IDataPresistence
         }
     }
 
-    private void OnEnable()
+    void OnEnable()
     {
-        DialogueNPC.OnDialogueFinished += HandleDialogueFinished;
+        DialogueManager.onDialogueFinished += HandleDialogueFinished;
     }
-    private void OnDisable()
+    void OnDisable()
     {
-        DialogueNPC.OnDialogueFinished -= HandleDialogueFinished;
+        DialogueManager.onDialogueFinished -= HandleDialogueFinished;
     }
 
     public void LoadData(GameData data)
