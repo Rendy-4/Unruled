@@ -4,18 +4,20 @@ using System;
 public class DialogueNPC : MonoBehaviour
 {
     public static Action<DialogueData> OnDialogueFinished;
-    [Header ("Expression Profile")]
-    public NPCExpressionProfile expressionProfile;
-
     [Header("Dialogue Settings")]
-    public DialogueType.dialogueType typeOfDialogue;
     public DialogueData dialogueData;
 
     [Header ("Interaction Settings")]
     private bool playerInRange = false;
-    public bool dialogueStarted = false;
-    bool finishedInvoked = false;
- 
+    private bool dialogueStarted = false;
+    private bool finishedInvoked = false;
+    private NpcFace npcFace;
+
+    void Awake()
+    {
+        npcFace = GetComponent<NpcFace>();
+    }
+
     private void Update()
     {
         if (playerInRange && !dialogueStarted && Input.GetKeyDown(KeyCode.Space)) //Dialog Baru
@@ -26,7 +28,8 @@ public class DialogueNPC : MonoBehaviour
 
             finishedInvoked = false;
             dialogueStarted = true;
-            DialogueManager.instance.SetNPCProfile(expressionProfile);
+
+            npcFace?.Apply();
             DialogueManager.instance.StartDialogue(dialogueData);
         }
 
@@ -34,8 +37,8 @@ public class DialogueNPC : MonoBehaviour
         {   
             finishedInvoked = true;
             dialogueStarted = false;
+            
             OnDialogueFinished?.Invoke(dialogueData);
-
         }
     }
 
