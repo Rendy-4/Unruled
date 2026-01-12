@@ -51,7 +51,6 @@ public class NPCMissionPosition : MonoBehaviour
             }
         }
 
-        // Tidak punya posisi untuk mission ini
-        gameObject.SetActive(false);
+        
     }
 }
