@@ -20,8 +20,12 @@ public class DialogueNPC : MonoBehaviour
 
     private void Update()
     {
+        
         if (playerInRange && !dialogueStarted && Input.GetKeyDown(KeyCode.Space)) //Dialog Baru
         {
+
+            if(DialogueManager.instance == null)
+            return;
 
             if(!CanStartDialogue())
             return;
@@ -45,13 +49,19 @@ public class DialogueNPC : MonoBehaviour
     bool CanStartDialogue()
     {
         if (dialogueData == null)
-        return false;
-
+        {
+            Debug.Log("No Dialogue for this mission");
+            return false;
+        }
+            Debug.Log($"🟡 CanStartDialogue | currentMission={MissionManager.Instance.currentMission} | completeMission={dialogueData.completeMission}");
         //Dialog mission hanya boleh jika mission masih sesuai
         if (dialogueData.completeMission >= 0)
         {
-            return MissionManager.Instance.currentMission == dialogueData.completeMission;
+            bool ok = MissionManager.Instance.currentMission == dialogueData.completeMission;
+            Debug.Log("Mission Match= " + ok);
+            return ok;
         }
+        Debug.Log("Berhasil");
         return true;
     }
     void OnTriggerEnter(Collider other)
@@ -69,6 +79,8 @@ public class DialogueNPC : MonoBehaviour
         {
             Debug.Log("Player out of range");
             playerInRange = false;
+            dialogueStarted = false;
+            finishedInvoked = false;
             DialogueManager.instance.ForceCloseDialogue();
         }
     }
