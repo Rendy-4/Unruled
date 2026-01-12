@@ -23,18 +23,22 @@ public class MissionManager : MonoBehaviour , IDataPresistence
 
    public bool ValidateMission(int missionOrder)
 {
+    Debug.Log($"🧪 ValidateMission | param={missionOrder}, current={currentMission}");
 
     if (missionOrder == currentMission)
     {
-        currentMission++;;
+        currentMission++;
+        Debug.Log($"✅ Mission naik ke {currentMission}");
         OnMissionUpdated?.Invoke();
         ForceRefreshNPC?.Invoke();
         DataPresistenceManager.instance.SaveGame();
         return true;
     }
 
+    Debug.Log("❌ Mission TIDAK cocok");
     return false;
 }
+
 
     void HandleDialogueFinished(DialogueData data)
     {
@@ -43,7 +47,7 @@ public class MissionManager : MonoBehaviour , IDataPresistence
 
         if(data.completeMission >= 0)
         {
-            ValidateMission(data.completeMission);
+            ValidateMission(currentMission);
         }
     }
 
