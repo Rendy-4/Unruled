@@ -56,9 +56,11 @@ public class DialogueNPC : MonoBehaviour
         if (dialogueData == null)
         return false;
 
-        if (dialogueData.completeMission >= 0)
+        if (dialogueData.missionToComplete
+ >= 0)
         {
-            return MissionManager.Instance.currentMission == dialogueData.completeMission;
+            return MissionManager.Instance.currentMission == dialogueData.missionToComplete
+;
         }
         return true;
     }

@@ -7,9 +7,6 @@ public class MissionManager : MonoBehaviour , IDataPresistence
    public static Action OnMissionUpdated;
    public static Action ForceRefreshNPC;
    public int currentMission;
-   private bool missionHandled = false;
-   
-
     private void Awake()
     {
         if(Instance != null && Instance != this)
@@ -24,19 +21,15 @@ public class MissionManager : MonoBehaviour , IDataPresistence
 
    public bool ValidateMission(int missionOrder)
 {
-    Debug.Log($"🧪 ValidateMission | param={missionOrder}, current={currentMission}");
-
     if (missionOrder == currentMission)
     {
         currentMission++;
-        Debug.Log($"✅ Mission naik ke {currentMission}");
+        Debug.Log($" Mission naik ke {currentMission}");
         OnMissionUpdated?.Invoke();
         ForceRefreshNPC?.Invoke();
         DataPresistenceManager.instance.SaveGame();
         return true;
     }
-
-    Debug.Log("❌ Mission TIDAK cocok");
     return false;
 }
 
@@ -48,9 +41,11 @@ public class MissionManager : MonoBehaviour , IDataPresistence
             return;
         }
 
-        if(data.completeMission >= 0)
+        if(data.missionToComplete
+ >= 0)
         {
-            ValidateMission(data.completeMission);
+            ValidateMission(data.missionToComplete
+);
         }
     }
 

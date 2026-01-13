@@ -7,6 +7,7 @@ public class DialogueData : ScriptableObject
     public DialogueLine[] dialogueLines;
 
     [Header("Mission Completion")]
-    [Tooltip("-1 tidak menyelesaikan mission")]
-    public int completeMission = -1;
+    [Tooltip("Dialog ini HANYA aktif saat currentMission == angka ini")]
+    public int missionToComplete;
+
 }
