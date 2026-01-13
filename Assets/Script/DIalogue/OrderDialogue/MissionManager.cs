@@ -7,6 +7,7 @@ public class MissionManager : MonoBehaviour , IDataPresistence
    public static Action OnMissionUpdated;
    public static Action ForceRefreshNPC;
    public int currentMission;
+   private bool missionHandled = false;
    
 
     private void Awake()
@@ -43,11 +44,13 @@ public class MissionManager : MonoBehaviour , IDataPresistence
     void HandleDialogueFinished(DialogueData data)
     {
         if (data == null)
-        return;
+        {
+            return;
+        }
 
         if(data.completeMission >= 0)
         {
-            ValidateMission(currentMission);
+            ValidateMission(data.completeMission);
         }
     }
 
@@ -56,10 +59,9 @@ public class MissionManager : MonoBehaviour , IDataPresistence
         DialogueManager.onDialogueFinished += HandleDialogueFinished;
     }
     void OnDisable()
-    {
+    {   
         DialogueManager.onDialogueFinished -= HandleDialogueFinished;
     }
-
     public void LoadData(GameData data)
 {
     currentMission = data.MissionOrder;

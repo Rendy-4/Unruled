@@ -49,7 +49,6 @@ public class DialogueNPC : MonoBehaviour
     private void HandleDialogueFinished(DialogueData data)
     {
         dialogueStarted = false;
-        Debug.Log("Dialog Selesai (Interactable)");
     }
 
     bool CanStartDialogue()

@@ -137,13 +137,14 @@ public class DialogueManager : MonoBehaviour
 {
     if (data == null || data.dialogueLines == null || data.dialogueLines.Length == 0)
     {
-        Debug.LogWarning("DialogueData kosong / null");
         return;
     }
 
-    dialogueGameObject.SetActive(true);
-    dialogueFinished = false;
+    currentDialogueData = data;
 
+    //dialogueGameObject.SetActive(true);//
+
+    dialogueFinished = false;
     dialogueLines = data.dialogueLines;
     currentLineIndex = 0;
     justStarted = true;
