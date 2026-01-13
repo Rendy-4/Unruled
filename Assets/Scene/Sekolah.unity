@@ -444,7 +444,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!4 &15935626
 Transform:
@@ -881,7 +881,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123031937}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -265.97, y: 1, z: 6.578003}
   m_LocalScale: {x: 1.8400002, y: 1.8399999, z: 1.8399999}
   m_ConstrainProportionsScale: 1
@@ -1175,7 +1175,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153748430}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.3524323, y: 1, z: 29.16}
   m_LocalScale: {x: 1.8400002, y: 1.8399999, z: 1.8399999}
   m_ConstrainProportionsScale: 1
@@ -2661,8 +2661,10 @@ MonoBehaviour:
   sceneText: ' '
   fadeDuration: 0.5
   displayTime: 0.5
-  freezeDuration: 0.5
   cooldown: 1
+  targetMode: 0
+  VcamMain: {fileID: 0}
+  VcamTarget: {fileID: 0}
 --- !u!65 &334101494
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4245,8 +4247,10 @@ MonoBehaviour:
   sceneText: Teleport Ke Gang Perumahan
   fadeDuration: 0.1
   displayTime: 1
-  freezeDuration: 3
   cooldown: 1
+  targetMode: 0
+  VcamMain: {fileID: 0}
+  VcamTarget: {fileID: 0}
 --- !u!65 &530973816
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6026,7 +6030,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653447764}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 145.88, y: 1, z: 0}
   m_LocalScale: {x: 1.8400002, y: 1.8399999, z: 1.8399999}
   m_ConstrainProportionsScale: 1
@@ -7909,8 +7913,10 @@ MonoBehaviour:
   sceneText: 
   fadeDuration: 0.5
   displayTime: 0.5
-  freezeDuration: 0.5
   cooldown: 1
+  targetMode: 0
+  VcamMain: {fileID: 0}
+  VcamTarget: {fileID: 0}
 --- !u!65 &800992155
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8046,8 +8052,10 @@ MonoBehaviour:
   sceneText: Teleport Ke depan Gerbang Sekolah
   fadeDuration: 1
   displayTime: 3
-  freezeDuration: 0.5
   cooldown: 1
+  targetMode: 0
+  VcamMain: {fileID: 0}
+  VcamTarget: {fileID: 0}
 --- !u!65 &809306202
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10606,8 +10614,10 @@ MonoBehaviour:
   sceneText: Teleport Ke Gang Perumahan
   fadeDuration: 1
   displayTime: 3
-  freezeDuration: 0.5
   cooldown: 1
+  targetMode: 0
+  VcamMain: {fileID: 0}
+  VcamTarget: {fileID: 0}
 --- !u!65 &1097757579
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11195,7 +11205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224436408}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.000015258789, y: 1, z: 0}
   m_LocalScale: {x: 1.8400002, y: 1.8399999, z: 1.8399999}
   m_ConstrainProportionsScale: 1
@@ -11303,7 +11313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1230739199}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 288.1, y: 1, z: 0}
   m_LocalScale: {x: 1.8400002, y: 1.8399999, z: 1.8399999}
   m_ConstrainProportionsScale: 1
@@ -13347,7 +13357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1465897014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15664,7 +15674,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1765038435}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 29.164017, y: 1, z: 33.460403}
   m_LocalScale: {x: 1.8400002, y: 1.8399999, z: 1.8399999}
   m_ConstrainProportionsScale: 1
@@ -17331,7 +17341,7 @@ GameObject:
   - component: {fileID: 1966451141}
   - component: {fileID: 1966451140}
   m_Layer: 0
-  m_Name: TeleportJalanUtama (1)
+  m_Name: Teleport Keluar Kantin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17346,7 +17356,7 @@ Transform:
   m_GameObject: {fileID: 1966451138}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 47.92, y: -4.95, z: 39.6}
+  m_LocalPosition: {x: 47.92, y: -4.95, z: 27.35}
   m_LocalScale: {x: 6.82, y: 7.6, z: 13.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17365,11 +17375,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 653447765}
-  sceneText: ' '
-  fadeDuration: 0
-  displayTime: 0
-  freezeDuration: 0.5
+  sceneText: Keluar dari Kantin
+  fadeDuration: 0.5
+  displayTime: 3
   cooldown: 1
+  targetMode: 0
+  VcamMain: {fileID: 381950001}
+  VcamTarget: {fileID: 3723939}
 --- !u!65 &1966451141
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17389,8 +17401,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.9707813, y: 1, z: 0.39392808}
+  m_Center: {x: -1.9319823, y: 0, z: 0.30303758}
 --- !u!4 &1974922812 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5993302042797342986, guid: 6c1c1d7ca1e3e50f39f4748fee4b5e90, type: 3}
@@ -18226,8 +18238,10 @@ MonoBehaviour:
   sceneText: Teleport Ke Perumahan
   fadeDuration: 0.1
   displayTime: 1
-  freezeDuration: 3
   cooldown: 1
+  targetMode: 0
+  VcamMain: {fileID: 0}
+  VcamTarget: {fileID: 0}
 --- !u!65 &2067332507
 BoxCollider:
   m_ObjectHideFlags: 0

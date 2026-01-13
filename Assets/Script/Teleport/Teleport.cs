@@ -14,10 +14,16 @@ public class SceneTeleportTrigger : MonoBehaviour
     public float fadeDuration = 0.5f;
     public float displayTime = 1.5f;
 
-    [Header("Player Freeze")]
-    public float freezeDuration = 0.5f;
-    private bool isProcessing;
+    [Header("Player Settings")]
     public float cooldown = 1f;
+    public PlayerMovement3D.MovementMode targetMode;
+
+    [Header("Camera Settings")]
+    public GameObject VcamMain;
+    public GameObject VcamTarget;
+
+    private bool isProcessing;
+    
 
 
    private void OnTriggerEnter(Collider other)
@@ -36,6 +42,7 @@ public class SceneTeleportTrigger : MonoBehaviour
     PlayerMovement3D controller = player.GetComponent<PlayerMovement3D>();
     if (controller != null)
         controller.Freeze(true);
+        controller.currentMode = targetMode;
 
         //Fade
         if (!string.IsNullOrEmpty(sceneText) && SceneOverlayUIController.Instance != null)
@@ -50,14 +57,25 @@ public class SceneTeleportTrigger : MonoBehaviour
     yield return new WaitForSeconds(fadeDuration);
 
     player.transform.position = teleportTarget.position;
+    player.transform.rotation = teleportTarget.rotation;
 
     yield return new WaitForSeconds(displayTime);
 
-    if (controller != null)
-        controller.Freeze(false);
+    if (controller != null && controller.visualsTransform != null)
+    {
+        Vector3 newScale = controller.visualsTransform.localScale;
+        newScale.x = Mathf.Abs(newScale.x);
+        controller.visualsTransform.localScale = newScale;
+    }
+
+    if (VcamMain != null) VcamMain.SetActive(true);
+    if (VcamTarget != null) VcamTarget.SetActive(false);
 
     yield return new WaitForSeconds(cooldown);
     isProcessing = false;
+
+    if (controller != null)
+        controller.Freeze(false);
 }
 
 }
