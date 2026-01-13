@@ -36,6 +36,7 @@ public class MenuManager : MonoBehaviour
 
     public void ToMainMenu()
     {
+        Time.timeScale = 1f;
         DataPresistenceManager.instance.SaveGame();
         SceneManager.LoadSceneAsync("Main Menu");
     }
