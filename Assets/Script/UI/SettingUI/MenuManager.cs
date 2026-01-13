@@ -11,21 +11,21 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
+
+        if(newGameButton == null && loadGameButton == null)
+        return;
+
         string fullPath = Path.Combine(Application.persistentDataPath, DataPresistenceManager.instance.fileName);
 
-        if (File.Exists(fullPath))
-        {
-            loadGameButton.interactable = true;
-        }
-        else
-        {
-            loadGameButton.interactable = false;
-        }
+        if (loadGameButton != null)
+        loadGameButton.interactable = File.Exists(fullPath);
     }
 
     public void OnNewGameClicked()
     {
-        DataPresistenceManager.instance.NewGame();
+        
+            DataPresistenceManager.instance.NewGame();
+
         SceneManager.LoadSceneAsync("Sekolah");
     }
 
@@ -34,13 +34,16 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadSceneAsync("Sekolah");
     }
 
+    public void ToMainMenu()
+    {
+        DataPresistenceManager.instance.SaveGame();
+        SceneManager.LoadSceneAsync("Main Menu");
+    }
     public void exitGame()
     {
+        DataPresistenceManager.instance.SaveGame();
         Application.Quit();
     }
 
-    public void ToMainMenu()
-    {
-        SceneManager.LoadSceneAsync("Main Menu");
-    }
+    
 }

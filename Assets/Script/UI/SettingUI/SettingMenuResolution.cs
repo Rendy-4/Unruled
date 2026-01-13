@@ -74,6 +74,8 @@ public class SettingMenuResolution : MonoBehaviour, IDataPresistence
 
         SelectedResolution = ResDropdown.value;
         ApplyResolution();
+
+        DataPresistenceManager.instance?.SaveGame();
     }
 
     public void OnFullscreenChanged()
@@ -82,6 +84,8 @@ public class SettingMenuResolution : MonoBehaviour, IDataPresistence
 
         IsFullScreen = FullscreenTogle.isOn;
         ApplyResolution();
+
+        DataPresistenceManager.instance?.SaveGame();
     }
 
     // ======================================
@@ -107,7 +111,13 @@ public class SettingMenuResolution : MonoBehaviour, IDataPresistence
             IsFullScreen);
     }
 
-    
+    void OnDisable()
+    {
+        if (!loadingFromSave)
+        {
+            DataPresistenceManager.instance?.SaveGame();
+        }
+    }
 
     public void LoadData(GameData data)
     {
