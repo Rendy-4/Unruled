@@ -21,4 +21,4 @@ MonoBehaviour:
     dialogueText: ywdeah sih
     portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
     expression: 0
-  completeMission: 1
+  completeMission: 2
