@@ -10,15 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f33af7d2d861f54bb5c0a732c77d098, type: 3}
-  m_Name: Dialogue2
+  m_Name: Dialogue 3
   m_EditorClassIdentifier: 
   dialogueLines:
-  - characterName: Milo
-    dialogueText: jadi gitu le
+  - characterName: Murid lain
+    dialogueText: cuy!!, kali ini kita jamkos nih, guru nya gak dateng lagi ada acara
     portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
     expression: 0
-  - characterName: Rian
-    dialogueText: ywdeah sih
+  - characterName: Milo
+    dialogueText: wah beneran nih, ya udah mending kita main aja ga sih
     portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
     expression: 0
-  completeMission: 2
+  - characterName: Milo
+    dialogueText: Rian mabar yuk!
+    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
+    expression: 0
+  - characterName: Rian
+    dialogueText: ok
+    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
+    expression: 0
+  missionToComplete: 0

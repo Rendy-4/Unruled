@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f33af7d2d861f54bb5c0a732c77d098, type: 3}
+  m_Name: 2Dialogue 2
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - characterName: Alice
+    dialogueText: Kenapa kau mengejarku sampai disini?
+    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
+    expression: 2
+  - characterName: Rian
+    dialogueText: Iya. Kenapa juga kau berlari saat ketemu aku?
+    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
+    expression: 1
+  - characterName: Alice
+    dialogueText: "eng\u2026 enggak kok, aku cuman pengen buru-buru aja"
+    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
+    expression: 1
+  - characterName: Rian
+    dialogueText: terus ngapain kamu ke belakang sekolah
+    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
+    expression: 1
+  - characterName: Alice
+    dialogueText: bukan urusanmu sudah pergi sana!
+    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
+    expression: 1
+  missionToComplete: 0
