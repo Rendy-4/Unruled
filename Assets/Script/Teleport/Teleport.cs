@@ -17,6 +17,7 @@ public class SceneTeleportTrigger : MonoBehaviour
     [Header("Player Settings")]
     public float cooldown = 1f;
     public PlayerMovement3D.MovementMode targetMode;
+    private Transform playerTransform;
 
     [Header("Camera Settings")]
     public GameObject VcamMain;
@@ -28,23 +29,26 @@ public class SceneTeleportTrigger : MonoBehaviour
 
    private void OnTriggerEnter(Collider other)
     {
-    if (isProcessing) return;
-    if (!other.CompareTag("Player")) return;
+        if (isProcessing) return;
+        if (!other.CompareTag("Player")) return;
 
-    StartCoroutine(HandlePortal(other));
+        StartCoroutine(HandlePortal(other));
     }
 
 
     private IEnumerator HandlePortal(Collider player)
-{
-    isProcessing = true;
+    {
+        isProcessing = true;
+        playerTransform = player.transform;
 
-    PlayerMovement3D controller = player.GetComponent<PlayerMovement3D>();
-    if (controller != null)
-        controller.Freeze(true);
-        controller.currentMode = targetMode;
+        PlayerMovement3D controller = playerTransform.GetComponent<PlayerMovement3D>();
+        if (controller != null)
+        {
+            controller.Freeze(true);
+            controller.currentMode = targetMode;
+        }
 
-        //Fade
+        //Fade  
         if (!string.IsNullOrEmpty(sceneText) && SceneOverlayUIController.Instance != null)
         {
             SceneOverlayUIController.Instance.PlaySceneText(
@@ -54,28 +58,23 @@ public class SceneTeleportTrigger : MonoBehaviour
             );
         }
 
-    yield return new WaitForSeconds(fadeDuration);
+        yield return new WaitForSeconds(fadeDuration);
 
-    player.transform.position = teleportTarget.position;
-    player.transform.rotation = teleportTarget.rotation;
+        if (playerTransform != null && teleportTarget != null)
+        {
+            playerTransform.position = teleportTarget.position;
+            playerTransform.rotation = teleportTarget.rotation;
+        }
 
-    yield return new WaitForSeconds(displayTime);
+        if (VcamMain != null) VcamMain.SetActive(true);
+        if (VcamTarget != null) VcamTarget.SetActive(false);
 
-    if (controller != null && controller.visualsTransform != null)
-    {
-        Vector3 newScale = controller.visualsTransform.localScale;
-        newScale.x = Mathf.Abs(newScale.x);
-        controller.visualsTransform.localScale = newScale;
+        yield return new WaitForSeconds(displayTime);
+
+        yield return new WaitForSeconds(cooldown);
+        isProcessing = false;
+
+        if (controller != null) controller.Freeze(false);
     }
-
-    if (VcamMain != null) VcamMain.SetActive(true);
-    if (VcamTarget != null) VcamTarget.SetActive(false);
-
-    yield return new WaitForSeconds(cooldown);
-    isProcessing = false;
-
-    if (controller != null)
-        controller.Freeze(false);
-}
 
 }
