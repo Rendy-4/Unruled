@@ -455,7 +455,7 @@ Transform:
   m_GameObject: {fileID: 15935622}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19, y: 1.36, z: -33}
+  m_LocalPosition: {x: 31.8, y: 1.36, z: -33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2918,7 +2918,7 @@ Transform:
   m_GameObject: {fileID: 381950001}
   serializedVersion: 2
   m_LocalRotation: {x: 0.073334284, y: 0.000000047939118, z: -0.000000004919386, w: 0.9973074}
-  m_LocalPosition: {x: 40.463333, y: -4.293034, z: -52.48268}
+  m_LocalPosition: {x: 53.26333, y: -4.293034, z: -52.48268}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3042,7 +3042,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388401697}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 617.1, y: 1, z: -1.2000008}
   m_LocalScale: {x: 1.8400002, y: 1.8399999, z: 1.8399999}
   m_ConstrainProportionsScale: 1
@@ -4076,7 +4076,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0.073334284, y: 0.000000047836036, z: -0.0000000035174925, w: 0.9973074}
-  m_LocalPosition: {x: 40.463333, y: -4.293034, z: -52.48268}
+  m_LocalPosition: {x: 53.26333, y: -4.293034, z: -52.48268}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4791,6 +4791,80 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -3500460014136483016, guid: 650b5c18332a6410383649bed5018e9d, type: 3}
   m_PrefabInstance: {fileID: 544675963}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &552380000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 552380001}
+  - component: {fileID: 552380003}
+  - component: {fileID: 552380002}
+  m_Layer: 0
+  m_Name: Teleport Keluar Kantin (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &552380001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552380000}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 47.92, y: -4.95, z: 66.3}
+  m_LocalScale: {x: 6.82, y: 7.6, z: 13.7}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1546064546}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &552380002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552380000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce70f252bdb221049951e56eb0485a9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportTarget: {fileID: 653447765}
+  sceneText: Keluar dari Kantin
+  fadeDuration: 0.5
+  displayTime: 3
+  cooldown: 1
+  targetMode: 0
+  VcamMain: {fileID: 381950001}
+  VcamTarget: {fileID: 3723939}
+--- !u!65 &552380003
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552380000}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9707813, y: 1, z: 0.39392808}
+  m_Center: {x: -1.9319823, y: 0, z: 0.30303758}
 --- !u!4 &552569006 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7253799815407847582, guid: 05ca53b720cc6dcd98842e64cede21cc, type: 3}
@@ -13904,6 +13978,7 @@ Transform:
   - {fileID: 929302777}
   - {fileID: 1122472582}
   - {fileID: 1966451139}
+  - {fileID: 552380001}
   - {fileID: 871837339}
   - {fileID: 1278401812}
   m_Father: {fileID: 1598941271}
@@ -14978,7 +15053,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625200599}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 636.28, y: 1, z: -1.2000008}
   m_LocalScale: {x: 1.8400002, y: 1.8399999, z: 1.8399999}
   m_ConstrainProportionsScale: 1
