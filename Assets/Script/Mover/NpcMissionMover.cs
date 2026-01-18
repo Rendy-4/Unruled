@@ -1,10 +1,13 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using NUnit.Framework;
 
 public class NpcMissionMover : MonoBehaviour
 {
+    [Header("Animation")]
+    public Animator animator;
+    public string walkBoolName = "isWalk";
+
     [Header("Movement Routes")]
     public List<MissionMoveRoute> routes = new List<MissionMoveRoute>();
 
@@ -26,7 +29,7 @@ public class NpcMissionMover : MonoBehaviour
 
     private void Start()
     {
-        CheckMission();
+        
     }
 
     private void CheckMission()
@@ -48,25 +51,40 @@ public class NpcMissionMover : MonoBehaviour
         }
     }
 
+    private void SetWalking(bool value)
+    {
+        if (animator == null)
+        return;
+        animator.SetBool(walkBoolName, value);
+    }
     private IEnumerator MoveRoutine(MissionMoveRoute route)
     {
         isMoving = true;
         playedMissions.Add(route.requiredMission);
+        SetWalking(true);
         foreach (Transform target in route.waypoints)
         {
             if (target == null)
             continue;
 
-            while (Vector3.Distance(transform.position, target.position) > 0.05f)
+            while (true)
             {
+                Vector3 targetposition = target.position;
+                targetposition.y = transform.position.y;
+
+            if (Vector3.Distance(transform.position, targetposition) <= 0.05f)
+                break;
+
                 transform.position = Vector3.MoveTowards(
                     transform.position,
-                    target.position,
+                    targetposition,
                     moveSpeed * Time.deltaTime
                 );
+
                 yield return null;
-            }
+            }   
         }
+        SetWalking(false);
         isMoving = false;
     }
 }
