@@ -18130,6 +18130,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1298270253}
     m_Modifications:
+    - target: {fileID: 327843914764419052, guid: 00e15acf6d0b50a78a7d5427cf7e2561, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c0bb5100e7bc294469a8672321e5760c, type: 2}
     - target: {fileID: 902020150215283844, guid: 00e15acf6d0b50a78a7d5427cf7e2561, type: 3}
       propertyPath: m_Name
       value: milo
