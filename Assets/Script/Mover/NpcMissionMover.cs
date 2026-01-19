@@ -18,6 +18,9 @@ public class NpcMissionMover : MonoBehaviour
     private bool isMoving;
     private HashSet<int> playedMissions = new HashSet<int>();
 
+    private float LockedY;
+    private bool LockYActive;
+
     private void OnEnable()
     {
         MissionManager.OnMissionUpdated += CheckMission;
@@ -61,6 +64,10 @@ public class NpcMissionMover : MonoBehaviour
     {
         isMoving = true;
         playedMissions.Add(route.requiredMission);
+
+        LockedY = transform.position.y;
+        LockYActive = true;
+
         SetWalking(true);
         foreach (Transform target in route.waypoints)
         {
@@ -85,9 +92,20 @@ public class NpcMissionMover : MonoBehaviour
             }   
         }
         SetWalking(false);
+        LockYActive = false;
         isMoving = false;
     }
+    private void LateUpdate()
+    {
+        if (!LockYActive)
+        return;
+
+        Vector3 pos = transform.position;
+        pos.y = LockedY;
+        transform.position = pos;
+    }
 }
+
 [System.Serializable]
     public class MissionMoveRoute
     {
