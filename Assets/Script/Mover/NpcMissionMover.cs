@@ -8,19 +8,26 @@ public class NpcMissionMover : MonoBehaviour
     public Animator animator;
     public string walkBoolName = "isWalk";
 
+    [Header("Interaction")]
+    public MonoBehaviour interactScript;
+    public Collider interactCollider;
+
     [Header("Movement Routes")]
     public List<MissionMoveRoute> routes = new List<MissionMoveRoute>();
 
     [Header("Movement Settings")]
     public float moveSpeed = 2f;
     public bool playOncePerMission = true;
-
     private bool isMoving;
     private HashSet<int> playedMissions = new HashSet<int>();
 
     private float LockedY;
     private bool LockYActive;
 
+    public bool IsMoving()
+    {
+        return isMoving;
+    }
     private void OnEnable()
     {
         MissionManager.OnMissionUpdated += CheckMission;
@@ -29,6 +36,7 @@ public class NpcMissionMover : MonoBehaviour
     {
         MissionManager.OnMissionUpdated -= CheckMission;
     }
+    
 
     private void Start()
     {
@@ -60,15 +68,25 @@ public class NpcMissionMover : MonoBehaviour
         return;
         animator.SetBool(walkBoolName, value);
     }
+    private void SetInteract(bool value)
+    {
+        if(interactScript != null)
+        interactScript.enabled = value;
+
+        if(interactCollider != null)
+        interactCollider.enabled = value;
+    }
     private IEnumerator MoveRoutine(MissionMoveRoute route)
     {
         isMoving = true;
         playedMissions.Add(route.requiredMission);
 
+        SetInteract(false);
+        SetWalking(true);
+
         LockedY = transform.position.y;
         LockYActive = true;
 
-        SetWalking(true);
         foreach (Transform target in route.waypoints)
         {
             if (target == null)
@@ -92,6 +110,8 @@ public class NpcMissionMover : MonoBehaviour
             }   
         }
         SetWalking(false);
+        SetInteract(true);
+
         LockYActive = false;
         isMoving = false;
     }
@@ -104,7 +124,9 @@ public class NpcMissionMover : MonoBehaviour
         pos.y = LockedY;
         transform.position = pos;
     }
+    
 }
+    
 
 [System.Serializable]
     public class MissionMoveRoute

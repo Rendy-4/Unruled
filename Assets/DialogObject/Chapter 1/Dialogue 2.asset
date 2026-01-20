@@ -29,4 +29,4 @@ MonoBehaviour:
     dialogueText: Sudah, jangan lebay.
     portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
     expression: 0
-  missionToComplete: 0
+  missionToComplete: 2

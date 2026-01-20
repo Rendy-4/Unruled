@@ -9,10 +9,12 @@ public class DialogueNPC : MonoBehaviour
     private bool playerInRange = false;
     private bool dialogueStarted = false;
     private NpcFace npcFace;
+    private NpcMissionMover missionmover;
 
     void Awake()
     {
         npcFace = GetComponent<NpcFace>();
+        missionmover = GetComponent<NpcMissionMover>();
     }
     void OnEnable()
     {
@@ -25,11 +27,16 @@ public class DialogueNPC : MonoBehaviour
     private void Update()
     {
         
-        if (playerInRange && !dialogueStarted && Input.GetKeyDown(KeyCode.Space)) //Dialog Baru
-        {
-
-            if(!playerInRange || dialogueStarted)
+            if(!playerInRange)
             return;
+            if(dialogueStarted)
+            return;
+
+        
+        if (missionmover != null & missionmover.IsMoving())
+        return;
+        
+
 
             if(!Input.GetKeyDown(KeyCode.Space))
             return;
@@ -43,7 +50,7 @@ public class DialogueNPC : MonoBehaviour
             dialogueStarted = true;
             npcFace?.Apply();
             DialogueManager.instance.StartDialogue(dialogueData);
-        }   
+         
     }
 
     private void HandleDialogueFinished(DialogueData data)
