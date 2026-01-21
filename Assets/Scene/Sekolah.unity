@@ -395,6 +395,7 @@ GameObject:
   - component: {fileID: 15935624}
   - component: {fileID: 15935623}
   - component: {fileID: 15935627}
+  - component: {fileID: 15935628}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -483,6 +484,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 3.7, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &15935628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15935622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534029d6e79df274fae70b6d10c1356f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  waypoints: []
+  playerInput: {fileID: 15935623}
+  forceWalkBool: forcewalk
+  requiredMission: 0
+  playOnce: 1
 --- !u!4 &28525000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7253799815407847582, guid: 05ca53b720cc6dcd98842e64cede21cc, type: 3}
@@ -12182,13 +12201,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fffc43d434a242647b34a63eac906525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1987471750}
+  moveSpeed: 10
+  waypoints: []
   walkBoolName: isWalk
+  interactScript: {fileID: 0}
+  interactCollider: {fileID: 0}
   routes:
   - requiredMission: 0
     waypoints:
     - {fileID: 323422874}
-  moveSpeed: 10
   playOncePerMission: 1
 --- !u!1 &1304356468
 GameObject:
@@ -18204,11 +18225,6 @@ PrefabInstance:
 --- !u!4 &1987471749 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6832095123784087461, guid: 00e15acf6d0b50a78a7d5427cf7e2561, type: 3}
-  m_PrefabInstance: {fileID: 1987471748}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1987471750 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 327843914764419052, guid: 00e15acf6d0b50a78a7d5427cf7e2561, type: 3}
   m_PrefabInstance: {fileID: 1987471748}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2000602992

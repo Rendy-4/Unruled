@@ -2,10 +2,9 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class NpcMissionMover : MonoBehaviour
+public class NpcMissionMover : MissionMover
 {
     [Header("Animation")]
-    public Animator animator;
     public string walkBoolName = "isWalk";
 
     [Header("Interaction")]
@@ -14,20 +13,8 @@ public class NpcMissionMover : MonoBehaviour
 
     [Header("Movement Routes")]
     public List<MissionMoveRoute> routes = new List<MissionMoveRoute>();
-
-    [Header("Movement Settings")]
-    public float moveSpeed = 2f;
     public bool playOncePerMission = true;
-    private bool isMoving;
     private HashSet<int> playedMissions = new HashSet<int>();
-
-    private float LockedY;
-    private bool LockYActive;
-
-    public bool IsMoving()
-    {
-        return isMoving;
-    }
     private void OnEnable()
     {
         MissionManager.OnMissionUpdated += CheckMission;
@@ -36,13 +23,6 @@ public class NpcMissionMover : MonoBehaviour
     {
         MissionManager.OnMissionUpdated -= CheckMission;
     }
-    
-
-    private void Start()
-    {
-        
-    }
-
     private void CheckMission()
     {
         if (isMoving) 
@@ -57,7 +37,7 @@ public class NpcMissionMover : MonoBehaviour
             if(playOncePerMission && playedMissions.Contains(route.requiredMission))
             return;
 
-            StartCoroutine(MoveRoutine(route));
+            StartCoroutine(Move(route));
             break;
         }
     }
@@ -76,55 +56,19 @@ public class NpcMissionMover : MonoBehaviour
         if(interactCollider != null)
         interactCollider.enabled = value;
     }
-    private IEnumerator MoveRoutine(MissionMoveRoute route)
+    private IEnumerator Move(MissionMoveRoute route)
     {
-        isMoving = true;
         playedMissions.Add(route.requiredMission);
 
         SetInteract(false);
         SetWalking(true);
 
-        LockedY = transform.position.y;
-        LockYActive = true;
+        yield return StartCoroutine(MoveThroughWaypoints());
 
-        foreach (Transform target in route.waypoints)
-        {
-            if (target == null)
-            continue;
-
-            while (true)
-            {
-                Vector3 targetposition = target.position;
-                targetposition.y = transform.position.y;
-
-            if (Vector3.Distance(transform.position, targetposition) <= 0.05f)
-                break;
-
-                transform.position = Vector3.MoveTowards(
-                    transform.position,
-                    targetposition,
-                    moveSpeed * Time.deltaTime
-                );
-
-                yield return null;
-            }   
-        }
         SetWalking(false);
-        SetInteract(true);
-
-        LockYActive = false;
-        isMoving = false;
+        SetInteract(true);  
     }
-    private void LateUpdate()
-    {
-        if (!LockYActive)
-        return;
-
-        Vector3 pos = transform.position;
-        pos.y = LockedY;
-        transform.position = pos;
-    }
-    
+   
 }
     
 

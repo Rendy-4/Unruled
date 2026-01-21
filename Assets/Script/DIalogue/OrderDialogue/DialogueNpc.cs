@@ -33,7 +33,7 @@ public class DialogueNPC : MonoBehaviour
             return;
 
         
-        if (missionmover != null & missionmover.IsMoving())
+        if (missionmover != null & missionmover.IsMoving)
         return;
         
 
