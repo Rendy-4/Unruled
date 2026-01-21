@@ -13550,6 +13550,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rian
       objectReference: {fileID: 0}
+    - target: {fileID: 6501661390972621667, guid: 0e92a88b0279206aeab0a2fa6072b02e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.9173682
+      objectReference: {fileID: 0}
+    - target: {fileID: 6501661390972621667, guid: 0e92a88b0279206aeab0a2fa6072b02e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.15293048
+      objectReference: {fileID: 0}
+    - target: {fileID: 6501661390972621667, guid: 0e92a88b0279206aeab0a2fa6072b02e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
