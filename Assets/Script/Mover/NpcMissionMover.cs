@@ -63,7 +63,7 @@ public class NpcMissionMover : MissionMover
         SetInteract(false);
         SetWalking(true);
 
-        yield return StartCoroutine(MoveThroughWaypoints());
+        yield return StartCoroutine(MoveThroughWaypoints(route.waypoints));
 
         SetWalking(false);
         SetInteract(true);  

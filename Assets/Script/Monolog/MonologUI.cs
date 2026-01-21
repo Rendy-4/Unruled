@@ -10,9 +10,19 @@ public class MonologUI : MonoBehaviour
     bool isTyping;
     Coroutine typingCouroutine;
 
+    void Awake()
+    {
+        Hide();
+    }
+
     void Update()
     {
-        if (panel.activeSelf && Input.GetKeyDown(KeyCode.Space))
+        if(!panel.activeSelf)
+        return;
+        if(!isTyping)
+        return;
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Skip();
         }
@@ -21,6 +31,9 @@ public class MonologUI : MonoBehaviour
     public void Play(string text)
     {
         currenttext = text;
+        isTyping = false;
+
+        bodyText.text = "";
         panel.SetActive(true);
 
         if(typingCouroutine != null)
