@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class SceneOverlayUIController : MonoBehaviour
 {
@@ -14,10 +15,21 @@ public class SceneOverlayUIController : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
         canvasGroup.alpha = 0;
         gameObject.SetActive(false);
     }
+
+
 
     public void PlaySceneText(
         string text,
