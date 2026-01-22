@@ -9,12 +9,9 @@ public class DialogueNPC : MonoBehaviour
     private bool playerInRange = false;
     private bool dialogueStarted = false;
     private NpcFace npcFace;
-    private NpcMissionMover missionmover;
-
     void Awake()
     {
         npcFace = GetComponent<NpcFace>();
-        missionmover = GetComponent<NpcMissionMover>();
     }
     void OnEnable()
     {
@@ -31,9 +28,6 @@ public class DialogueNPC : MonoBehaviour
             return;
             if(dialogueStarted)
             return;
-        
-        if (missionmover != null && missionmover.IsMoving)
-        return;
         
             if(!Input.GetKeyDown(KeyCode.Space))
             return;

@@ -7,7 +7,9 @@ public class AutoMoveTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!other.CompareTag("player"))
+        if(!other.CompareTag("Player"))
+        return;
+        if(playerMover == null)
         return;
         playerMover.StartMove(playerWaypoints);
 

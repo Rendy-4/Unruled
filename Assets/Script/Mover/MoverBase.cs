@@ -8,10 +8,16 @@ public class MoverBase : MonoBehaviour
 
     public IEnumerator MoveToWaypoints(Transform[] waypoints)
     {
+        if (waypoints == null || waypoints.Length == 0)
+        yield break;
+
         IsMoving = true;
 
         foreach (var wp in waypoints)
         {
+            if (wp == null)
+            continue;
+            
             while (Vector3.Distance(transform.position, wp.position) > 0.05f)
             {
                 transform.position = Vector3.MoveTowards(
