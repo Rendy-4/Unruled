@@ -7102,6 +7102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newGameButton: {fileID: 0}
   loadGameButton: {fileID: 0}
+  startText: memulai permainan...
+  fadeDuration: 1
+  displayTime: 2
 --- !u!4 &737601869 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -3545351076377288486, guid: 594f0cb5d0469a88dbc87d7e8fdf2f4d, type: 3}
