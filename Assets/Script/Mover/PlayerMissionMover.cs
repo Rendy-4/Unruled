@@ -7,6 +7,7 @@ public class PlayerMissionMover : MissionMover
     public string forceWalkBool = "forcewalk";
      [Header("Mission")]
     public int requiredMission;
+    public Transform[] waypoints;
     public bool playOnce = true;
 
     private bool hasPlayed;
@@ -44,7 +45,7 @@ public class PlayerMissionMover : MissionMover
         if(animator)
         animator.SetBool(forceWalkBool, true);
 
-        yield return StartCoroutine(MoveThroughWaypoints());
+        yield return StartCoroutine(MoveThroughWaypoints(waypoints));
 
         if(animator)
         animator.SetBool(forceWalkBool, false);

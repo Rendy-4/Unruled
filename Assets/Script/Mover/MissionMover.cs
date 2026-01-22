@@ -5,7 +5,7 @@ public class MissionMover : MonoBehaviour
 {
     [Header ("Base Movement")]
     public float moveSpeed = 2f;
-    public Transform[] waypoints;
+    
 
     protected bool isMoving;
     protected float lockedY;
@@ -18,7 +18,7 @@ public class MissionMover : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    protected IEnumerator MoveThroughWaypoints()
+    protected IEnumerator MoveThroughWaypoints(Transform[] waypoints)
     {
         isMoving = true;
         lockedY = transform.position.y;
