@@ -5,6 +5,7 @@ public class MissionMover : MonoBehaviour
 {
     [Header ("Base Movement")]
     public float moveSpeed = 2f;
+    
 
     protected bool isMoving;
     protected float lockedY;
