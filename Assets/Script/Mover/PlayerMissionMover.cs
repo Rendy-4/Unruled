@@ -7,9 +7,8 @@ public class PlayerMissionMover : MissionMover
     public string forceWalkBool = "forcewalk";
      [Header("Mission")]
     public int requiredMission;
-    public Transform[] waypoints;
     public bool playOnce = true;
-
+    public Transform[] waypoints;
     private bool hasPlayed;
    
 
