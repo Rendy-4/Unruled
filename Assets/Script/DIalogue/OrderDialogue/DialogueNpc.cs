@@ -31,13 +31,10 @@ public class DialogueNPC : MonoBehaviour
             return;
             if(dialogueStarted)
             return;
-
         
-        if (missionmover != null & missionmover.IsMoving)
+        if (missionmover != null && missionmover.IsMoving)
         return;
         
-
-
             if(!Input.GetKeyDown(KeyCode.Space))
             return;
             
@@ -63,11 +60,9 @@ public class DialogueNPC : MonoBehaviour
         if (dialogueData == null)
         return false;
 
-        if (dialogueData.missionToComplete
- >= 0)
+        if (dialogueData.missionToComplete >= 0)
         {
-            return MissionManager.Instance.currentMission == dialogueData.missionToComplete
-;
+            return MissionManager.Instance.currentMission == dialogueData.missionToComplete;
         }
         return true;
     }
@@ -87,6 +82,8 @@ public class DialogueNPC : MonoBehaviour
             Debug.Log("Player out of range");
             playerInRange = false;
             dialogueStarted = false;
+
+            if(DialogueManager.instance != null)
             DialogueManager.instance.ForceCloseDialogue();
         }
     }

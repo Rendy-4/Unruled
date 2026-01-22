@@ -396,6 +396,7 @@ GameObject:
   - component: {fileID: 15935623}
   - component: {fileID: 15935627}
   - component: {fileID: 15935628}
+  - component: {fileID: 15935629}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -483,7 +484,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 2, y: 3.7, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0.15}
 --- !u!114 &15935628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,6 +503,23 @@ MonoBehaviour:
   requiredMission: 0
   waypoints: []
   playOnce: 1
+--- !u!114 &15935629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15935622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9f7cb80f86ee84988137ed5b874f8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 15935624}
+  playerInput: {fileID: 15935623}
+  animator: {fileID: 663657539}
+  moveSpeed: 2
+  forceWalkBool: forcewalk
 --- !u!4 &28525000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7253799815407847582, guid: 05ca53b720cc6dcd98842e64cede21cc, type: 3}
@@ -2656,7 +2674,7 @@ Transform:
   m_GameObject: {fileID: 323422873}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 535.56, y: -3.84, z: 6.038}
+  m_LocalPosition: {x: 549.83, y: -3.84, z: 6.038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12225,7 +12243,9 @@ GameObject:
   - component: {fileID: 1298270259}
   - component: {fileID: 1298270260}
   - component: {fileID: 1298270261}
-  - component: {fileID: 1298270262}
+  - component: {fileID: 1298270263}
+  - component: {fileID: 1298270264}
+  - component: {fileID: 1298270265}
   m_Layer: 0
   m_Name: NPC (Milo)
   m_TagString: NPC
@@ -12332,7 +12352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expressionProfile: {fileID: 11400000, guid: 667cd9ccf20f14e4cb66218c5bdadd9d, type: 2}
---- !u!114 &1298270262
+--- !u!114 &1298270263
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12344,15 +12364,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fffc43d434a242647b34a63eac906525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 2
   walkBoolName: isWalk
+  interactCollider: {fileID: 0}
+  routes: []
+  playOncePerMission: 1
+--- !u!114 &1298270264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298270249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0e781996ca1a84dba2c2e3f145b4d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredMission: 0
+  PlayOnce: 1
+  waypoints:
+  - {fileID: 323422874}
   interactScript: {fileID: 1298270257}
   interactCollider: {fileID: 1298270258}
-  routes:
-  - requiredMission: 0
-    waypoints:
-    - {fileID: 323422874}
-  playOncePerMission: 1
+--- !u!114 &1298270265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298270249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f80c243ecd92dd04889e9740d15d29cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
 --- !u!1 &1304356468
 GameObject:
   m_ObjectHideFlags: 0
@@ -14103,7 +14150,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1465897014
 MonoBehaviour:
   m_ObjectHideFlags: 0
