@@ -3,12 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 public class NPCMover : MonoBehaviour
 {
-    public List<MissionRoute> missionRoutes;
+    [Header("Mission Settings")]
+    public int requiredMission;
+    public bool PlayOnce = true;
+
+    [Header("Waypoints")]
+    public Transform[] waypoints;
 
     [Header("Interaction Lock")]
     public MonoBehaviour interactScript;
     public Collider interactCollider;
 
+    private bool hasPlayed;
     private MoverBase baseMover;
 
     void Awake()
@@ -27,33 +33,32 @@ public class NPCMover : MonoBehaviour
 
     void CheckMission()
     {
-        int mission = MissionManager.Instance.currentMission;
+        if(baseMover.IsMoving)
+        return;
+        if(PlayOnce && hasPlayed)
+        return;
 
-        foreach (var route in missionRoutes)
-        {
-            if (route.requiredMission != mission)
-            continue;
-            if (route.PlayOnce && route.used)
-            continue;
+        if(MissionManager.Instance.currentMission != requiredMission)
+        return;
 
-            StartCoroutine(MoveNpc(route));
-            route.used = true;
-            break;
-        }
-        
-    }
-        IEnumerator MoveNpc(MissionRoute route)
+        StartCoroutine(MoveNpc());
+
+        IEnumerator MoveNpc()
         {
+            hasPlayed = true;
+
             if(interactScript)
             interactScript.enabled = false;
             if(interactCollider)
             interactCollider.enabled = false;
 
-            yield return StartCoroutine(baseMover.MoveToWaypoints(route.waypoints));
+            yield return StartCoroutine(baseMover.MoveToWaypoints(waypoints));
 
             if(interactScript)
             interactScript.enabled = true;
             if(interactCollider)
             interactCollider.enabled = true;
         }
+    }
+
 }
