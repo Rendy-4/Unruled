@@ -5,10 +5,13 @@ public class MoverBase : MonoBehaviour
 {
     public float speed = 2f;
     public bool IsMoving{get ; private set; }
+    public Animator animator;
 
     public IEnumerator MoveToWaypoints(Transform[] waypoints)
     {
         IsMoving = true;
+        if(animator != null)
+        animator.SetBool("isWalk",true);
 
         foreach (var wp in waypoints)
         {
@@ -22,6 +25,8 @@ public class MoverBase : MonoBehaviour
                 yield return null;
             }
         }
+        if(animator != null)
+        animator.SetBool("isWalk",false);
         IsMoving = false;
     }
 }

@@ -12192,6 +12192,7 @@ GameObject:
   - component: {fileID: 1298270261}
   - component: {fileID: 1298270264}
   - component: {fileID: 1298270265}
+  - component: {fileID: 1298270266}
   m_Layer: 0
   m_Name: NPC (Milo)
   m_TagString: NPC
@@ -12335,6 +12336,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  animator: {fileID: 2073795493}
+--- !u!114 &1298270266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298270249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab03aca6b2424c4aa517117c3ceaa2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcID: Milo_1
 --- !u!1 &1304356468
 GameObject:
   m_ObjectHideFlags: 0
@@ -19307,6 +19322,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.03, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &2073795493 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 327843914764419052, guid: 00e15acf6d0b50a78a7d5427cf7e2561, type: 3}
+  m_PrefabInstance: {fileID: 1987471748}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2090711346 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7253799815407847582, guid: 05ca53b720cc6dcd98842e64cede21cc, type: 3}

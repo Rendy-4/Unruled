@@ -37,7 +37,7 @@ public class NpcMissionController : MonoBehaviour
         Updatestate();
     }
 
-    void Updatestate()
+    public void Updatestate()
     {
         int mission = MissionManager.Instance.currentMission;
 
@@ -67,4 +67,26 @@ public class NpcMissionController : MonoBehaviour
             }
         }
     }
+     public void SetState(int mission, bool visible)
+    {
+        int index = System.Array.FindIndex(missionStates, s => s.missionIndex == mission);
+        if (index >= 0)
+        {
+            var state = missionStates[index];
+            if (state.targetPosition != null)
+                transform.SetPositionAndRotation(state.targetPosition.position, state.targetPosition.rotation);
+
+            foreach (var r in renderers)
+                r.enabled = visible;
+
+            if (npcCollider != null)
+                npcCollider.enabled = visible;
+        }
+    }
+    public bool IsVisible()
+    {
+    return renderers.Length > 0 && renderers[0].enabled;
+    }
+
+    
 }

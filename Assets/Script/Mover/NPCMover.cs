@@ -66,6 +66,9 @@ public class NPCMover : MonoBehaviour
 
         UnlockInteraction();
         isRunning = false;
+        var missionController = GetComponent<NpcMissionController>();
+        if (missionController != null)
+            missionController.Updatestate();
     }
 
     void LockInteraction()
@@ -79,4 +82,12 @@ public class NPCMover : MonoBehaviour
         if (interactScript) interactScript.enabled = true;
         if (interactCollider) interactCollider.enabled = true;
     }
+    public int GetLastPlayedMission()
+    {
+        int max = 0;
+        foreach (int m in playedMissions)
+            if (m > max) max = m;
+        return max;
+    }
+
 }
