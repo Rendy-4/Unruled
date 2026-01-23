@@ -1,20 +1,25 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+
+[System.Serializable]
+public class MissionMoveData
+{
+    public int requiredMission;
+    public bool playOnce = true;
+    public Transform[] waypoints;
+}
 public class NPCMover : MonoBehaviour
 {
-    [Header("Mission Settings")]
-    public int requiredMission;
-    public bool PlayOnce = true;
-
-    [Header("Waypoints")]
-    public Transform[] waypoints;
+    [Header("Mission Moves")]
+    public List<MissionMoveData> missionMoves;
 
     [Header("Interaction Lock")]
     public MonoBehaviour interactScript;
     public Collider interactCollider;
 
-    private bool hasPlayed;
+    private HashSet<int> playedMissions = new HashSet<int>();
+    private bool isRunning;
     private MoverBase baseMover;
 
     void Awake()
@@ -26,6 +31,7 @@ public class NPCMover : MonoBehaviour
     {
         MissionManager.OnMissionUpdated += CheckMission;
     }
+
     void OnDisable()
     {
         MissionManager.OnMissionUpdated -= CheckMission;
@@ -33,32 +39,44 @@ public class NPCMover : MonoBehaviour
 
     void CheckMission()
     {
-        if(baseMover.IsMoving)
-        return;
-        if(PlayOnce && hasPlayed)
-        return;
+        if (isRunning || baseMover.IsMoving)
+            return;
 
-        if(MissionManager.Instance.currentMission != requiredMission)
-        return;
-
-        StartCoroutine(MoveNpc());
-
-        IEnumerator MoveNpc()
+        foreach (var move in missionMoves)
         {
-            hasPlayed = true;
+            if (move.requiredMission != MissionManager.Instance.currentMission)
+                continue;
 
-            if(interactScript)
-            interactScript.enabled = false;
-            if(interactCollider)
-            interactCollider.enabled = false;
+            if (move.playOnce && playedMissions.Contains(move.requiredMission))
+                continue;
 
-            yield return StartCoroutine(baseMover.MoveToWaypoints(waypoints));
-
-            if(interactScript)
-            interactScript.enabled = true;
-            if(interactCollider)
-            interactCollider.enabled = true;
+            StartCoroutine(RunMove(move));
+            break;
         }
     }
 
+    IEnumerator RunMove(MissionMoveData move)
+    {
+        isRunning = true;
+        playedMissions.Add(move.requiredMission);
+
+        LockInteraction();
+
+        yield return StartCoroutine(baseMover.MoveToWaypoints(move.waypoints));
+
+        UnlockInteraction();
+        isRunning = false;
+    }
+
+    void LockInteraction()
+    {
+        if (interactScript) interactScript.enabled = false;
+        if (interactCollider) interactCollider.enabled = false;
+    }
+
+    void UnlockInteraction()
+    {
+        if (interactScript) interactScript.enabled = true;
+        if (interactCollider) interactCollider.enabled = true;
+    }
 }
