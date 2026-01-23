@@ -11920,10 +11920,12 @@ MonoBehaviour:
   missionMoves:
   - requiredMission: 0
     playOnce: 1
+    isTeleport: 0
     waypoints:
     - {fileID: 1560653078781746939}
   - requiredMission: 1
     playOnce: 1
+    isTeleport: 0
     waypoints:
     - {fileID: 2689267420885798483}
   interactScript: {fileID: 1298270257}
@@ -13794,7 +13796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1465897014
 MonoBehaviour:
   m_ObjectHideFlags: 0

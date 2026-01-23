@@ -92,9 +92,9 @@ MonoBehaviour:
   - characterName: Alice
     dialogueText: Dan ingat, jangan ceritakan hal ini kepada siapapun.
     portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 1
+    expression: 2
   - characterName: Rian
-    dialogueText: . . . . (Hening)
+    dialogueText: hmm, aku paham kok
     portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
-    expression: 1
+    expression: 2
   missionToComplete: 0
