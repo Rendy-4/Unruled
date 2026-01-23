@@ -1,12 +1,14 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 [System.Serializable]
 public class MissionMoveData
 {
     public int requiredMission;
     public bool playOnce = true;
+    public bool isTeleport = false;
     public Transform[] waypoints;
 }
 public class NPCMover : MonoBehaviour
@@ -61,8 +63,22 @@ public class NPCMover : MonoBehaviour
         playedMissions.Add(move.requiredMission);
 
         LockInteraction();
+        if (move.isTeleport)
+        {
+            if(move.waypoints != null && move.waypoints.Length > 0)
+            {
+                transform.SetPositionAndRotation(
+                move.waypoints[move.waypoints.Length - 1].position,
+                move.waypoints[move.waypoints.Length - 1].rotation
+            );
+            }
+        }
+        else
+        {
+         yield return StartCoroutine(baseMover.MoveToWaypoints(move.waypoints));   
+        }
 
-        yield return StartCoroutine(baseMover.MoveToWaypoints(move.waypoints));
+        
 
         UnlockInteraction();
         isRunning = false;
@@ -88,6 +104,15 @@ public class NPCMover : MonoBehaviour
         foreach (int m in playedMissions)
             if (m > max) max = m;
         return max;
+    }
+     public void MarkMissionPlayed(int mission)
+    {
+        playedMissions.Add(mission);
+    }
+
+    public bool HasPlayedMissions()
+    {
+        return playedMissions.Count > 0;
     }
 
 }

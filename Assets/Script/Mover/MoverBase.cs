@@ -13,8 +13,7 @@ public class MoverBase : MonoBehaviour
         if(animator != null)
         animator.SetBool("isWalk",true);
 
-        foreach (var wp in waypoints)
-        {
+       foreach (var wp in waypoints){
             while (Vector3.Distance(transform.position, wp.position) > 0.05f)
             {
                 transform.position = Vector3.MoveTowards(
