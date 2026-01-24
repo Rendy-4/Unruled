@@ -13,12 +13,24 @@ MonoBehaviour:
   m_Name: Dialogue 4
   m_EditorClassIdentifier: 
   dialogueLines:
-  - characterName: Milo
-    dialogueText: Bro aku duluan ya, ada kegiatan pramuka sama yang lainnya nih
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
+  - characterName: Murid lain
+    dialogueText: cuy!!, kali ini kita jamkos nih, guru nya gak dateng lagi ada acara
+    portraitSprite: {fileID: 0}
     expression: 0
-  - characterName: Rian
-    dialogueText: Oh ya, aku duluan kalau begitu!
+  - characterName: Milo
+    dialogueText: wah beneran nih, ya udah mending kita main aja ga sih
     portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
     expression: 0
-  missionToComplete: 0
+  - characterName: Milo
+    dialogueText: Rian mabar yuk!
+    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
+    expression: 0
+  - characterName: Rian
+    dialogueText: ok
+    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
+    expression: 0
+  - characterName: 
+    dialogueText: '"tanpa sadar mereka menghabiskan waktu hingga jam pulang tiba"'
+    portraitSprite: {fileID: 0}
+    expression: 0
+  missionToComplete: 10
