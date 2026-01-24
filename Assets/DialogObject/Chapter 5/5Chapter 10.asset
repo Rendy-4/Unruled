@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f33af7d2d861f54bb5c0a732c77d098, type: 3}
+  m_Name: 5Chapter 10
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - characterName: Bu Erika
+    dialogueText: Kamu nggak harus ceritakan semuanya sekaligus. Kita mulai dari
+      apa yang kamu nyaman bagi dulu.
+    portraitSprite: {fileID: 0}
+    expression: 0
+  - characterName: Alice
+    dialogueText: "Aku\u2026 cuma\u2026 lagi capek, Bu."
+    portraitSprite: {fileID: 0}
+    expression: 0
+  - characterName: Bu Erika
+    dialogueText: Itu tidak berarti kamu lemah. Capek itu manusiawi.
+    portraitSprite: {fileID: 0}
+    expression: 0
+  - characterName: Alice
+    dialogueText: "Aku\u2026 bukan mau mengeluh. Aku cuma\u2026 bingung harus gimana."
+    portraitSprite: {fileID: 0}
+    expression: 0
+  - characterName: Bu Erika
+    dialogueText: Kita cari jawabannya pelan-pelan. Kamu sudah ambil langkah besar
+      hari ini.
+    portraitSprite: {fileID: 0}
+    expression: 0
+  - characterName: Alice
+    dialogueText: "(napasnya pecah hampir tak terdengar) \u2026Iya, Bu."
+    portraitSprite: {fileID: 0}
+    expression: 0
+  missionToComplete: 0

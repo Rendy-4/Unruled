@@ -12,6 +12,7 @@ public class NotifInteract : MonoBehaviour
     [Header("Cinemachine Settings")]
     public GameObject VcamMain;
     public GameObject VcamTarget;
+    public GameObject[] AllVcamsToDisable;
 
     [Header("Movement Settings")]
     public PlayerMovement3D.MovementMode targetMode;
@@ -57,14 +58,40 @@ public class NotifInteract : MonoBehaviour
                 movement.visualsTransform.localScale = newScale;
             }
         }
-        if (VcamMain != null && VcamTarget != null)
-        {
-            VcamMain.SetActive(false);
-            VcamTarget.SetActive(true);
-        }
+        // Handle Cinemachine Vcams
+        SwicthCinemachineVcams();
         yield return new WaitForSeconds(1.5f);
 
         if (movement != null) movement.Freeze(false);
+    }
+
+    private void SwicthCinemachineVcams()
+    {
+        if (VcamMain != null)
+        {
+            VcamMain.SetActive(false);
+        }
+        if (AllVcamsToDisable != null)
+        {
+            foreach (GameObject vcam in AllVcamsToDisable)
+            {
+                if (vcam != null)
+                {
+                    vcam.SetActive(false);
+                }
+            }
+        }
+        if (VcamTarget != null)
+        {
+            VcamTarget.SetActive(true);
+        }
+        else
+        {
+            if (VcamMain != null)
+            {
+                VcamMain.SetActive(true);
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)

@@ -10,30 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f33af7d2d861f54bb5c0a732c77d098, type: 3}
-  m_Name: 3Chapter 1
+  m_Name: 3Chapter 2
   m_EditorClassIdentifier: 
   dialogueLines:
   - characterName: Ayah
-    dialogueText: '(suara tinggi dari ruang tamu) Aku
-
-      udah bilang jangan ambil
-      keputusan besar tanpa diskusi dulu!'
+    dialogueText: (berhenti bicara)
+    portraitSprite: {fileID: 0}
+    expression: 0
+  - characterName: Alice
+    dialogueText: "\u2026Aku pulang."
     portraitSprite: {fileID: 0}
     expression: 0
   - characterName: Ibu
-    dialogueText: (di ruang tamu, emosi tertahan) Diskusi apa? Kamu bahkan tidak
-      pernah ada! Yang kamu tahu cuma kerja dan pulang marah!
+    dialogueText: "(berusaha bersikap normal, canggung) \u201Coh Alice, Kamu sudah
+      makan?\u201D"
     portraitSprite: {fileID: 0}
     expression: 0
-  - characterName: Ayah
-    dialogueText: Ini tentang masa depan, bukan soal ego kamu!
-    portraitSprite: {fileID: 0}
-    expression: 0
-  - characterName: Ayah
-    dialogueText: '(suara tinggi dari ruang tamu) Aku
-
-      udah bilang jangan ambil
-      keputusan besar tanpa diskusi dulu!'
+  - characterName: Alice
+    dialogueText: (datar, tanpa emosi) Belum. Ga lapar.
     portraitSprite: {fileID: 0}
     expression: 0
   - characterName: Ibu
