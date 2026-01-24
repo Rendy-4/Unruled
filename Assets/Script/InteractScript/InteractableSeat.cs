@@ -10,8 +10,11 @@ public class InteractableSeat : MonoBehaviour
     [Header("Seat Settings")]
     public Transform seatPosition;
     public Transform standPosition;
+    public bool faceRight = true;
 
     private string sittingBool = "IsSitting";
+    
+    
 
     private bool playerInRange = false;
     private bool isSitting = false;
@@ -50,6 +53,16 @@ public class InteractableSeat : MonoBehaviour
 
             player.transform.position = seatPosition.position;
             player.transform.rotation = seatPosition.rotation;
+
+            if (playerMovent.visualsTransform != null)
+            {
+                Vector3 curentScale = playerMovent.visualsTransform.localScale;
+                float facingDirection = faceRight ? 1f : -1f;
+
+                curentScale.x = Mathf.Abs(curentScale.x) * facingDirection;
+                
+                playerMovent.visualsTransform.localScale = curentScale;
+            }
 
             if (playerCollider != null)
                 playerCollider.enabled = true;
