@@ -53,6 +53,6 @@ public class NotifF : MonoBehaviour
     {
         if (MissionManager.Instance == null) return false;
 
-        return MissionManager.Instance.currentMission >= requiredMission;
+        return MissionManager.Instance.currentMission == requiredMission;
     }
 }
