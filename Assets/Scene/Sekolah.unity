@@ -396,6 +396,7 @@ GameObject:
   - component: {fileID: 15935623}
   - component: {fileID: 15935627}
   - component: {fileID: 15935629}
+  - component: {fileID: 15935630}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -501,6 +502,21 @@ MonoBehaviour:
   animator: {fileID: 663657539}
   moveSpeed: 1
   forceWalkBool: forcewalk
+--- !u!114 &15935630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15935622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 923099aabc341e54daa8061e6860e6f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalSpeed: 5
+  sprintSpeed: 15
+  isSprinting: 0
 --- !u!4 &28525000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7253799815407847582, guid: 05ca53b720cc6dcd98842e64cede21cc, type: 3}
