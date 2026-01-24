@@ -14,11 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - characterName: Alice
-    dialogueText: Tapi aku masih belum selesai, aku tahu ini bakalan berat.
+    dialogueText: Thanks. Tapi jangan pikir aku bakal curhat tiap hari.
     portraitSprite: {fileID: 0}
     expression: 0
   - characterName: Rian
-    dialogueText: Ya. Dan kamu yang akan menjalaninya. Tapi kamu nggak mulai sendirian.
+    dialogueText: Lah, siapa juga yang minta. Aku cuma duduk doang tadi.
+    portraitSprite: {fileID: 0}
+    expression: 0
+  - characterName: 'Alice '
+    dialogueText: "ye\u2026, Bodo amat."
     portraitSprite: {fileID: 0}
     expression: 0
   missionToComplete: 0
