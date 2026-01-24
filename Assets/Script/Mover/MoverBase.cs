@@ -5,6 +5,7 @@ public class MoverBase : MonoBehaviour
 {
     public float speed = 2f;
     public bool IsMoving{get ; private set; }
+    private Coroutine moveRoutine;
     public Animator animator;
 
     public IEnumerator MoveToWaypoints(Transform[] waypoints)
@@ -27,5 +28,18 @@ public class MoverBase : MonoBehaviour
         if(animator != null)
         animator.SetBool("isWalk",false);
         IsMoving = false;
+    }
+    public void StartMove(MonoBehaviour owner, Transform[] waypoints)
+    {
+       StopMove();
+       moveRoutine = owner.StartCoroutine(MoveToWaypoints(waypoints)); 
+    }
+    public void StopMove()
+    {
+        if (moveRoutine != null)
+        {
+            StopCoroutine(moveRoutine);
+            moveRoutine = null;
+        }
     }
 }

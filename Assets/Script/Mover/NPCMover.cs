@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+
 
 [System.Serializable]
 public class MissionMoveData
@@ -52,6 +52,9 @@ public class NPCMover : MonoBehaviour
             if (move.playOnce && playedMissions.Contains(move.requiredMission))
                 continue;
 
+                if(isRunning && !move.isTeleport)
+                return;
+
             StartCoroutine(RunMove(move));
             break;
         }
@@ -61,6 +64,8 @@ public class NPCMover : MonoBehaviour
     {
         isRunning = true;
         playedMissions.Add(move.requiredMission);
+
+        baseMover.StopMove();
 
         LockInteraction();
         if (move.isTeleport)
