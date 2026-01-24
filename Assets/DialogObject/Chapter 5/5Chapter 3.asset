@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f33af7d2d861f54bb5c0a732c77d098, type: 3}
+  m_Name: 5Chapter 3
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - characterName: Alice
+    dialogueText: "(menelan nafas, pelan) Aku selalu kepikiran\u2026 jika terus begini,
+      aku hanya akan capek sendirian.\r\n"
+    portraitSprite: {fileID: 0}
+    expression: 0
+  - characterName: Rian
+    dialogueText: "(pelan, bukan memuji, hanya mengakui) Itu kedengarannya\u2026
+      jujur. Dan berani."
+    portraitSprite: {fileID: 0}
+    expression: 0
+  - characterName: Alice
+    dialogueText: "(mendengus kecil, tapi bukan marah) Jangan digedein. Aku cuma\u2026
+      capek aja."
+    portraitSprite: {fileID: 0}
+    expression: 0
+  - characterName: Rian
+    dialogueText: "Capek juga butuh tempat buat berhenti. Jadi\u2026 kamu mau minta
+      bantuan?"
+    portraitSprite: {fileID: 0}
+    expression: 0
+  missionToComplete: 0

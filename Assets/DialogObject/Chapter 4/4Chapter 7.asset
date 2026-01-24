@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f33af7d2d861f54bb5c0a732c77d098, type: 3}
+  m_Name: 4Chapter 7
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - characterName: Rian
+    dialogueText: "...Ini aku Rian. Maaf\u2026 aku nggak sengaja ngeliat tadi."
+    portraitSprite: {fileID: 0}
+    expression: 0
+  - characterName: 'Alice '
+    dialogueText: "(refleks cepat menghapus sisa air mata, nadanya dibuat tegas)
+      Hah? Enggak kok, aku nggak nangis.\r\nCuma\u2026 angin. Debu. bukan apa - apa."
+    portraitSprite: {fileID: 0}
+    expression: 0
+  - characterName: Rian
+    dialogueText: Aku nggak bilang kamu nangis, kan?
+    portraitSprite: {fileID: 0}
+    expression: 0
+  - characterName: 'Alice '
+    dialogueText: (terdiam. Tersenyum tipis, pahit) Tapi, tadi kamu lihatkan?
+    portraitSprite: {fileID: 0}
+    expression: 0
+  - characterName: Rian
+    dialogueText: "Kalau\u2026 kamu butuh teman ngobrol, bilang aja, Aku nggak bakal
+      mengejek atau ribut."
+    portraitSprite: {fileID: 0}
+    expression: 0
+  - characterName: Alice
+    dialogueText: (menatap jauh, bukan menolak, tapi takut membuka diri) Teman ngobrol?
+      Kamu pikir semua selesai cuma dengan ngobrol?
+    portraitSprite: {fileID: 0}
+    expression: 0
+  - characterName: Rian
+    dialogueText: "Nggak juga sih. Tapi kadang\u2026 mulai dari situ bikin beban
+      nggak seberat itu."
+    portraitSprite: {fileID: 0}
+    expression: 0
+  missionToComplete: 0
