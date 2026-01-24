@@ -9,6 +9,11 @@ public class MonologUI : MonoBehaviour
     string currenttext;
     bool isTyping;
     Coroutine typingCouroutine;
+    [Header("Auto Hide")]
+    public float autoHideDelay = 1.5f;
+    public float fadeDuration = 0.4f;
+
+    public CanvasGroup canvasGroup;
 
     void Awake()
     {
@@ -34,6 +39,7 @@ public class MonologUI : MonoBehaviour
         isTyping = false;
 
         bodyText.text = "";
+        canvasGroup.alpha = 1f;
         panel.SetActive(true);
 
         if(typingCouroutine != null)
@@ -53,6 +59,7 @@ public class MonologUI : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
         isTyping = false;
+        StartCoroutine(AutoHide());
     }
 
     void Skip()
@@ -68,6 +75,18 @@ public class MonologUI : MonoBehaviour
     public void Hide()
     {
         panel.SetActive(false);
+    }
+    IEnumerator AutoHide()
+    {
+        yield return new WaitForSeconds(autoHideDelay);
+
+        float time = 0f;
+        while (time < fadeDuration)
+        {
+            time += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(1f, 0f, time / fadeDuration);
+            yield return null;
+        }
     }
 
     public bool IsTyping()
