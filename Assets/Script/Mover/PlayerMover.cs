@@ -5,7 +5,7 @@ public class PlayerMover : MonoBehaviour
 {
     [Header("References")]
     public Rigidbody rb;
-    public MonoBehaviour playerInput;   
+    public PlayerMovement3D playerMovement; // drag di inspector
     public Animator animator;
 
     [Header("Movement")]
@@ -16,8 +16,9 @@ public class PlayerMover : MonoBehaviour
 
     public void StartMove(Transform[] waypoints)
     {
-        if(IsMoving)
-        return;
+        if (IsMoving || waypoints == null || waypoints.Length == 0)
+            return;
+
         StartCoroutine(AutoMoveRoutine(waypoints));
     }
 
@@ -25,38 +26,47 @@ public class PlayerMover : MonoBehaviour
     {
         IsMoving = true;
 
-        if(playerInput)
-        playerInput.enabled = false;
-        if(rb)
-        rb.isKinematic = true;
-        if(animator)
-        animator.SetBool(forceWalkBool, true);
+        // 🔒 LOCK PLAYER CONTROL (AMAN)
+        if (playerMovement)
+            playerMovement.enabled = false;
+
+        if (rb)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            rb.isKinematic = true;
+        }
+
+        if (animator)
+            animator.SetBool(forceWalkBool, true);
 
         foreach (Transform target in waypoints)
         {
+            if (!target) continue;
 
-            if(target == null)
-            continue;
+            Vector3 targetPos = target.position;
+            targetPos.y = transform.position.y;
 
-                while (Vector3.Distance(transform.position, target.position) > 0.05f)
+            while (Vector3.Distance(transform.position, targetPos) > 0.05f)
             {
-            Vector3 pos = target.position;
-            pos.y = transform.position.y;
-
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                pos,
-                moveSpeed * Time.deltaTime
+                transform.position = Vector3.MoveTowards(
+                    transform.position,
+                    targetPos,
+                    moveSpeed * Time.deltaTime
                 );
                 yield return null;
             }
-        } 
-        if(animator)
-        animator.SetBool(forceWalkBool, false); 
-        if(rb)
-        rb.isKinematic = false;
-        if(playerInput)
-        playerInput.enabled = true;
+        }
+
+        // 🔓 UNLOCK PLAYER CONTROL
+        if (animator)
+            animator.SetBool(forceWalkBool, false);
+
+        if (rb)
+            rb.isKinematic = false;
+
+        if (playerMovement)
+            playerMovement.enabled = true;
 
         IsMoving = false;
     }

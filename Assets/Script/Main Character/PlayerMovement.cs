@@ -61,7 +61,6 @@ public class PlayerMovement3D : MonoBehaviour, IDataPresistence
             rb.angularVelocity = Vector3.zero;
         }
     }
-
     public void LoadData(GameData data)
     {
         transform.position = data.playerPosistion;

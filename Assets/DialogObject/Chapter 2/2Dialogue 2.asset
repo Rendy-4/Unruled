@@ -33,4 +33,4 @@ MonoBehaviour:
     dialogueText: bukan urusanmu sudah pergi sana!
     portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
     expression: 1
-  missionToComplete: 0
+  missionToComplete: 18
