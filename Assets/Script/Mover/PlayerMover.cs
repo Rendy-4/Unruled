@@ -5,7 +5,7 @@ public class PlayerMover : MonoBehaviour
 {
     [Header("References")]
     public Rigidbody rb;
-    public PlayerMovement3D playerMovement; // drag di inspector
+    public PlayerMovement3D playerMovement;
     public Animator animator;
 
     [Header("Movement")]
@@ -26,7 +26,7 @@ public class PlayerMover : MonoBehaviour
     {
         IsMoving = true;
 
-        // 🔒 LOCK PLAYER CONTROL (AMAN)
+        
         if (playerMovement)
             playerMovement.enabled = false;
 
@@ -58,7 +58,7 @@ public class PlayerMover : MonoBehaviour
             }
         }
 
-        // 🔓 UNLOCK PLAYER CONTROL
+       
         if (animator)
             animator.SetBool(forceWalkBool, false);
 
