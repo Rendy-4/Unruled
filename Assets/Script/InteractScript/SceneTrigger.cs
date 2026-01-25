@@ -6,6 +6,10 @@ public class SceneMissionTrigger : MonoBehaviour
     [Header("Mission")]
     public int missionOrder;
 
+    [Header("UI Interact")]
+    public GameObject pressFUI;
+    public KeyCode interactKey = KeyCode.F;
+
     [Header("Scene Text")]
     [TextArea(3, 6)]
     public string sceneText;
@@ -14,38 +18,72 @@ public class SceneMissionTrigger : MonoBehaviour
     public float fadeDuration = 0.5f;
     public float displayTime = 1.5f;
 
-    [Header("Freeze Player (Optional)")]
+    [Header("Freeze Player")]
     public bool freezePlayer = true;
-    public float freezeDuration = 0.5f;
 
     [Header("Teleport (Optional)")]
-    public bool useTeleport = false;
+    public bool useTeleport = true;
     public Transform teleportTarget;
 
+    private bool playerInRange;
     private bool sudahSelesai;
+    private Transform playerTransform;
 
-    private void OnTriggerEnter(Collider other)
+    void Start()
+    {
+        if (pressFUI != null)
+            pressFUI.SetActive(false);
+    }
+
+    void Update()
+    {
+        if (!playerInRange || sudahSelesai)
+            return;
+
+        if (Input.GetKeyDown(interactKey))
+        {
+            bool valid = MissionManager.Instance.ValidateMission(missionOrder);
+            if (!valid) return;
+
+            StartCoroutine(HandleScene());
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
     {
         if (sudahSelesai) return;
         if (!other.CompareTag("Player")) return;
 
-        bool valid = MissionManager.Instance.ValidateMission(missionOrder);
-        if (!valid) return;
+        playerInRange = true;
+        playerTransform = other.transform;
 
-        StartCoroutine(HandleScene(other));
+        if (pressFUI != null)
+            pressFUI.SetActive(true);
     }
 
-    private IEnumerator HandleScene(Collider player)
+    void OnTriggerExit(Collider other)
+    {
+        if (!other.CompareTag("Player")) return;
+
+        playerInRange = false;
+        playerTransform = null;
+
+        if (pressFUI != null)
+            pressFUI.SetActive(false);
+    }
+
+    IEnumerator HandleScene()
     {
         sudahSelesai = true;
 
-        PlayerMovement3D controller = player.GetComponent<PlayerMovement3D>();
+        if (pressFUI != null)
+            pressFUI.SetActive(false);
 
-        // ▶ Freeze player
+        PlayerMovement3D controller = playerTransform.GetComponent<PlayerMovement3D>();
+
         if (freezePlayer && controller != null)
             controller.Freeze(true);
 
-        // ▶ Scene overlay
         if (!string.IsNullOrEmpty(sceneText) &&
             SceneOverlayUIController.Instance != null)
         {
@@ -56,23 +94,19 @@ public class SceneMissionTrigger : MonoBehaviour
             );
         }
 
-        // ⏳ Tunggu fade in
         yield return new WaitForSeconds(fadeDuration);
 
-        // ▶ Teleport (optional)
         if (useTeleport && teleportTarget != null)
         {
-            player.transform.position = teleportTarget.position;
+            playerTransform.position = teleportTarget.position;
+            playerTransform.rotation = teleportTarget.rotation;
         }
 
-        // ⏳ Tunggu display
         yield return new WaitForSeconds(displayTime);
 
-        // ▶ Unfreeze
         if (freezePlayer && controller != null)
             controller.Freeze(false);
 
-        // ▶ Matikan trigger
         GetComponent<Collider>().enabled = false;
     }
 }
