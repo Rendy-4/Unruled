@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NotifF : MonoBehaviour
+public class Notif : MonoBehaviour
 {
     [Header("UI")]
     public Image pressFUI;
@@ -21,11 +21,6 @@ public class NotifF : MonoBehaviour
     {
         if (!playerInRange) return;
         if (!CanInteract()) return;
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            Debug.Log("F ditekan → siap dialog / monolog");
-        }
     }
 
     void OnTriggerEnter(Collider other)
