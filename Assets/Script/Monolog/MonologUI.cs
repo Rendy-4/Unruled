@@ -28,11 +28,6 @@ public class MonologUI : MonoBehaviour
         return;
         if(!isTyping)
         return;
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Skip();
-        }
     }
 
     public void Play(string text)
@@ -62,18 +57,6 @@ public class MonologUI : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
         isTyping = false;
-        StartAutoHide();
-    }
-
-    void Skip()
-    {
-        if(!isTyping)
-        return;
-
-        StopCoroutine(typingCouroutine);
-        bodyText.text = currenttext;
-        isTyping = false;
-
         StartAutoHide();
     }
 
