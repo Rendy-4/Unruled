@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ecac9c42e332271aca7c585f10abeae4
+guid: ec9bd600b5183e94b855587cd9309dcd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7455303052798692335
-    second: Tak berjudul105_20251212075146_0
+      213: -7125492961162913332
+    second: Milo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tak berjudul105_20251212075146_0
+      name: Milo_0
       rect:
         serializedVersion: 2
         x: 421
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: feb83fa60ae867760800000000000000
-      internalID: 7455303052798692335
+      spriteID: cc9965087e92d1d90800000000000000
+      internalID: -7125492961162913332
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tak berjudul105_20251212075146_0: 7455303052798692335
+      Milo_0: -7125492961162913332
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

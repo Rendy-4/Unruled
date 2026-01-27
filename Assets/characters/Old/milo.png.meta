@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5fa7cee959baad64ca70a2e7e73180ac
+guid: ecac9c42e332271aca7c585f10abeae4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2823772571983056389
-    second: Rian_0
+      213: 7455303052798692335
+    second: Tak berjudul105_20251212075146_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rian_0
+      name: Tak berjudul105_20251212075146_0
       rect:
         serializedVersion: 2
-        x: 114
+        x: 421
         y: 0
-        width: 1850
-        height: 2952
+        width: 1773
+        height: 2857
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bf175788ec1ffc8d0800000000000000
-      internalID: -2823772571983056389
+      spriteID: feb83fa60ae867760800000000000000
+      internalID: 7455303052798692335
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Rian_0: -2823772571983056389
+      Tak berjudul105_20251212075146_0: 7455303052798692335
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
