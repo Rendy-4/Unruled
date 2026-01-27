@@ -2388,7 +2388,7 @@ Transform:
   m_GameObject: {fileID: 264243920}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.07, y: -2.83, z: 35.3}
+  m_LocalPosition: {x: 30.07, y: -3.84, z: 35.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6687,6 +6687,7 @@ GameObject:
   - component: {fileID: 602624800}
   - component: {fileID: 602624799}
   - component: {fileID: 602624798}
+  - component: {fileID: 602624802}
   m_Layer: 0
   m_Name: ToCH2
   m_TagString: Untagged
@@ -6722,8 +6723,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missionOrder: 16
-  pressFUI: {fileID: 1834784914}
-  interactKey: 102
   sceneText: 'Hari berikutnya. Rian berjalan ke kelas bersama Milo.
 
 '
@@ -6806,6 +6805,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602624796}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &602624802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602624796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11801e490d06e974ca6cef44fb99f6d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressFUI: {fileID: 1834784916}
+  requiredMission: 16
 --- !u!1 &602670489
 GameObject:
   m_ObjectHideFlags: 0
@@ -11623,7 +11636,7 @@ Transform:
   m_GameObject: {fileID: 976587230}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36.7, y: 0, z: 13.58}
+  m_LocalPosition: {x: 7.6, y: 0, z: 13.58}
   m_LocalScale: {x: 1, y: 1, z: 4.73}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16396,8 +16409,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missionOrder: 19
-  pressFUI: {fileID: 1834784914}
-  interactKey: 102
   sceneText: "Alice pun pergi dengan terburu - buru. setelah itu Rian pergi kembali
     ke dalam kelas. \r\nRian masuk kelas, meletakkan tas. Milo datang dengan wajah
     nyengir seperti biasa.\r\n"
