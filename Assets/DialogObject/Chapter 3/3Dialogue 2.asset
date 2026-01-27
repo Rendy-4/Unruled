@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f33af7d2d861f54bb5c0a732c77d098, type: 3}
+  m_Name: 3Dialogue 2
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - characterName: 
+    dialogueText: '. . . . '
+    portraitSprite: {fileID: 0}
+    expression: 0
+  - characterName: Alice
+    dialogueText: Aku sebenarnya ingin bilang ini dari kemaren
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
+    expression: 0
+  - characterName: Rian
+    dialogueText: jadi kamu mau bilang apa?
+    portraitSprite: {fileID: -2823772571983056389, guid: 5fa7cee959baad64ca70a2e7e73180ac, type: 3}
+    expression: 0
+  - characterName: Alice
+    dialogueText: 'Huft . . . '
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
+    expression: 0
+  - characterName: Alice
+    dialogueText: Aku nggak mau terus lari. Tapi aku juga nggak tau harus ngapain
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
+    expression: 0
+  - characterName: Rian
+    dialogueText: . . . . bagaimana kalau kita ke BK. Untuk konsultasi
+    portraitSprite: {fileID: -2823772571983056389, guid: 5fa7cee959baad64ca70a2e7e73180ac, type: 3}
+    expression: 0
+  - characterName: Rian
+    dialogueText: . . . . bagaimana kalau kita ke BK. Untuk konsultasi
+    portraitSprite: {fileID: -2823772571983056389, guid: 5fa7cee959baad64ca70a2e7e73180ac, type: 3}
+    expression: 0
+  - characterName: Alice
+    dialogueText: . . . beneran nih?
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
+    expression: 0
+  - characterName: Alice
+    dialogueText: . . . beneran nih?
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
+    expression: 0
+  - characterName: Rian
+    dialogueText: Iya. Sekarang. Biar kamu nggak bimbang lagi
+    portraitSprite: {fileID: -2823772571983056389, guid: 5fa7cee959baad64ca70a2e7e73180ac, type: 3}
+    expression: 0
+  - characterName: Alice
+    dialogueText: hmmm . . . Oke
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
+    expression: 0
+  missionToComplete: 29

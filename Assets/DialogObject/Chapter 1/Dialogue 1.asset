@@ -15,30 +15,30 @@ MonoBehaviour:
   dialogueLines:
   - characterName: Milo
     dialogueText: Rian, PR Pak Surya udah kelar belum? Jangan bilang kamu udah ngerjain?
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
+    portraitSprite: {fileID: -7125492961162913332, guid: ec9bd600b5183e94b855587cd9309dcd, type: 3}
     expression: 2
   - characterName: Rian
     dialogueText: Kalo muka panik gitu sih, kayaknya kamu belum ya?
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
+    portraitSprite: {fileID: -2823772571983056389, guid: 5fa7cee959baad64ca70a2e7e73180ac, type: 3}
     expression: 1
   - characterName: Milo
     dialogueText: Hehe... pinjam catatanmu dong. Darurat ini.
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
+    portraitSprite: {fileID: -7125492961162913332, guid: ec9bd600b5183e94b855587cd9309dcd, type: 3}
     expression: 1
   - characterName: Rian
     dialogueText: Dih kayak orang minta uang 100rb aja, kau
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
+    portraitSprite: {fileID: -2823772571983056389, guid: 5fa7cee959baad64ca70a2e7e73180ac, type: 3}
     expression: 1
   - characterName: Milo
     dialogueText: nanti kubayar 100rb
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
+    portraitSprite: {fileID: -7125492961162913332, guid: ec9bd600b5183e94b855587cd9309dcd, type: 3}
     expression: 1
   - characterName: Milo
     dialogueText: Deal ! gk nih ?
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
+    portraitSprite: {fileID: -7125492961162913332, guid: ec9bd600b5183e94b855587cd9309dcd, type: 3}
     expression: 1
   - characterName: Milo
     dialogueText: jangan dong.
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
+    portraitSprite: {fileID: -7125492961162913332, guid: ec9bd600b5183e94b855587cd9309dcd, type: 3}
     expression: 1
   missionToComplete: 0

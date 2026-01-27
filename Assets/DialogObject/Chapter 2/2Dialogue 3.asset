@@ -15,18 +15,18 @@ MonoBehaviour:
   dialogueLines:
   - characterName: Milo
     dialogueText: Bro, tadi kamu kemana sih? Katanya mau nyusul, tapi nggak nongol.
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
+    portraitSprite: {fileID: -7125492961162913332, guid: ec9bd600b5183e94b855587cd9309dcd, type: 3}
     expression: 1
   - characterName: Rian
     dialogueText: cuman, ada urusan bentar tadi.
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
+    portraitSprite: {fileID: -2823772571983056389, guid: 5fa7cee959baad64ca70a2e7e73180ac, type: 3}
     expression: 1
   - characterName: Milo
     dialogueText: Urusan apa? Rahasia negara banget gayanya.
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
+    portraitSprite: {fileID: -7125492961162913332, guid: ec9bd600b5183e94b855587cd9309dcd, type: 3}
     expression: 1
   - characterName: Rian
     dialogueText: Serius, bukan apa-apa.
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
+    portraitSprite: {fileID: -2823772571983056389, guid: 5fa7cee959baad64ca70a2e7e73180ac, type: 3}
     expression: 1
   missionToComplete: 20

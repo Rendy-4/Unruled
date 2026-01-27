@@ -15,26 +15,26 @@ MonoBehaviour:
   dialogueLines:
   - characterName: Alice
     dialogueText: Kenapa kau mengejarku sampai disini?
-    portraitSprite: {fileID: -6348002525523266690, guid: 27ef528c8b9a22f8fbbfc28992b1f0c6, type: 3}
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
     expression: 2
   - characterName: Rian
     dialogueText: Iya. Kenapa juga kau berlari saat ketemu aku?
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
+    portraitSprite: {fileID: -2823772571983056389, guid: 5fa7cee959baad64ca70a2e7e73180ac, type: 3}
     expression: 1
   - characterName: Alice
     dialogueText: "eng\u2026 enggak kok, aku cuman pengen buru-buru aja"
-    portraitSprite: {fileID: -6348002525523266690, guid: 27ef528c8b9a22f8fbbfc28992b1f0c6, type: 3}
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
     expression: 1
   - characterName: Rian
     dialogueText: terus ngapain kamu ke belakang sekolah
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
+    portraitSprite: {fileID: -2823772571983056389, guid: 5fa7cee959baad64ca70a2e7e73180ac, type: 3}
     expression: 1
   - characterName: Alice
     dialogueText: bukan urusanmu sudah pergi sana!
-    portraitSprite: {fileID: -6348002525523266690, guid: 27ef528c8b9a22f8fbbfc28992b1f0c6, type: 3}
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
     expression: 1
   - characterName: Rian
     dialogueText: "berbisik di dalam hati \u201Corang aneh\u201D"
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
+    portraitSprite: {fileID: -2823772571983056389, guid: 5fa7cee959baad64ca70a2e7e73180ac, type: 3}
     expression: 1
   missionToComplete: 18

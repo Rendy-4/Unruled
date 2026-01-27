@@ -15,86 +15,86 @@ MonoBehaviour:
   dialogueLines:
   - characterName: Alice
     dialogueText: Kau lewat sini lagi!
-    portraitSprite: {fileID: -6348002525523266690, guid: 27ef528c8b9a22f8fbbfc28992b1f0c6, type: 3}
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
     expression: 1
   - characterName: Rian
     dialogueText: Kebiasaan. ini Jalan pintas ke halte bus.
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
+    portraitSprite: {fileID: -2823772571983056389, guid: 5fa7cee959baad64ca70a2e7e73180ac, type: 3}
     expression: 1
   - characterName: Alice
     dialogueText: huff... yang kemarin itu. Jangan bilang ke siapa-siapa ya. Entah
       itu Guru, orang tua, siapapun.
-    portraitSprite: {fileID: -6348002525523266690, guid: 27ef528c8b9a22f8fbbfc28992b1f0c6, type: 3}
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
     expression: 1
   - characterName: Rian
     dialogueText: Aku nggak bilang ke siapa-siapa kok. Aku tidak suka ikut campur
       urusan orang lain.
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
+    portraitSprite: {fileID: -2823772571983056389, guid: 5fa7cee959baad64ca70a2e7e73180ac, type: 3}
     expression: 1
   - characterName: Alice
     dialogueText: "Dengar ya! Aku melakukan ini bukan karena aku bangga. malahan
       Jauh dari itu.\"\r\n Terlihat tangannya gemetar sedikit, lalu cepat ia sembunyikan
       ke belakang"
-    portraitSprite: {fileID: -6348002525523266690, guid: 27ef528c8b9a22f8fbbfc28992b1f0c6, type: 3}
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
     expression: 1
   - characterName: Alice
     dialogueText: . . . . .
-    portraitSprite: {fileID: -6348002525523266690, guid: 27ef528c8b9a22f8fbbfc28992b1f0c6, type: 3}
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
     expression: 1
   - characterName: Alice
     dialogueText: "Rumahku itu... seperti bukan rumah lagi. Tiap hari ada yang berdebat.
       Suara piring pecah, pintu dibanting\u2026 kamu mengerti kan maksudku"
-    portraitSprite: {fileID: -6348002525523266690, guid: 27ef528c8b9a22f8fbbfc28992b1f0c6, type: 3}
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
     expression: 1
   - characterName: Alice
     dialogueText: Huft (Menelan Ludah)
-    portraitSprite: {fileID: -6348002525523266690, guid: 27ef528c8b9a22f8fbbfc28992b1f0c6, type: 3}
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
     expression: 1
   - characterName: Alice
     dialogueText: (Tarikan nafas pelan)
-    portraitSprite: {fileID: -6348002525523266690, guid: 27ef528c8b9a22f8fbbfc28992b1f0c6, type: 3}
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
     expression: 1
   - characterName: Alice
     dialogueText: Aku tahu ini salah, tapi itu cara tercepat untukku agar menjadi
       lebih tenang.
-    portraitSprite: {fileID: -6348002525523266690, guid: 27ef528c8b9a22f8fbbfc28992b1f0c6, type: 3}
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
     expression: 1
   - characterName: Rian
     dialogueText: (Rian menatapnya, nada suara nya menjadi lembut tetapi jujur. )
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
+    portraitSprite: {fileID: -2823772571983056389, guid: 5fa7cee959baad64ca70a2e7e73180ac, type: 3}
     expression: 1
   - characterName: Rian
     dialogueText: "Aku nggak mau sok nasehatin. Tapi ya\u2026 . Aku ngerti perasaan
       ingin kabur. Mungkin?."
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
+    portraitSprite: {fileID: -2823772571983056389, guid: 5fa7cee959baad64ca70a2e7e73180ac, type: 3}
     expression: 1
   - characterName: Alice
     dialogueText: (Alice menatap Rian lagi, Ada sedikit rasa lega sekilas karena
       didengar, bukan dihakimi. )
-    portraitSprite: {fileID: -6348002525523266690, guid: 27ef528c8b9a22f8fbbfc28992b1f0c6, type: 3}
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
     expression: 1
   - characterName: Alice
     dialogueText: "Terima kasih\u2026 sudah mau mengerti."
-    portraitSprite: {fileID: -6348002525523266690, guid: 27ef528c8b9a22f8fbbfc28992b1f0c6, type: 3}
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
     expression: 1
   - characterName: Alice
     dialogueText: . . . . (Hening)
-    portraitSprite: {fileID: -6348002525523266690, guid: 27ef528c8b9a22f8fbbfc28992b1f0c6, type: 3}
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
     expression: 1
   - characterName: Alice
     dialogueText: Dan ingat, jangan ceritakan hal ini kepada siapapun.
-    portraitSprite: {fileID: -6348002525523266690, guid: 27ef528c8b9a22f8fbbfc28992b1f0c6, type: 3}
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
     expression: 1
   - characterName: Alice
     dialogueText: . . . . (Hening)
-    portraitSprite: {fileID: -6348002525523266690, guid: 27ef528c8b9a22f8fbbfc28992b1f0c6, type: 3}
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
     expression: 1
   - characterName: Alice
     dialogueText: Dan ingat, jangan ceritakan hal ini kepada siapapun.
-    portraitSprite: {fileID: -6348002525523266690, guid: 27ef528c8b9a22f8fbbfc28992b1f0c6, type: 3}
+    portraitSprite: {fileID: 9049539159198059528, guid: a5b0dcdf2040c7f4387b45e2aaec95cf, type: 3}
     expression: 2
   - characterName: Rian
     dialogueText: hmm, aku paham kok
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
+    portraitSprite: {fileID: -2823772571983056389, guid: 5fa7cee959baad64ca70a2e7e73180ac, type: 3}
     expression: 2
   missionToComplete: 23

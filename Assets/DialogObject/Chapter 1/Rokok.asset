@@ -15,10 +15,10 @@ MonoBehaviour:
   dialogueLines:
   - characterName: Rian
     dialogueText: "Kamu kan\u2026"
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
+    portraitSprite: {fileID: -2823772571983056389, guid: 5fa7cee959baad64ca70a2e7e73180ac, type: 3}
     expression: 0
   - characterName: Rian
     dialogueText: Itu barusan Alice kan? Anak populer itu? Kok dia ada disini?
-    portraitSprite: {fileID: 292776439409623423, guid: 241d72680ce0637f9b29e8367fc90307, type: 3}
+    portraitSprite: {fileID: -2823772571983056389, guid: 5fa7cee959baad64ca70a2e7e73180ac, type: 3}
     expression: 0
   missionToComplete: 15

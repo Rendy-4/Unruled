@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueLines:
   - characterName: Milo
     dialogueText: Wah, baksonya wangi banget
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
+    portraitSprite: {fileID: -7125492961162913332, guid: ec9bd600b5183e94b855587cd9309dcd, type: 3}
     expression: 0
   - characterName: Siswa 1
     dialogueText: Dengar-dengar dia nggak masuk lagi hari ini
@@ -31,6 +31,6 @@ MonoBehaviour:
     expression: 0
   - characterName: Milo
     dialogueText: Udah selesai blom?, ayo lanjut ke-kelas. Gih
-    portraitSprite: {fileID: 7455303052798692335, guid: ecac9c42e332271aca7c585f10abeae4, type: 3}
+    portraitSprite: {fileID: -7125492961162913332, guid: ec9bd600b5183e94b855587cd9309dcd, type: 3}
     expression: 0
   missionToComplete: 8
