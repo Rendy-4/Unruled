@@ -30,7 +30,8 @@ MonoBehaviour:
     portraitSprite: {fileID: 0}
     expression: 0
   - characterName: Milo
-    dialogueText: Udah selesai blom?, ayo lanjut ke-kelas. Gih
+    dialogueText: Udah selesai blom?, ayo lanjut ke-kelas. Gih , aku mau beli jajan
+      dulu
     portraitSprite: {fileID: -7125492961162913332, guid: ec9bd600b5183e94b855587cd9309dcd, type: 3}
     expression: 0
   missionToComplete: 8
