@@ -10180,7 +10180,7 @@ MonoBehaviour:
   dialogueGameObject: {fileID: 1602062357}
   basePortrait: {fileID: 743060605}
   ExpressionLayer: {fileID: 0}
-  defaultPortraitSprite: {fileID: 0}
+  defaultPortraitSprite: {fileID: 9166386262451799377, guid: 448e0eea9fde308138065a2585928a88, type: 3}
   textSpeed: 0.05
   isTyping: 0
   dialogueFinished: 0
