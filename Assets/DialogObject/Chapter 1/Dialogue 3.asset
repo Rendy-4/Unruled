@@ -19,11 +19,11 @@ MonoBehaviour:
     expression: 0
   - characterName: Siswa 1
     dialogueText: Dengar-dengar dia nggak masuk lagi hari ini
-    portraitSprite: {fileID: 0}
+    portraitSprite: {fileID: 4034299820580100144, guid: de7d0c51c980107489310220349ef7ab, type: 3}
     expression: 0
   - characterName: Siswa 2
     dialogueText: Dulunya juga begitu, katanya
-    portraitSprite: {fileID: 0}
+    portraitSprite: {fileID: 4034299820580100144, guid: de7d0c51c980107489310220349ef7ab, type: 3}
     expression: 0
   - characterName: 
     dialogueText: Bel berbunyi . . .
