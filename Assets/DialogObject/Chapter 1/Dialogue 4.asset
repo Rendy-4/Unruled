@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueLines:
   - characterName: Murid lain
     dialogueText: cuy!!, kali ini kita jamkos nih, guru nya gak dateng lagi ada acara
-    portraitSprite: {fileID: 0}
+    portraitSprite: {fileID: 5397070020879262860, guid: 029aad7f12859d643bc761836bfcc514, type: 3}
     expression: 0
   - characterName: Milo
     dialogueText: wah beneran nih, ya udah mending kita main aja ga sih
@@ -31,6 +31,6 @@ MonoBehaviour:
     expression: 0
   - characterName: 
     dialogueText: '"tanpa sadar mereka menghabiskan waktu hingga jam pulang tiba"'
-    portraitSprite: {fileID: 0}
+    portraitSprite: {fileID: 404769197595482596, guid: 8be2cd03918c68a4e8b3de03a3cc9539, type: 3}
     expression: 0
   missionToComplete: 10

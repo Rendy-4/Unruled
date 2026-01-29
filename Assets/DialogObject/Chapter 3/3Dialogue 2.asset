@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueLines:
   - characterName: 
     dialogueText: '. . . . '
-    portraitSprite: {fileID: 0}
+    portraitSprite: {fileID: 404769197595482596, guid: 8be2cd03918c68a4e8b3de03a3cc9539, type: 3}
     expression: 0
   - characterName: Alice
     dialogueText: Aku sebenarnya ingin bilang ini dari kemaren
